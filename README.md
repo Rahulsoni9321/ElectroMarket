@@ -21,21 +21,22 @@ ElectroMarket is a user-friendly e-commerce platform designed specifically for p
 ## Installation
 
 1. Clone the repository:
-   git clone https://github.com/sunilsaini87/ElectroMarket.git
+
+   - git clone https://github.com/sunilsaini87/ElectroMarket.git
 
 2. Install dependencies for both the client and server:
-   cd electromarket
-   cd backend
-   npm install
-   cd ..
-   cd frontend
-   npm install
+   - cd electromarket
+   - cd backend
+   - npm install
+   - cd ..
+   - cd frontend
+   - npm install
 3. Set up environment variables:
 
    - Create a `.env` file in the root directory and add necessary environment variables like database connection string, JWT secret, etc.
 
 4. Run the application:
-   npm run dev
+   - npm run dev
 
 ## Deployment
 
