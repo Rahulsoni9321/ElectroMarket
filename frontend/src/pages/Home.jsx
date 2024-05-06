@@ -44,7 +44,7 @@ export default function HomepagePage() {
   return (
     <>
       <Helmet>
-        <title>electromar</title>
+        <title>ElectroMarket</title>
         <meta
           name="description"
           content="Web site created using create-react-app"
@@ -811,7 +811,7 @@ export default function HomepagePage() {
               </div>
               <div className="mt-[60px] h-px w-full self-stretch bg-gray-400_01" />
               <Text as="p" className="mt-[26px] !text-black-900_cc">
-                © Copyright 2024 TechVolt. All rights reserved
+                © Copyright 2024 ElectroMarket. All rights reserved
               </Text>
             </div>
           </div>
