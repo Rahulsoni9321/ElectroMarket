@@ -16,14 +16,16 @@ export default function HomepageHeader({
 }) {
   return (
     <div {...props}>
-      <header className="flex items-center justify-center self-stretch border-b border-solid border-gray-200 bg-white-A700 py-10 sm:py-2">
-        <div className="container-xs flex items-center justify-between gap-5 md:flex-col md:p-5">
-          <Img
-            src="./public/Images/ElectroMarket.jpg"
-            alt="headerlogo"
-            className="h-[70px] w-[300px] object-contain my-0"
-          />
-          <ul className="flex flex-wrap items-center gap-10 pr-2.5">
+      <header className="flex items-center justify-center self-stretch border-b border-solid border-gray-200 bg-slate-400 text-white py-10 sm:py-1">
+        <div className="container-xs flex items-center justify-between gap-2 md:flex-col md:p-5">
+          <ul className="flex flex-wrap items-center gap-10 pr-2.5 ">
+            <li>
+              <Img
+                src="\public\assets\Electromarket.png"
+                alt="headerlogo"
+                className="h-[50px] object-contain object-left-top"
+              />
+            </li>
             <li>
               <a
                 href="#"
@@ -62,8 +64,6 @@ export default function HomepageHeader({
                 </Text>
               </a>
             </li>
-          </ul>
-          <div className="flex w-[13%] justify-between gap-5 md:w-full">
             <a href="#">
               <Img
                 src="./public/assets/search-svgrepo-com.svg"
@@ -78,14 +78,7 @@ export default function HomepageHeader({
                 className="h-[32px] w-[32px]"
               />
             </a>
-            <a href="#">
-              <Img
-                src="\public\assets\lock-alt-svgrepo-com.svg"
-                alt="lock"
-                className="h-[32px] w-[32px]"
-              />
-            </a>
-          </div>
+          </ul>
         </div>
       </header>
       <div className="flex justify-center self-stretch border-b border-solid border-gray-200 bg-white-A700 pb-[13px] pt-[15px]">
@@ -95,7 +88,7 @@ export default function HomepageHeader({
               {homeOne}
             </Text>
             <Img
-              src="images/img_arrow_right_gray_700.svg"
+              src="\public\assets\arrowright-svgrepo-com.svg"
               alt="arrowright"
               className="h-[24px] w-[24px] sm:w-full"
             />
