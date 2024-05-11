@@ -8,17 +8,13 @@ export default function HomepageHeader({
   accessories = "Accessories",
   aboutus = "About Us",
   contactus = "Contact Us",
-  homeOne = "Home",
-  shopOne = "Product Details",
-  arrowright,
-  shopTwo,
   ...props
 }) {
   return (
     <div {...props}>
       <header className="flex items-center justify-center self-stretch border-b border-solid border-gray-200 bg-slate-400 text-white py-10 sm:py-1">
         <div className="container-xs flex items-center justify-between gap-2 md:flex-col md:p-5">
-          <ul className="flex flex-wrap items-center gap-10 pr-2.5 ">
+          <ul className="flex flex-wrap items-center gap-20 pr-2.5 ">
             <li>
               <Img
                 src="\public\assets\Electromarket.png"
@@ -81,39 +77,6 @@ export default function HomepageHeader({
           </ul>
         </div>
       </header>
-      <div className="flex justify-center self-stretch border-b border-solid border-gray-200 bg-white-A700 pb-[13px] pt-[15px]">
-        <div className="container-xs flex md:p-5">
-          <div className="flex flex-wrap items-start gap-1.5 sm:flex-col">
-            <Text size="xl" as="p" className="capitalize !text-gray-700">
-              {homeOne}
-            </Text>
-            <Img
-              src="\public\assets\arrowright-svgrepo-com.svg"
-              alt="arrowright"
-              className="h-[24px] w-[24px] sm:w-full"
-            />
-            <Text
-              size="xl"
-              as="p"
-              className="!font-medium capitalize !text-gray-700"
-            >
-              {shopOne}
-            </Text>
-            {!!arrowright ? (
-              <Img
-                src={arrowright}
-                alt="arrowright"
-                className="h-[24px] w-[24px] sm:w-full"
-              />
-            ) : null}
-            {!!shopTwo ? (
-              <Text size="xl" as="p" className="!font-medium capitalize">
-                {shopTwo}
-              </Text>
-            ) : null}
-          </div>
-        </div>
-      </div>
     </div>
   );
 }
@@ -123,8 +86,4 @@ HomepageHeader.propTypes = {
   accessories: PropTypes.string,
   aboutus: PropTypes.string,
   contactus: PropTypes.string,
-  homeOne: PropTypes.string,
-  shopOne: PropTypes.string,
-  arrowright: PropTypes.node, // or PropTypes.element, depending on the type of arrowright
-  shopTwo: PropTypes.string,
 };
