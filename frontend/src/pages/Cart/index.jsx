@@ -52,7 +52,7 @@ export default function CartPage() {
   return (
     <>
       <Helmet>
-        <title>electromar</title>
+        <title>ElectroMarket</title>
         <meta
           name="description"
           content="Web site created using create-react-app"
