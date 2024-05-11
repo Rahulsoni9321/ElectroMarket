@@ -1,4 +1,5 @@
 // import React from "react";
+import PropTypes from "prop-types";
 import { Helmet } from "react-helmet";
 import {
   Img,
@@ -23,11 +24,8 @@ export default function ProductGridPage() {
   return (
     <>
       <Helmet>
-        <title>electromar</title>
-        <meta
-          name="description"
-          content="Web site created using create-react-app"
-        />
+        <title>ElectroMarket</title>
+        <meta name="description" content="Web site" />
       </Helmet>
       <div className="flex w-full flex-col gap-10 bg-white-A700">
         <HomepageHeader shopOne="Shop" />
@@ -662,3 +660,7 @@ export default function ProductGridPage() {
     </>
   );
 }
+
+ProductGridPage.propTypes = {
+  expanded: PropTypes.string,
+};
