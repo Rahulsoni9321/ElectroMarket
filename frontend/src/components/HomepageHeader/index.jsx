@@ -1,5 +1,6 @@
-import React from "react";
+// import React from "react";
 import { Text, Img } from "./..";
+import PropTypes from "prop-types";
 
 export default function HomepageHeader({
   home = "Home",
@@ -123,3 +124,14 @@ export default function HomepageHeader({
     </div>
   );
 }
+HomepageHeader.propTypes = {
+  home: PropTypes.string,
+  shop: PropTypes.string,
+  accessories: PropTypes.string,
+  aboutus: PropTypes.string,
+  contactus: PropTypes.string,
+  homeOne: PropTypes.string,
+  shopOne: PropTypes.string,
+  arrowright: PropTypes.node, // or PropTypes.element, depending on the type of arrowright
+  shopTwo: PropTypes.string,
+};
