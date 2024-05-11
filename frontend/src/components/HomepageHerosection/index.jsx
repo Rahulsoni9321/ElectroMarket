@@ -21,7 +21,7 @@ export default function HomepageHerosection({
       {...props}
       className={`${props.className} flex flex-col items-center w-full mt-10 gap-10`}
     >
-      <div className="container-xs flex w-full max-w-[1360px] rounded-[10px] bg-teal-200 hover:bg-stone-300 md:p-5">
+      <div className="container-xs flex w-full max-w-[1360px] rounded-[10px] bg-teal-600 hover:bg-stone-300 md:p-5">
         <Slider
           autoPlay
           autoPlayInterval={1000}
