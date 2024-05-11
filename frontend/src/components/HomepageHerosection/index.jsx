@@ -9,7 +9,7 @@ export default function HomepageHerosection({
       <br />A Versatile Microcontroller Board
     </>
   ),
-  descriptiontext = "Snapdragon 7 Gen 1 | 120Hz sAMOLED+",
+  descriptiontext = "Model Name ->	Rev 3 | RAM -> 32 KB | CPU Speed ->16 MHz",
   button = "Buy Now",
   ...props
 }) {
@@ -21,10 +21,10 @@ export default function HomepageHerosection({
       {...props}
       className={`${props.className} flex flex-col items-center w-full mt-10 gap-10`}
     >
-      <div className="container-xs flex w-full max-w-[1360px] rounded-[10px] bg-purple-300 md:p-5">
+      <div className="container-xs flex w-full max-w-[1360px] rounded-[10px] bg-teal-200 hover:bg-stone-300 md:p-5">
         <Slider
           autoPlay
-          autoPlayInterval={2000}
+          autoPlayInterval={1000}
           responsive={{
             0: { items: 1 },
             550: { items: 1 },
@@ -65,12 +65,12 @@ export default function HomepageHerosection({
                       size="lg"
                       rightIcon={
                         <Img
-                          src="images/img_frame.svg"
+                          src="\public\assets\right-svgrepo-com.svg"
                           alt="frame"
                           className="h-[24px] w-[24px]"
                         />
                       }
-                      className="min-w-[167px] gap-2.5 rounded-md font-bold sm:px-5"
+                      className="min-w-[167px] gap-2.5 rounded-md font-bold sm:px-5 bg-yellow-200 hover:bg-white"
                     >
                       {button}
                     </Button>
