@@ -12,7 +12,7 @@ export default function HomepageHeader({
 }) {
   return (
     <div {...props}>
-      <header className="flex items-center justify-center self-stretch border-b border-solid border-gray-200 bg-slate-400 text-white py-10 sm:py-1">
+      <header className="flex items-center justify-center self-stretch border-b border-solid border-gray-200 bg-slate-400 font-bold  py-10 sm:py-1">
         <div className="container-xs flex items-center justify-between gap-2 md:flex-col md:p-5">
           <ul className="flex flex-wrap items-center gap-20 pr-2.5 ">
             <li>
