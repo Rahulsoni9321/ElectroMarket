@@ -5,9 +5,8 @@ import PropTypes from "prop-types";
 export default function HomepageHerosection({
   titletext = (
     <>
-      Galaxy M55 5G
-      <br />
-      Must be a Monster
+      Arduino Uno
+      <br />A Versatile Microcontroller Board
     </>
   ),
   descriptiontext = "Snapdragon 7 Gen 1 | 120Hz sAMOLED+",
@@ -22,7 +21,7 @@ export default function HomepageHerosection({
       {...props}
       className={`${props.className} flex flex-col items-center w-full mt-10 gap-10`}
     >
-      <div className="container-xs flex w-full max-w-[1360px] rounded-[10px] bg-white-A700 md:p-5">
+      <div className="container-xs flex w-full max-w-[1360px] rounded-[10px] bg-purple-300 md:p-5">
         <Slider
           autoPlay
           autoPlayInterval={2000}
@@ -40,7 +39,13 @@ export default function HomepageHerosection({
           items={[...Array(3)].map(() => (
             <React.Fragment key={Math.random()}>
               <div className="flex rounded-[10px] bg-white-A700">
-                <div className="flex h-[640px] w-full items-center rounded-[10px] bg-[url(/public/images/img_group_2.png)] bg-cover bg-no-repeat pb-[152px] pl-[63px] pr-14 pt-[181px] md:h-auto md:p-5">
+                <div className="flex h-[640px] w-full items-center rounded-[10px] bg-cover bg-no-repeat pb-[152px] pl-[63px] pr-14 pt-[181px] md:h-auto md:p-5">
+                  <img
+                    src="./public/Images/arduino.png"
+                    className="object-fit-contain"
+                    alt="Arduino Image"
+                  />
+
                   <div className="flex w-[59%] flex-col items-start gap-9 md:w-full">
                     <Heading
                       size="7xl"

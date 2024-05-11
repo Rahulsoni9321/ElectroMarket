@@ -17,7 +17,7 @@ export default function HomepageHeader({
           <ul className="flex flex-wrap items-center gap-20 pr-2.5 ">
             <li>
               <Img
-                src="\public\assets\Electromarket.png"
+                src="\public\Images\Electromarket.png"
                 alt="headerlogo"
                 className="h-[50px] object-contain object-left-top"
               />
