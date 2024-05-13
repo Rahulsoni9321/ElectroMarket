@@ -19,10 +19,26 @@ model User {
   Username String @unique
   Email  String @unique
   Password String
+  Product Product[]
 }
+
+
+model Admin {
+  id String  @id @default(auto()) @map("_id") @db.ObjectId
+  AdminName String @unique
+  Email String @unique
+  PhoneNumber String @unique
+  Password String 
+  Products Product[]
+}
+
 
 model Product {
   id   String    @id @default(auto()) @map("_id") @db.ObjectId
   Title String 
   Description String
+  AdminId String @db.ObjectId
+  UserId String? @db.ObjectId
+  Admin Admin @relation(fields: [AdminId],references: [id])
+  User User?  @relation(fields: [UserId], references: [id])
 }
