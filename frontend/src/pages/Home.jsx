@@ -64,11 +64,11 @@ export default function HomepagePage() {
               />
             </div> */}
             <div className="flex gap-10 md:flex-col">
-              <div className="flex w-full flex-col items-center gap-[1px] rounded-[5px] border border-solid border-gray-800_01 px-5 pb-6 pt-9 sm:py-5">
+              <div className="flex w-full flex-col items-center rounded-[30px] px-1 pb-1 pt-1 sm:py-1">
                 <Img
                   src="\public\Images\Raspberry Pi 3.png"
                   alt="image"
-                  className="h-[150px] w-full object-cover md:h-auto"
+                  className="h-min w-min object-none  md:h-auto"
                 />
                 <div className="flex flex-col gap-2 self-stretch">
                   <Text size="3xl" as="p" className="leading-9 !text-black-900">
@@ -122,11 +122,11 @@ export default function HomepagePage() {
                   </Button>
                 </div>
               </div>
-              <div className="flex w-full flex-col gap-[23px] rounded-[30px] border border-solid border-gray-400_01 px-5 pb-6 pt-9 sm:py-5">
+              <div className="flex w-full flex-col items-center rounded-[30px] px-1 pb-1 pt-1 sm:py-1">
                 <Img
-                  src="\public\Images\breadboard.png"
+                  src="\public\Images\breadboard1.png"
                   alt="imagefive"
-                  className="h-[350px] object-contain"
+                  className="h-min w-min object-none md:h-auto"
                 />
                 <div className="flex flex-col gap-2">
                   <Text size="3xl" as="p" className="leading-9 !text-black-900">
@@ -182,11 +182,11 @@ export default function HomepagePage() {
                   </div>
                 </div>
               </div>
-              <div className="flex w-full flex-col items-center gap-[23px] rounded-[30px] border border-solid border-gray-400_01 px-5 pb-6 pt-9 sm:py-5">
+              <div className="flex w-full flex-col items-center rounded-[30px] px-1 pb-1 pt-1 sm:py-1">
                 <Img
-                  src="./public/Images/servomotor.png"
+                  src="./public/Images/servomotor1.png"
                   alt="imagethree"
-                  className="h-[350px] w-full object-cover md:h-auto"
+                  className="h-min w-min object-none md:h-auto"
                 />
                 <div className="flex flex-col gap-2 self-stretch">
                   <Text size="3xl" as="p" className="leading-9 !text-black-900">
