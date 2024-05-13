@@ -51,7 +51,7 @@ export default function HomepagePage() {
       <div className="flex w-full flex-col items-center bg-white-A700">
         <HomepageHeader shopOne="Shop" className="self-stretch" />
         <HomepageHerosection />
-        <div className="mt-20 flex justify-center self-stretch pb-10 pt-6 sm:py-5">
+        <div className="mt-0 flex justify-center self-stretch pb-10 pt-1 sm:py-1">
           <div className="container-xs flex flex-col gap-12 md:p-5">
             {/* <div className="flex flex-col items-start gap-[11px]">
               <Heading size="6xl" as="h1">
@@ -64,11 +64,11 @@ export default function HomepagePage() {
               />
             </div> */}
             <div className="flex gap-10 md:flex-col">
-              <div className="flex w-full flex-col items-center gap-[23px] rounded-[30px] border border-solid border-gray-400_01 px-5 pb-6 pt-9 sm:py-5">
+              <div className="flex w-full flex-col items-center gap-[1px] rounded-[5px] border border-solid border-gray-800_01 px-5 pb-6 pt-9 sm:py-5">
                 <Img
-                  src="images/img_image_6_350x386.png"
+                  src="\public\Images\Raspberry Pi 3.png"
                   alt="image"
-                  className="h-[350px] w-full object-cover md:h-auto"
+                  className="h-[150px] w-full object-cover md:h-auto"
                 />
                 <div className="flex flex-col gap-2 self-stretch">
                   <Text size="3xl" as="p" className="leading-9 !text-black-900">
@@ -124,9 +124,9 @@ export default function HomepagePage() {
               </div>
               <div className="flex w-full flex-col gap-[23px] rounded-[30px] border border-solid border-gray-400_01 px-5 pb-6 pt-9 sm:py-5">
                 <Img
-                  src="images/img_image_5.png"
+                  src="\public\Images\breadboard.png"
                   alt="imagefive"
-                  className="h-[350px] object-cover"
+                  className="h-[350px] object-contain"
                 />
                 <div className="flex flex-col gap-2">
                   <Text size="3xl" as="p" className="leading-9 !text-black-900">
@@ -184,7 +184,7 @@ export default function HomepagePage() {
               </div>
               <div className="flex w-full flex-col items-center gap-[23px] rounded-[30px] border border-solid border-gray-400_01 px-5 pb-6 pt-9 sm:py-5">
                 <Img
-                  src="images/img_image_3.png"
+                  src="./public/Images/servomotor.png"
                   alt="imagethree"
                   className="h-[350px] w-full object-cover md:h-auto"
                 />
