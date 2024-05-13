@@ -51,7 +51,7 @@ export default function HomepagePage() {
       <div className="flex w-full flex-col items-center bg-white-A700">
         <HomepageHeader shopOne="Shop" className="self-stretch" />
         <HomepageHerosection />
-        <div className="mt-0 flex justify-center self-stretch pb-10 pt-1 sm:py-1">
+        <div className="mt-0 flex justify-center self-stretch pb-10 pt-1 sm:py-1 bg-slate-300">
           <div className="container-xs flex flex-col gap-12 md:p-5">
             {/* <div className="flex flex-col items-start gap-[11px]">
               <Heading size="6xl" as="h1">
@@ -71,19 +71,22 @@ export default function HomepagePage() {
                   className="h-min w-min object-none  md:h-auto"
                 />
                 <div className="flex flex-col gap-2 self-stretch">
-                  <Text size="3xl" as="p" className="leading-9 !text-black-900">
-                    5 Star (1.5), Split AC, AI Convertible 6-in-1, Gold Fin+ &
-                    Black Protection, 2024 Model
+                  <Text
+                    size="3xl"
+                    as="p"
+                    className="leading-9 !text-black-900 text-center"
+                  >
+                    Raspberry PI 3 Model B+ Motherboard | BCM2837
                   </Text>
                   <div className="flex w-[43%] items-center justify-center gap-2 md:w-full">
                     <RatingBar
-                      value={1}
+                      value={3.5}
                       isEditable={true}
                       size={18}
                       className="flex flex-1 justify-between"
                     />
                     <Text as="p" className="!text-black-900">
-                      3(122)
+                      17(122)
                     </Text>
                   </div>
                 </div>
@@ -97,20 +100,20 @@ export default function HomepagePage() {
                       as="p"
                       className="!text-gray-700 line-through"
                     >
-                      ₹85990
+                      ₹14,999
                     </Text>
                     <Text size="xl" as="p">
-                      46% Off
+                      72% Off
                     </Text>
                   </div>
                   <Heading size="4xl" as="h2">
-                    ₹17,800
+                    ₹4,195
                   </Heading>
                 </div>
                 <div className="flex gap-[15px] self-stretch">
                   <Button
                     shape="round"
-                    className="w-full border border-solid border-black-900_02 font-inter font-medium sm:px-5"
+                    className="w-full border border-solid border-black-900_02 font-inter font-medium sm:px-1"
                   >
                     Learn More
                   </Button>
@@ -130,18 +133,18 @@ export default function HomepagePage() {
                 />
                 <div className="flex flex-col gap-2">
                   <Text size="3xl" as="p" className="leading-9 !text-black-900">
-                    650L, Convertible Side-by-Side Refrigerator with Smart
-                    Inverter Compressor, Smart Diagnosis
+                    Electronic Spices 400 Points Half Size Solderless Breadboard
+                    for Prototype Circuit Pack of 1pcs
                   </Text>
                   <div className="flex w-[43%] items-center justify-center gap-2 md:w-full">
                     <RatingBar
-                      value={1}
+                      value={2.5}
                       isEditable={true}
                       size={18}
                       className="flex flex-1 justify-between"
                     />
                     <Text as="p" className="!text-black-900">
-                      3(122)
+                      22(122)
                     </Text>
                   </div>
                 </div>
@@ -156,14 +159,14 @@ export default function HomepagePage() {
                         as="p"
                         className="!text-gray-700 line-through"
                       >
-                        ₹85990
+                        ₹199
                       </Text>
                       <Text size="xl" as="p">
-                        46% Off
+                        40% Off
                       </Text>
                     </div>
                     <Heading size="4xl" as="h3">
-                      ₹17,800
+                      ₹119
                     </Heading>
                   </div>
                   <div className="flex gap-4">
@@ -190,18 +193,19 @@ export default function HomepagePage() {
                 />
                 <div className="flex flex-col gap-2 self-stretch">
                   <Text size="3xl" as="p" className="leading-9 !text-black-900">
-                    7Kg Front Load Washing Machine, Inverter Direct Drive,
-                    Middle Black
+                    Drfeify RC Motor Servo, Black 17g Metal Gear Core Motor
+                    Servo RC Model Car Upgrade Accessory with Install Screws
+                    Parts
                   </Text>
                   <div className="flex w-[43%] items-center justify-center gap-[7px] md:w-full">
                     <RatingBar
-                      value={1}
+                      value={4.8}
                       isEditable={true}
                       size={18}
                       className="flex flex-1 justify-between"
                     />
                     <Text as="p" className="!text-black-900">
-                      3(122)
+                      36(122)
                     </Text>
                   </div>
                 </div>
@@ -215,14 +219,14 @@ export default function HomepagePage() {
                       as="p"
                       className="!text-gray-700 line-through"
                     >
-                      ₹85990
+                      ₹8,199
                     </Text>
                     <Text size="xl" as="p">
-                      46% Off
+                      50% Off
                     </Text>
                   </div>
                   <Heading size="4xl" as="h4">
-                    ₹17,800
+                    ₹4,099
                   </Heading>
                 </div>
                 <div className="flex gap-4 self-stretch">
