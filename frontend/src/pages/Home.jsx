@@ -16,8 +16,6 @@ import HomepageTab from "../components/HomepageTab";
 
 const data = [
   { smarttvone: "images/img_image_7_576x426.png", smarttv: "Smart TV" },
-  { smarttvone: "images/img_image_7_3.png", smarttv: "Washing machine" },
-  { smarttvone: "images/img_image_7_4.png", smarttv: "Air conditioner" },
 ];
 const data1 = [
   {
@@ -53,75 +51,6 @@ export default function HomepagePage() {
       <div className="flex w-full flex-col items-center bg-white-A700">
         <HomepageHeader shopOne="Shop" className="self-stretch" />
         <HomepageHerosection />
-        <div className="container-xs mt-20 flex gap-6 md:flex-col md:p-5">
-          <div className="flex w-full flex-col items-start gap-[23px] rounded-[30px] bg-orange-100 px-5 py-9 sm:py-5">
-            <Img
-              src="images/img_image_6.png"
-              alt="image"
-              className="h-[239px] w-full object-cover md:h-auto"
-            />
-            <div className="flex flex-col items-start gap-[9px] self-stretch">
-              <Text size="6xl" as="p" className="!text-black-900">
-                Fantastic deals await!
-              </Text>
-              <Text as="p" className="w-full leading-6 !text-black-900">
-                Don&#39;t miss our promotions on home appliances, audio and
-                video products
-              </Text>
-            </div>
-            <Button
-              shape="round"
-              className="min-w-[170px] font-inter font-medium sm:px-5"
-            >
-              Buy now
-            </Button>
-          </div>
-          <div className="flex w-full flex-col items-start gap-[23px] rounded-[30px] bg-blue_gray-50 px-5 py-[38px] sm:py-5">
-            <div className="self-stretch rounded-[116px] bg-red-900 p-[23px] sm:p-5">
-              <Img
-                src="images/img_image_6_186x345.png"
-                alt="imagesix"
-                className="h-[186px] w-full rounded-[49px] object-cover md:h-auto"
-              />
-            </div>
-            <div className="flex flex-col gap-2 self-stretch">
-              <Text size="6xl" as="p" className="!text-black-900">
-                Be an techvolt member
-              </Text>
-              <Text as="p" className="leading-6 !text-black-900">
-                Enjoy all the membership benefits, from special discounts to
-                exclusive services and offers
-              </Text>
-            </div>
-            <Button
-              shape="round"
-              className="min-w-[170px] font-inter font-medium sm:px-5"
-            >
-              Join Us
-            </Button>
-          </div>
-          <div className="flex w-full flex-col items-start gap-6 rounded-[30px] bg-gray-300_02 px-5 py-9 sm:py-5">
-            <Img
-              src="images/img_image_6.png"
-              alt="imagesix"
-              className="h-[239px] w-full object-cover md:h-auto"
-            />
-            <div className="flex flex-col items-start gap-1 self-stretch">
-              <Text size="6xl" as="p" className="!text-black-900">
-                Gift registration
-              </Text>
-              <Text as="p" className="w-full leading-6 !text-black-900">
-                Check out redemption procedures for promotional gifts
-              </Text>
-            </div>
-            <Button
-              shape="round"
-              className="min-w-[170px] font-inter font-medium sm:px-5"
-            >
-              Learn More
-            </Button>
-          </div>
-        </div>
         <div className="mt-20 flex justify-center self-stretch pb-10 pt-6 sm:py-5">
           <div className="container-xs flex flex-col gap-12 md:p-5">
             <div className="flex flex-col items-start gap-[11px]">
