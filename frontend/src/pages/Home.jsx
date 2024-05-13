@@ -16,8 +16,6 @@ import HomepageTab from "../components/HomepageTab";
 
 const data = [
   { smarttvone: "images/img_image_7_576x426.png", smarttv: "Smart TV" },
-  { smarttvone: "images/img_image_7_3.png", smarttv: "Washing machine" },
-  { smarttvone: "images/img_image_7_4.png", smarttv: "Air conditioner" },
 ];
 const data1 = [
   {
@@ -53,78 +51,9 @@ export default function HomepagePage() {
       <div className="flex w-full flex-col items-center bg-white-A700">
         <HomepageHeader shopOne="Shop" className="self-stretch" />
         <HomepageHerosection />
-        <div className="container-xs mt-20 flex gap-6 md:flex-col md:p-5">
-          <div className="flex w-full flex-col items-start gap-[23px] rounded-[30px] bg-orange-100 px-5 py-9 sm:py-5">
-            <Img
-              src="images/img_image_6.png"
-              alt="image"
-              className="h-[239px] w-full object-cover md:h-auto"
-            />
-            <div className="flex flex-col items-start gap-[9px] self-stretch">
-              <Text size="6xl" as="p" className="!text-black-900">
-                Fantastic deals await!
-              </Text>
-              <Text as="p" className="w-full leading-6 !text-black-900">
-                Don&#39;t miss our promotions on home appliances, audio and
-                video products
-              </Text>
-            </div>
-            <Button
-              shape="round"
-              className="min-w-[170px] font-inter font-medium sm:px-5"
-            >
-              Buy now
-            </Button>
-          </div>
-          <div className="flex w-full flex-col items-start gap-[23px] rounded-[30px] bg-blue_gray-50 px-5 py-[38px] sm:py-5">
-            <div className="self-stretch rounded-[116px] bg-red-900 p-[23px] sm:p-5">
-              <Img
-                src="images/img_image_6_186x345.png"
-                alt="imagesix"
-                className="h-[186px] w-full rounded-[49px] object-cover md:h-auto"
-              />
-            </div>
-            <div className="flex flex-col gap-2 self-stretch">
-              <Text size="6xl" as="p" className="!text-black-900">
-                Be an techvolt member
-              </Text>
-              <Text as="p" className="leading-6 !text-black-900">
-                Enjoy all the membership benefits, from special discounts to
-                exclusive services and offers
-              </Text>
-            </div>
-            <Button
-              shape="round"
-              className="min-w-[170px] font-inter font-medium sm:px-5"
-            >
-              Join Us
-            </Button>
-          </div>
-          <div className="flex w-full flex-col items-start gap-6 rounded-[30px] bg-gray-300_02 px-5 py-9 sm:py-5">
-            <Img
-              src="images/img_image_6.png"
-              alt="imagesix"
-              className="h-[239px] w-full object-cover md:h-auto"
-            />
-            <div className="flex flex-col items-start gap-1 self-stretch">
-              <Text size="6xl" as="p" className="!text-black-900">
-                Gift registration
-              </Text>
-              <Text as="p" className="w-full leading-6 !text-black-900">
-                Check out redemption procedures for promotional gifts
-              </Text>
-            </div>
-            <Button
-              shape="round"
-              className="min-w-[170px] font-inter font-medium sm:px-5"
-            >
-              Learn More
-            </Button>
-          </div>
-        </div>
-        <div className="mt-20 flex justify-center self-stretch pb-10 pt-6 sm:py-5">
+        <div className="mt-0 flex justify-center self-stretch pb-10 pt-1 sm:py-1 bg-slate-300">
           <div className="container-xs flex flex-col gap-12 md:p-5">
-            <div className="flex flex-col items-start gap-[11px]">
+            {/* <div className="flex flex-col items-start gap-[11px]">
               <Heading size="6xl" as="h1">
                 Picks For You
               </Heading>
@@ -133,28 +62,31 @@ export default function HomepagePage() {
                 text1="Most Popular"
                 text2="Newest"
               />
-            </div>
-            <div className="flex gap-10 md:flex-col">
-              <div className="flex w-full flex-col items-center gap-[23px] rounded-[30px] border border-solid border-gray-400_01 px-5 pb-6 pt-9 sm:py-5">
+            </div> */}
+            <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
+              <div className="flex w-full flex-col items-center rounded-[30px] px-1 pb-1 pt-1 sm:py-1">
                 <Img
-                  src="images/img_image_6_350x386.png"
+                  src="\public\Images\Raspberry Pi 3.png"
                   alt="image"
-                  className="h-[350px] w-full object-cover md:h-auto"
+                  className="h-min w-min"
                 />
                 <div className="flex flex-col gap-2 self-stretch">
-                  <Text size="3xl" as="p" className="leading-9 !text-black-900">
-                    5 Star (1.5), Split AC, AI Convertible 6-in-1, Gold Fin+ &
-                    Black Protection, 2024 Model
+                  <Text
+                    size="3xl"
+                    as="p"
+                    className="leading-9 !text-black-900 text-center"
+                  >
+                    Raspberry PI 3 Model B+ Motherboard | BCM2837
                   </Text>
                   <div className="flex w-[43%] items-center justify-center gap-2 md:w-full">
                     <RatingBar
-                      value={1}
+                      value={3.5}
                       isEditable={true}
                       size={18}
                       className="flex flex-1 justify-between"
                     />
                     <Text as="p" className="!text-black-900">
-                      3(122)
+                      17(122)
                     </Text>
                   </div>
                 </div>
@@ -168,20 +100,20 @@ export default function HomepagePage() {
                       as="p"
                       className="!text-gray-700 line-through"
                     >
-                      ₹85990
+                      ₹14,999
                     </Text>
                     <Text size="xl" as="p">
-                      46% Off
+                      72% Off
                     </Text>
                   </div>
                   <Heading size="4xl" as="h2">
-                    ₹17,800
+                    ₹4,195
                   </Heading>
                 </div>
                 <div className="flex gap-[15px] self-stretch">
                   <Button
                     shape="round"
-                    className="w-full border border-solid border-black-900_02 font-inter font-medium sm:px-5"
+                    className="w-80 border border-solid border-black-900_02 font-inter font-medium sm:px-1"
                   >
                     Learn More
                   </Button>
@@ -193,26 +125,26 @@ export default function HomepagePage() {
                   </Button>
                 </div>
               </div>
-              <div className="flex w-full flex-col gap-[23px] rounded-[30px] border border-solid border-gray-400_01 px-5 pb-6 pt-9 sm:py-5">
+              <div className="flex w-full flex-col items-center rounded-[30px] px-1 pb-1 pt-1 sm:py-1">
                 <Img
-                  src="images/img_image_5.png"
+                  src="\public\Images\breadboard1.png"
                   alt="imagefive"
-                  className="h-[350px] object-cover"
+                  className="h-min w-min"
                 />
                 <div className="flex flex-col gap-2">
                   <Text size="3xl" as="p" className="leading-9 !text-black-900">
-                    650L, Convertible Side-by-Side Refrigerator with Smart
-                    Inverter Compressor, Smart Diagnosis
+                    Electronic Spices 400 Points Half Size Solderless Breadboard
+                    for Prototype Circuit Pack of 1pcs
                   </Text>
                   <div className="flex w-[43%] items-center justify-center gap-2 md:w-full">
                     <RatingBar
-                      value={1}
+                      value={2.5}
                       isEditable={true}
                       size={18}
                       className="flex flex-1 justify-between"
                     />
                     <Text as="p" className="!text-black-900">
-                      3(122)
+                      22(122)
                     </Text>
                   </div>
                 </div>
@@ -227,20 +159,20 @@ export default function HomepagePage() {
                         as="p"
                         className="!text-gray-700 line-through"
                       >
-                        ₹85990
+                        ₹199
                       </Text>
                       <Text size="xl" as="p">
-                        46% Off
+                        40% Off
                       </Text>
                     </div>
                     <Heading size="4xl" as="h3">
-                      ₹17,800
+                      ₹119
                     </Heading>
                   </div>
                   <div className="flex gap-4">
                     <Button
                       shape="round"
-                      className="w-full border border-solid border-black-900_02 font-inter font-medium sm:px-5"
+                      className="w-80 border border-solid border-black-900_02 font-inter font-medium sm:px-5"
                     >
                       Learn More
                     </Button>
@@ -253,26 +185,27 @@ export default function HomepagePage() {
                   </div>
                 </div>
               </div>
-              <div className="flex w-full flex-col items-center gap-[23px] rounded-[30px] border border-solid border-gray-400_01 px-5 pb-6 pt-9 sm:py-5">
+              <div className="flex w-full flex-col items-center rounded-[30px] px-1 pb-1 pt-1 sm:py-1">
                 <Img
-                  src="images/img_image_3.png"
+                  src="./public/Images/servomotor1.png"
                   alt="imagethree"
-                  className="h-[350px] w-full object-cover md:h-auto"
+                  className="h-min w-min"
                 />
                 <div className="flex flex-col gap-2 self-stretch">
                   <Text size="3xl" as="p" className="leading-9 !text-black-900">
-                    7Kg Front Load Washing Machine, Inverter Direct Drive,
-                    Middle Black
+                    Drfeify RC Motor Servo, Black 17g Metal Gear Core Motor
+                    Servo RC Model Car Upgrade Accessory with Install Screws
+                    Parts
                   </Text>
                   <div className="flex w-[43%] items-center justify-center gap-[7px] md:w-full">
                     <RatingBar
-                      value={1}
+                      value={4.8}
                       isEditable={true}
                       size={18}
                       className="flex flex-1 justify-between"
                     />
                     <Text as="p" className="!text-black-900">
-                      3(122)
+                      36(122)
                     </Text>
                   </div>
                 </div>
@@ -286,20 +219,20 @@ export default function HomepagePage() {
                       as="p"
                       className="!text-gray-700 line-through"
                     >
-                      ₹85990
+                      ₹8,199
                     </Text>
                     <Text size="xl" as="p">
-                      46% Off
+                      50% Off
                     </Text>
                   </div>
                   <Heading size="4xl" as="h4">
-                    ₹17,800
+                    ₹4,099
                   </Heading>
                 </div>
                 <div className="flex gap-4 self-stretch">
                   <Button
                     shape="round"
-                    className="w-full border border-solid border-black-900_02 font-inter font-medium sm:px-5"
+                    className="w-80 border border-solid border-black-900_02 font-inter font-medium sm:px-5"
                   >
                     Learn More
                   </Button>
@@ -315,10 +248,10 @@ export default function HomepagePage() {
           </div>
         </div>
         <div className="mt-10 flex flex-col items-center self-stretch pb-10 pt-[31px] sm:py-5">
-          <div className="container-xs flex flex-col gap-12 md:p-5">
+          <div className="container-xs flex flex-col gap-6 md:p-5">
             <div className="flex w-[64%] flex-col items-start gap-1 md:w-full">
               <Heading size="6xl" as="h2">
-                HighLights
+                HighLight: Start Your Project Now!!
               </Heading>
               <HomepageTab
                 text3="Air Care"
@@ -343,26 +276,28 @@ export default function HomepagePage() {
                 ref={sliderRef}
                 items={[...Array(3)].map(() => (
                   <React.Fragment key={Math.random()}>
-                    <div className="flex flex-col gap-6 rounded-[30px] border-2 border-solid border-gray-400 bg-gray-300_02">
+                    <div className="flex flex-col gap-6 rounded-[30px] border-2 border-solid bg-red-100 border-gray-400 bg-gray-300_02">
                       <Img
-                        src="images/img_image_7.png"
+                        src="\public\Images\20.png"
                         alt="imageseven"
-                        className="h-[566px] rounded-tl-[30px] rounded-tr-[30px] object-cover"
+                        className="h-[200px] rounded-tl-[30px] rounded-tr-[30px] object-contain"
                       />
                       <div className="flex flex-col items-center gap-[13px] pb-10 sm:pb-5">
                         <Heading size="4xl" as="h3">
-                          Complete your space
+                          Starter Kit for Uno R3 Compatible with Arduino IDE
+                          <span className="items-center text-xs">
+                            (Images are for illustration purpose only)
+                          </span>
                         </Heading>
-                        <Text
-                          size="3xl"
-                          as="p"
-                          className="!font-normal !text-gray-700"
-                        >
-                          TechVolt Objet Collection
-                        </Text>
                         <Button
                           shape="round"
-                          className="min-w-[170px] font-inter font-medium sm:px-5"
+                          className="border border-solid border-black-900_02 font-inter font-medium sm:px-5"
+                        >
+                          Learn More
+                        </Button>
+                        <Button
+                          shape="round"
+                          className="min-w-[170px] font-inter font-medium sm:px-5 bg-orange-200 hover:bg-orange-400"
                         >
                           Buy now
                         </Button>

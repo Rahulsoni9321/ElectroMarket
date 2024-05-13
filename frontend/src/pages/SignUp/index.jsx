@@ -8,11 +8,8 @@ export default function SignUpPage() {
   return (
     <>
       <Helmet>
-        <title>electromar</title>
-        <meta
-          name="description"
-          content="Web site created using create-react-app"
-        />
+        <title>ElectroMarket</title>
+        <meta name="description" content="Web site" />
       </Helmet>
       <div className="flex w-full flex-col items-center gap-10 bg-white-A700">
         <HomepageHeader shopOne="Sign Up" className="self-stretch" />
