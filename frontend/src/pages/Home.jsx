@@ -63,12 +63,12 @@ export default function HomepagePage() {
                 text2="Newest"
               />
             </div> */}
-            <div className="flex gap-10 md:flex-col">
+            <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
               <div className="flex w-full flex-col items-center rounded-[30px] px-1 pb-1 pt-1 sm:py-1">
                 <Img
                   src="\public\Images\Raspberry Pi 3.png"
                   alt="image"
-                  className="h-min w-min object-none  md:h-auto"
+                  className="h-min w-min"
                 />
                 <div className="flex flex-col gap-2 self-stretch">
                   <Text
@@ -113,7 +113,7 @@ export default function HomepagePage() {
                 <div className="flex gap-[15px] self-stretch">
                   <Button
                     shape="round"
-                    className="w-full border border-solid border-black-900_02 font-inter font-medium sm:px-1"
+                    className="w-80 border border-solid border-black-900_02 font-inter font-medium sm:px-1"
                   >
                     Learn More
                   </Button>
@@ -129,7 +129,7 @@ export default function HomepagePage() {
                 <Img
                   src="\public\Images\breadboard1.png"
                   alt="imagefive"
-                  className="h-min w-min object-none md:h-auto"
+                  className="h-min w-min"
                 />
                 <div className="flex flex-col gap-2">
                   <Text size="3xl" as="p" className="leading-9 !text-black-900">
@@ -172,7 +172,7 @@ export default function HomepagePage() {
                   <div className="flex gap-4">
                     <Button
                       shape="round"
-                      className="w-full border border-solid border-black-900_02 font-inter font-medium sm:px-5"
+                      className="w-80 border border-solid border-black-900_02 font-inter font-medium sm:px-5"
                     >
                       Learn More
                     </Button>
@@ -189,7 +189,7 @@ export default function HomepagePage() {
                 <Img
                   src="./public/Images/servomotor1.png"
                   alt="imagethree"
-                  className="h-min w-min object-none md:h-auto"
+                  className="h-min w-min"
                 />
                 <div className="flex flex-col gap-2 self-stretch">
                   <Text size="3xl" as="p" className="leading-9 !text-black-900">
@@ -232,7 +232,7 @@ export default function HomepagePage() {
                 <div className="flex gap-4 self-stretch">
                   <Button
                     shape="round"
-                    className="w-full border border-solid border-black-900_02 font-inter font-medium sm:px-5"
+                    className="w-80 border border-solid border-black-900_02 font-inter font-medium sm:px-5"
                   >
                     Learn More
                   </Button>
@@ -248,10 +248,10 @@ export default function HomepagePage() {
           </div>
         </div>
         <div className="mt-10 flex flex-col items-center self-stretch pb-10 pt-[31px] sm:py-5">
-          <div className="container-xs flex flex-col gap-12 md:p-5">
+          <div className="container-xs flex flex-col gap-6 md:p-5">
             <div className="flex w-[64%] flex-col items-start gap-1 md:w-full">
               <Heading size="6xl" as="h2">
-                HighLights
+                HighLight: Start Your Project Now!!
               </Heading>
               <HomepageTab
                 text3="Air Care"
@@ -276,26 +276,28 @@ export default function HomepagePage() {
                 ref={sliderRef}
                 items={[...Array(3)].map(() => (
                   <React.Fragment key={Math.random()}>
-                    <div className="flex flex-col gap-6 rounded-[30px] border-2 border-solid border-gray-400 bg-gray-300_02">
+                    <div className="flex flex-col gap-6 rounded-[30px] border-2 border-solid bg-red-100 border-gray-400 bg-gray-300_02">
                       <Img
-                        src="images/img_image_7.png"
+                        src="\public\Images\20.png"
                         alt="imageseven"
-                        className="h-[566px] rounded-tl-[30px] rounded-tr-[30px] object-cover"
+                        className="h-[200px] rounded-tl-[30px] rounded-tr-[30px] object-contain"
                       />
                       <div className="flex flex-col items-center gap-[13px] pb-10 sm:pb-5">
                         <Heading size="4xl" as="h3">
-                          Complete your space
+                          Starter Kit for Uno R3 Compatible with Arduino IDE
+                          <span className="items-center text-xs">
+                            (Images are for illustration purpose only)
+                          </span>
                         </Heading>
-                        <Text
-                          size="3xl"
-                          as="p"
-                          className="!font-normal !text-gray-700"
-                        >
-                          TechVolt Objet Collection
-                        </Text>
                         <Button
                           shape="round"
-                          className="min-w-[170px] font-inter font-medium sm:px-5"
+                          className="border border-solid border-black-900_02 font-inter font-medium sm:px-5"
+                        >
+                          Learn More
+                        </Button>
+                        <Button
+                          shape="round"
+                          className="min-w-[170px] font-inter font-medium sm:px-5 bg-orange-200 hover:bg-orange-400"
                         >
                           Buy now
                         </Button>
