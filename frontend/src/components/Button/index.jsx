@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 import PropTypes from "prop-types";
 
 const shapes = {
@@ -12,7 +12,8 @@ const variants = {
     deep_orange_A700: "bg-deep_orange-A700 text-white-A700",
   },
   outline: {
-    deep_orange_A700: "border-deep_orange-A700 border-b-2 border-solid text-black-900_02",
+    deep_orange_A700:
+      "border-deep_orange-A700 border-b-2 border-solid text-black-900_02",
   },
 };
 const sizes = {

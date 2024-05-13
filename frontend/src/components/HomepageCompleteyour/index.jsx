@@ -1,5 +1,6 @@
 // import React from "react";
 import { Text, Img } from "./..";
+import PropTypes from "prop-types";
 
 export default function HomepageCompleteyour({
   image = "images/img_image_7_318x421.png",
@@ -25,3 +26,10 @@ export default function HomepageCompleteyour({
     </div>
   );
 }
+
+HomepageCompleteyour.propTypes = {
+  image: PropTypes.string,
+  title: PropTypes.node,
+  subtitle: PropTypes.node,
+  className: PropTypes.node,
+};
