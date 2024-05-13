@@ -7,8 +7,11 @@ dotenv.config({
 
 const app = express();
 
-PORT = 3000;
+const PORT = 5000;
+app.get("/", (req, res) => {
+  res.send("server is connected");
+});
 
 app.listen(PORT, () => {
-  console.log(`server is running at ${PORT}`);
+  console.log(`server is running at http://localhost${PORT}`);
 });
