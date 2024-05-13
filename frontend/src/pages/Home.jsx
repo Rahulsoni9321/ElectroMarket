@@ -53,7 +53,7 @@ export default function HomepagePage() {
         <HomepageHerosection />
         <div className="mt-20 flex justify-center self-stretch pb-10 pt-6 sm:py-5">
           <div className="container-xs flex flex-col gap-12 md:p-5">
-            <div className="flex flex-col items-start gap-[11px]">
+            {/* <div className="flex flex-col items-start gap-[11px]">
               <Heading size="6xl" as="h1">
                 Picks For You
               </Heading>
@@ -62,7 +62,7 @@ export default function HomepagePage() {
                 text1="Most Popular"
                 text2="Newest"
               />
-            </div>
+            </div> */}
             <div className="flex gap-10 md:flex-col">
               <div className="flex w-full flex-col items-center gap-[23px] rounded-[30px] border border-solid border-gray-400_01 px-5 pb-6 pt-9 sm:py-5">
                 <Img
