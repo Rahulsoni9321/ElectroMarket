@@ -19,9 +19,18 @@ model User {
   Username String @unique
   Email  String @unique
   Password String
+  WishList WishList[]
   Product Product[]
 }
 
+
+model WishList {
+  id String  @id @default(auto()) @map("_id") @db.ObjectId
+  UserId String @db.ObjectId()
+  ProducId String @db.ObjectId()
+  Product Product @relation(fields: [ProducId], references: [id])
+  User User @relation(fields: [UserId], references: [id])
+} 
 
 model Admin {
   id String  @id @default(auto()) @map("_id") @db.ObjectId
@@ -41,4 +50,6 @@ model Product {
   UserId String? @db.ObjectId
   Admin Admin @relation(fields: [AdminId],references: [id])
   User User?  @relation(fields: [UserId], references: [id])
+  Wishlist WishList[]
+  createdAt DateTime
 }
