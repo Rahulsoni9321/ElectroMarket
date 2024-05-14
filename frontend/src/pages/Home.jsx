@@ -14,26 +14,7 @@ import HomepageHeader from "../components/HomepageHeader";
 import HomepageHerosection from "../components/HomepageHerosection";
 import HomepageTab from "../components/HomepageTab";
 
-const data = [
-  { smarttvone: "images/img_image_7_576x426.png", smarttv: "Smart TV" },
-];
-const data1 = [
-  {
-    image: "images/img_image_7_318x421.png",
-    title: "Complete your space",
-    subtitle: "TechVolt Objet Collection",
-  },
-  {
-    image: "images/img_image_7_1.png",
-    title: "Complete your space",
-    subtitle: "TechVolt Objet Collection",
-  },
-  {
-    image: "images/img_image_7_2.png",
-    title: "Complete your space",
-    subtitle: "TechVolt Objet Collection",
-  },
-];
+const data1 = [];
 
 export default function HomepagePage() {
   const [sliderState, setSliderState] = React.useState(0);
@@ -251,7 +232,7 @@ export default function HomepagePage() {
           <div className="container-xs flex flex-col gap-6 md:p-5">
             <div className="flex w-[64%] flex-col items-start gap-1 md:w-full">
               <Heading size="6xl" as="h2">
-                HighLight: Start Your Project Now!!
+                HighLight
               </Heading>
               <HomepageTab
                 text3="Air Care"
@@ -314,37 +295,7 @@ export default function HomepagePage() {
             </div>
           </div>
         </div>
-        <div className="container-xs mt-[71px] flex flex-col gap-[45px] md:p-5">
-          <div className="flex flex-col items-start gap-1.5">
-            <Heading size="6xl" as="h2">
-              TechVolt Experience
-            </Heading>
-            <Text size="2xl" as="p" className="tracking-[1.40px]">
-              Tips, guides and techy deep dives—straight from the source
-            </Text>
-          </div>
-          <div className="flex gap-10 md:flex-col">
-            {data.map((d, index) => (
-              <div
-                key={"list" + index}
-                className="relative h-[576px] w-full md:h-auto"
-              >
-                <Img
-                  src={d.smarttvone}
-                  alt="smart_tv"
-                  className="h-[576px] w-full rounded-[20px] object-cover"
-                />
-                <Heading
-                  size="2xl"
-                  as="h2"
-                  className="absolute bottom-[6%] left-[8%] m-auto !text-white-A700"
-                >
-                  {d.smarttv}
-                </Heading>
-              </div>
-            ))}
-          </div>
-        </div>
+
         <div className="container-xs mt-28 flex flex-col gap-[46px] md:p-5">
           <div className="flex flex-col items-start gap-1">
             <Heading size="6xl" as="h2">
@@ -637,10 +588,6 @@ export default function HomepagePage() {
                     className="h-[50px] w-[223px] object-contain"
                   />
                   <div className="flex flex-col gap-[18px]">
-                    <Text as="p" className="leading-[26px]">
-                      The fastest and simple way to generate growing business
-                      solutions with our products
-                    </Text>
                     <div className="flex items-center gap-2.5 self-start">
                       <Img
                         src="images/img_lock_black_900_02.svg"
@@ -648,7 +595,7 @@ export default function HomepagePage() {
                         className="h-[24px] w-[24px] self-start"
                       />
                       <Text as="p" className="self-end">
-                        TechVolt@Gmail.com
+                        sunilkumarsaini6363@gmail.com
                       </Text>
                     </div>
                   </div>
