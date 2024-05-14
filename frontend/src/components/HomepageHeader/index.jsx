@@ -1,20 +1,21 @@
 // import React from "react";
 import { Text, Img } from "./..";
+// import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
 export default function HomepageHeader({
   home = "Home",
   shop = "Shop",
-  accessories = "Accessories",
   aboutus = "About Us",
   contactus = "Contact Us",
+  signup = "Sign Up",
   ...props
 }) {
   return (
     <div {...props}>
-      <header className="flex items-center justify-center self-stretch border-b border-solid border-gray-200 bg-slate-400 font-bold  py-10 sm:py-1">
-        <div className="container-xs flex items-center justify-between gap-2 md:flex-col md:p-5">
-          <ul className="flex flex-wrap items-center gap-20 pr-2.5 ">
+      <header className="flex border-b border-solid border-gray-200 bg-slate-400 font-bold py-10 sm:py-1">
+        <div className="max-w-screen-xl flex items-center justify-between gap-2 md:flex-col md:p-5">
+          <ul className="flex items-center gap-20 pr-2.5">
             <li>
               <Img
                 src="\public\Images\Electromarket.png"
@@ -42,14 +43,14 @@ export default function HomepageHeader({
             <li>
               <a href="#">
                 <Text size="2xl" as="p" className="p-[11px] tracking-[1.40px]">
-                  {accessories}
+                  {aboutus}
                 </Text>
               </a>
             </li>
             <li>
               <a href="#">
                 <Text size="2xl" as="p" className="p-[11px] tracking-[1.40px]">
-                  {aboutus}
+                  {signup}
                 </Text>
               </a>
             </li>
@@ -60,20 +61,22 @@ export default function HomepageHeader({
                 </Text>
               </a>
             </li>
-            <a href="#">
-              <Img
-                src="./public/assets/search-svgrepo-com.svg"
-                alt="search"
-                className="h-[32px] w-[32px]"
-              />
-            </a>
-            <a href="#">
-              <Img
-                src="./public/assets/bag-shopping-svgrepo-com.svg"
-                alt="bag"
-                className="h-[32px] w-[32px]"
-              />
-            </a>
+            <div className="flex gap-2">
+              <a href="#">
+                <Img
+                  src="./public/assets/search-svgrepo-com.svg"
+                  alt="search"
+                  className="h-[32px] w-[32px]"
+                />
+              </a>
+              <a href="#">
+                <Img
+                  src="./public/assets/bag-shopping-svgrepo-com.svg"
+                  alt="bag"
+                  className="h-[32px] w-[32px]"
+                />
+              </a>
+            </div>
           </ul>
         </div>
       </header>
@@ -86,4 +89,5 @@ HomepageHeader.propTypes = {
   accessories: PropTypes.string,
   aboutus: PropTypes.string,
   contactus: PropTypes.string,
+  signup: PropTypes.string,
 };
