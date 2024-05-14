@@ -324,20 +324,13 @@ export default function HomepagePage() {
                   </Text>
                 </div>
                 <Img
-                  src="images/img_icon.svg"
+                  src="\public\assets\product reg.svg"
                   alt="image"
                   className="h-[48px] w-[48px]"
                 />
               </div>
               <Button
                 size="lg"
-                rightIcon={
-                  <Img
-                    src="images/img_frame_white_a700.svg"
-                    alt="frame"
-                    className="h-[24px] w-[24px]"
-                  />
-                }
                 className="min-w-[169px] gap-2.5 rounded-[24px] font-inter font-medium sm:px-5"
               >
                 Learn More
@@ -362,18 +355,11 @@ export default function HomepagePage() {
                   </Text>
                 </div>
                 <Button size="xl" shape="square" className="w-[48px]">
-                  <Img src="images/img_icon_black_900_02.svg" />
+                  <Img src="\public\assets\product support.svg" />
                 </Button>
               </div>
               <Button
                 size="lg"
-                rightIcon={
-                  <Img
-                    src="images/img_frame.svg"
-                    alt="frame"
-                    className="h-[24px] w-[24px]"
-                  />
-                }
                 className="min-w-[169px] gap-2.5 rounded-[24px] border border-solid border-black-900_02 font-inter font-medium sm:px-5"
               >
                 Learn More
@@ -398,20 +384,13 @@ export default function HomepagePage() {
                   </Text>
                 </div>
                 <Img
-                  src="images/img_icon_black_900_02_48x48.svg"
+                  src="\public\assets\order support.svg"
                   alt="icon"
                   className="h-[48px] w-[48px]"
                 />
               </div>
               <Button
                 size="lg"
-                rightIcon={
-                  <Img
-                    src="images/img_frame.svg"
-                    alt="frame"
-                    className="h-[24px] w-[24px]"
-                  />
-                }
                 className="min-w-[169px] gap-2.5 rounded-[24px] border border-solid border-black-900_02 font-inter font-medium sm:px-5"
               >
                 Learn More
@@ -436,20 +415,13 @@ export default function HomepagePage() {
                   </Text>
                 </div>
                 <Img
-                  src="images/img_icon_48x48.svg"
+                  src="\public\assets\repair.svg"
                   alt="icon"
                   className="h-[48px] w-[48px]"
                 />
               </div>
               <Button
                 size="lg"
-                rightIcon={
-                  <Img
-                    src="images/img_frame.svg"
-                    alt="frame"
-                    className="h-[24px] w-[24px]"
-                  />
-                }
                 className="min-w-[169px] gap-2.5 rounded-[24px] border border-solid border-black-900_02 font-inter font-medium sm:px-5"
               >
                 Learn More
@@ -466,20 +438,13 @@ export default function HomepagePage() {
                   </Text>
                 </div>
                 <Img
-                  src="images/img_icon_1.svg"
+                  src="\public\assets\quick help.svg"
                   alt="icon"
                   className="h-[48px] w-[48px]"
                 />
               </div>
               <Button
                 size="lg"
-                rightIcon={
-                  <Img
-                    src="images/img_frame.svg"
-                    alt="frame"
-                    className="h-[24px] w-[24px]"
-                  />
-                }
                 className="min-w-[169px] gap-2.5 rounded-[24px] border border-solid border-black-900_02 font-inter font-medium sm:px-5"
               >
                 Learn More
@@ -496,20 +461,13 @@ export default function HomepagePage() {
                   </Text>
                 </div>
                 <Img
-                  src="images/img_volume.svg"
+                  src="\public\assets\whatsapp.svg"
                   alt="volume"
                   className="h-[48px] w-[48px]"
                 />
               </div>
               <Button
                 size="lg"
-                rightIcon={
-                  <Img
-                    src="images/img_frame.svg"
-                    alt="frame"
-                    className="h-[24px] w-[24px]"
-                  />
-                }
                 className="min-w-[169px] gap-2.5 rounded-[24px] border border-solid border-black-900_02 font-inter font-medium sm:px-5"
               >
                 Learn More
@@ -526,20 +484,13 @@ export default function HomepagePage() {
                   </Text>
                 </div>
                 <Img
-                  src="images/img_icon_2.svg"
+                  src="\public\assets\mail.svg"
                   alt="icon"
                   className="h-[48px] w-[48px]"
                 />
               </div>
               <Button
                 size="lg"
-                rightIcon={
-                  <Img
-                    src="images/img_frame.svg"
-                    alt="frame"
-                    className="h-[24px] w-[24px]"
-                  />
-                }
                 className="min-w-[169px] gap-2.5 rounded-[24px] border border-solid border-black-900_02 font-inter font-medium sm:px-5"
               >
                 Learn More
@@ -556,20 +507,13 @@ export default function HomepagePage() {
                   </Text>
                 </div>
                 <Img
-                  src="images/img_icon_3.svg"
+                  src="\public\assets\call.svg"
                   alt="icon"
                   className="h-[48px] w-[48px]"
                 />
               </div>
               <Button
                 size="lg"
-                rightIcon={
-                  <Img
-                    src="images/img_frame.svg"
-                    alt="frame"
-                    className="h-[24px] w-[24px]"
-                  />
-                }
                 className="min-w-[169px] gap-2.5 rounded-[24px] border border-solid border-black-900_02 font-inter font-medium sm:px-5"
               >
                 Learn More
@@ -583,14 +527,14 @@ export default function HomepagePage() {
               <div className="flex items-start self-stretch md:flex-col">
                 <div className="flex w-[37%] flex-col gap-[37px] md:w-full">
                   <Img
-                    src="images/img_footer_logo.png"
+                    src="\public\Images\Electromarket.png"
                     alt="footerlogo"
                     className="h-[50px] w-[223px] object-contain"
                   />
                   <div className="flex flex-col gap-[18px]">
                     <div className="flex items-center gap-2.5 self-start">
                       <Img
-                        src="images/img_lock_black_900_02.svg"
+                        src="\public\assets\mail.svg"
                         alt="lock"
                         className="h-[24px] w-[24px] self-start"
                       />
@@ -667,7 +611,7 @@ export default function HomepagePage() {
                     placeholder={`Enter email id`}
                     suffix={
                       <Img
-                        src="images/img_frame_gray_700.svg"
+                        src="\public\assets\arrowright-svgrepo-com.svg"
                         alt="frame"
                         className="h-[24px] w-[24px]"
                       />
@@ -676,18 +620,15 @@ export default function HomepagePage() {
                   />
                   <div className="flex w-[52%] justify-between gap-5 md:w-full">
                     <Img
-                      src="images/img_bx_bxl_instagram_alt.svg"
+                      src="\public\assets\instagram_alt.svg"
                       alt="bxbxl"
                       className="h-[24px] w-[24px]"
                     />
                     <Img
-                      src="images/img_akar_icons_twitter_fill.svg"
+                      src="\public\assets\twitter_fill.svg"
                       alt="akaricons"
                       className="h-[24px] w-[24px]"
                     />
-                    <Button size="xs" shape="square" className="w-[24px]">
-                      <Img src="images/img_akar_icons_linkedin_fill.svg" />
-                    </Button>
                   </div>
                 </div>
               </div>
