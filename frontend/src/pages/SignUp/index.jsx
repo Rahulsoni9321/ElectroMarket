@@ -1,9 +1,41 @@
-// import React from "react";
 import { Helmet } from "react-helmet";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import Footer from "../../components/Footer";
 import HomepageHeader from "../../components/HomepageHeader";
 
 export default function SignUpPage() {
+  const [data, setData] = useState({
+    username: "",
+    email: "",
+    password: "",
+  });
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
+
+  const handleChange = ({ currntTarget: input }) => {
+    setData({ ...data, [input.name]: input.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const url = "http://localhost:3000/api/v1/user/signup";
+      navigate("/api/v1/user/signin");
+      const { data: res } = await axios.post(url, data);
+      console.log(res.message);
+    } catch (error) {
+      if (
+        error.response &&
+        error.response.status >= 400 &&
+        error.response.status <= 500
+      ) {
+        setError(error.response.data.message);
+      }
+    }
+  };
+
   return (
     <>
       <Helmet>
@@ -15,7 +47,7 @@ export default function SignUpPage() {
         <section className="bg-gray-50 dark:bg-gray-800 self-stretch">
           <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
             <a
-              href="#"
+              href="/"
               className="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white"
             >
               <img
@@ -30,7 +62,11 @@ export default function SignUpPage() {
                 <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
                   Create an account
                 </h1>
-                <form className="space-y-4 md:space-y-6" action="#">
+                <form
+                  className="space-y-4 md:space-y-6"
+                  onSubmit={handleSubmit}
+                  action="#"
+                >
                   <div>
                     <label
                       htmlFor="username"
@@ -41,8 +77,10 @@ export default function SignUpPage() {
                     <input
                       type="text"
                       name="username"
+                      onChange={handleChange}
                       id="username"
                       placeholder="Username"
+                      value={data.username}
                       className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                       required=""
                     />
@@ -59,6 +97,8 @@ export default function SignUpPage() {
                       type="email"
                       name="email"
                       id="email"
+                      value={data.email}
+                      onChange={handleChange}
                       className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                       placeholder="name@company.com"
                       required=""
@@ -76,6 +116,8 @@ export default function SignUpPage() {
                       name="password"
                       id="password"
                       placeholder="••••••••"
+                      onChange={handleChange}
+                      value={data.password}
                       className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                       required=""
                     />
@@ -106,6 +148,7 @@ export default function SignUpPage() {
                       </label>
                     </div>
                   </div>
+                  {error && <div>{error}</div>}
                   <button
                     type="submit"
                     className="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
