@@ -16,26 +16,13 @@ export default function HomepagePage() {
     <>
       <Helmet>
         <title>ElectroMarket</title>
-        <meta
-          name="description"
-          content="Web site created using create-react-app"
-        />
+        <meta name="description" content="Web site" />
       </Helmet>
-      <div className="flex w-full flex-col items-center bg-white-A700">
+      <div className="flex w-full flex-col items-center dark:bg-gray-800">
         <HomepageHeader shopOne="Shop" className="self-stretch" />
         <HomepageHerosection />
         <div className="mt-0 flex justify-center self-stretch pb-10 pt-1 sm:py-1 bg-slate-300">
           <div className="container-xs flex flex-col gap-12 md:p-5">
-            {/* <div className="flex flex-col items-start gap-[11px]">
-              <Heading size="6xl" as="h1">
-                Picks For You
-              </Heading>
-              <HomepageTab
-                buttontext1="Best Deal"
-                text1="Most Popular"
-                text2="Newest"
-              />
-            </div> */}
             <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
               <div className="flex w-full flex-col items-center rounded-[30px] px-1 pb-1 pt-1 sm:py-1">
                 <Img

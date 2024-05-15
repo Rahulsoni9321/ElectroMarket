@@ -10,6 +10,7 @@ export default function HomepageHeader({
   contactus = "Contact",
   signin = "Signin",
   signup = "Sign Up",
+  cart = "Cart",
   ...props
 }) {
   return (
@@ -70,21 +71,12 @@ export default function HomepageHeader({
               </a>
             </li>
             <li>
-              <a href="#">
-                <Img
-                  src="./public/assets/search-svgrepo-com.svg"
-                  alt="search"
-                  className="h-[32px] w-[32px]"
-                />
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <Img
-                  src="./public/assets/bag-shopping-svgrepo-com.svg"
-                  alt="bag"
-                  className="h-[32px] w-[32px]"
-                />
+              <a href="\Cart">
+                <img
+                  src="\public\assets\cart-shopping-svgrepo-com.svg"
+                  alt="Cart"
+                  className="h-[40px] object-contain"
+                ></img>
               </a>
             </li>
           </ul>
@@ -101,4 +93,5 @@ HomepageHeader.propTypes = {
   contactus: PropTypes.string,
   signup: PropTypes.string,
   signin: PropTypes.string,
+  cart: PropTypes.string,
 };
