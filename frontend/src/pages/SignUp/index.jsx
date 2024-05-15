@@ -1,6 +1,5 @@
 // import React from "react";
 import { Helmet } from "react-helmet";
-import { Heading, Text, Button, CheckBox, Input, Img } from "../../components";
 import Footer from "../../components/Footer";
 import HomepageHeader from "../../components/HomepageHeader";
 
@@ -11,124 +10,122 @@ export default function SignUpPage() {
         <title>ElectroMarket</title>
         <meta name="description" content="Web site" />
       </Helmet>
-      <div className="flex w-full flex-col items-center gap-10 bg-white-A700">
+      <div className="flex w-full flex-col items-center gap-10 bg-gray-600 dark:bg-gray-800">
         <HomepageHeader shopOne="Sign Up" className="self-stretch" />
-        <div className="container-xs flex justify-center px-[343px] md:p-5 md:px-5">
-          <div className="flex w-full flex-col items-center gap-[33px] rounded-[16px] border border-solid border-blue_gray-100_01 bg-gray-100 p-8 sm:p-5">
-            <Img
-              src="images/img_header_logo.png"
-              alt="headerlogo"
-              className="h-[50px] w-[223px] object-contain"
-            />
-            <div className="flex flex-col items-center gap-6 self-stretch">
-              <div className="flex flex-col items-center gap-[30px] self-stretch">
-                <a href="#" className="self-start">
-                  <Heading size="3xl" as="h1" className="!text-blue_gray-900">
-                    Sign Up
-                  </Heading>
-                </a>
-                <div className="flex gap-4 self-stretch md:flex-col">
-                  <div className="flex w-full flex-col items-start gap-2">
-                    <Text as="p" className="!text-black-900">
-                      First Name
-                    </Text>
-                    <Input
-                      shape="round"
+        <section className="bg-gray-50 dark:bg-gray-800 self-stretch">
+          <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+            <a
+              href="#"
+              className="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white"
+            >
+              <img
+                className="w-8 h-8 mr-2"
+                src="\public\assets\Electromarket.svg"
+                alt="logo"
+              />
+              ElectroMarket
+            </a>
+            <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+              <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
+                <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+                  Create an account
+                </h1>
+                <form className="space-y-4 md:space-y-6" action="#">
+                  <div>
+                    <label
+                      htmlFor="username"
+                      className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >
+                      Username
+                    </label>
+                    <input
                       type="text"
-                      name="firstName"
-                      placeholder={`First name`}
-                      className="!rounded-[24px] sm:pr-5"
+                      name="username"
+                      id="username"
+                      placeholder="Username"
+                      className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                      required=""
                     />
                   </div>
-                  <div className="flex w-full flex-col items-start gap-[7px]">
-                    <Text as="p" className="!text-black-900">
-                      Last Name
-                    </Text>
-                    <Input
-                      shape="round"
-                      type="text"
-                      name="lastName"
-                      placeholder={`Last name`}
-                      className="!rounded-[24px] sm:pr-5"
-                    />
-                  </div>
-                </div>
-                <div className="flex gap-4 self-stretch md:flex-col">
-                  <div className="flex w-full flex-col items-start gap-2">
-                    <Text as="p" className="!text-black-900">
-                      Email Address
-                    </Text>
-                    <Input
-                      shape="round"
+
+                  <div>
+                    <label
+                      htmlFor="email"
+                      className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >
+                      Your email
+                    </label>
+                    <input
                       type="email"
                       name="email"
-                      placeholder={`Email Address`}
-                      className="!rounded-[24px] sm:pr-5"
+                      id="email"
+                      className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                      placeholder="name@company.com"
+                      required=""
                     />
                   </div>
-                  <div className="flex w-full flex-col items-start gap-[7px]">
-                    <Text as="p" className="!text-black-900">
-                      <span className="text-black-900">Phone</span>
-                      <span className="text-deep_orange-A700">*</span>
-                    </Text>
-                    <Input
-                      shape="round"
-                      type="number"
-                      name="phone"
-                      placeholder={`Enter phone number`}
-                      prefix={
-                        <Img
-                          src="images/img_fi10597864.svg"
-                          alt="fi_10597864"
-                          className="h-[24px] w-[24px]"
-                        />
-                      }
-                      className="gap-[35px] !rounded-[24px] sm:pr-5"
+                  <div>
+                    <label
+                      htmlFor="password"
+                      className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >
+                      Password
+                    </label>
+                    <input
+                      type="password"
+                      name="password"
+                      id="password"
+                      placeholder="••••••••"
+                      className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                      required=""
                     />
                   </div>
-                </div>
-                <div className="flex flex-col items-start gap-[7px] self-stretch">
-                  <Text as="p" className="!text-black-900">
-                    Password
-                  </Text>
-                  <Input
-                    shape="round"
-                    type="password"
-                    name="password"
-                    placeholder={`Password`}
-                    className="!rounded-[24px] sm:pr-5"
-                  />
-                </div>
-                <a href="#" className="self-end">
-                  <Text as="p" className="!font-medium">
-                    Forgot Password?
-                  </Text>
-                </a>
-                <CheckBox
-                  name="checkmark"
-                  label="By signing up I agree  to the Terms & Conditions and Privacy Policy"
-                  id="checkmark"
-                  className="gap-2 self-stretch py-1.5 pr-[35px] text-base text-gray-700 sm:pr-5"
-                />
-                <Button
-                  size="3xl"
-                  shape="round"
-                  className="w-full !rounded-[26px] font-inter font-bold sm:px-5"
-                >
-                  SIGN UP
-                </Button>
-              </div>
-              <div className="flex flex-wrap items-center gap-1">
-                <Text as="p">Already have account?</Text>
-                <a href="#">
-                  <Heading as="h2" className="!text-deep_orange-A700">
-                    Sign In
-                  </Heading>
-                </a>
+
+                  <div className="flex items-start">
+                    <div className="flex items-center h-5">
+                      <input
+                        id="terms"
+                        aria-describedby="terms"
+                        type="checkbox"
+                        className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800"
+                        required=""
+                      />
+                    </div>
+                    <div className="ml-3 text-sm">
+                      <label
+                        htmlFor="terms"
+                        className="font-light text-gray-500 dark:text-gray-300"
+                      >
+                        I accept the{" "}
+                        <a
+                          className="font-medium text-primary-600 hover:underline dark:text-primary-500"
+                          href="#"
+                        >
+                          Terms and Conditions
+                        </a>
+                      </label>
+                    </div>
+                  </div>
+                  <button
+                    type="submit"
+                    className="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                  >
+                    Create an account
+                  </button>
+                  <p className="text-sm font-light text-gray-500 dark:text-gray-400">
+                    Already have an account?{" "}
+                    <a
+                      href="#"
+                      className="font-medium text-primary-600 hover:underline dark:text-primary-500"
+                    >
+                      Login here
+                    </a>
+                  </p>
+                </form>
               </div>
             </div>
           </div>
-        </div>
+        </section>
         <Footer className="self-stretch" />
       </div>
     </>
