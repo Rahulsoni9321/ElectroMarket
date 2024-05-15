@@ -1,6 +1,4 @@
-// import React from "react";
 import { Text, Img } from "./..";
-// import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
 export default function HomepageHeader({
@@ -10,7 +8,6 @@ export default function HomepageHeader({
   contactus = "Contact",
   signin = "Signin",
   signup = "Sign Up",
-  cart = "Cart",
   ...props
 }) {
   return (
@@ -43,28 +40,28 @@ export default function HomepageHeader({
               </a>
             </li>
             <li>
-              <a href="About">
+              <a href="/About">
                 <Text size="2xl" as="p" className="p-[11px] tracking-[1.40px]">
                   {aboutus}
                 </Text>
               </a>
             </li>
             <li>
-              <a href="Contact">
+              <a href="/Contact">
                 <Text size="2xl" as="p" className="p-[11px] tracking-[1.40px]">
                   {contactus}
                 </Text>
               </a>
             </li>
             <li>
-              <a href="\SignUp">
+              <a href="/api/v1/user/signup">
                 <Text size="2xl" as="p" className="p-[11px] tracking-[1.40px]">
                   {signup}
                 </Text>
               </a>
             </li>
             <li>
-              <a href="\Signin">
+              <a href="/api/v1/user/signin">
                 <Text size="2xl" as="p" className="p-[11px] tracking-[1.40px]">
                   {signin}
                 </Text>
@@ -93,5 +90,4 @@ HomepageHeader.propTypes = {
   contactus: PropTypes.string,
   signup: PropTypes.string,
   signin: PropTypes.string,
-  cart: PropTypes.string,
 };

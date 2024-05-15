@@ -21,11 +21,11 @@ const ProjectRoutes = () => {
       element: <Cart />,
     },
     {
-      path: "signin",
+      path: "/api/v1/user/signin",
       element: <Signin />,
     },
     {
-      path: "signup",
+      path: "/api/v1/user/signup",
       element: <SignUp />,
     },
     {

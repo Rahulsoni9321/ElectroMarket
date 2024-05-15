@@ -1,4 +1,5 @@
 // import React from "react";
+import PropTypes from "prop-types";
 
 const Img = ({
   className,
@@ -15,5 +16,10 @@ const Img = ({
       loading={"lazy"}
     />
   );
+};
+Img.propTypes = {
+  className: PropTypes.any,
+  src: PropTypes.string,
+  alt: PropTypes.string,
 };
 export { Img };
