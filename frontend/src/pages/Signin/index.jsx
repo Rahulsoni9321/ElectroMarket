@@ -105,6 +105,24 @@ export default function SigninPage() {
                       Sign up
                     </a>
                   </p>
+                  <p className="text-sm font-light text-gray-500 dark:text-gray-400">
+                    Sign up as Admin{" "}
+                    <a
+                      href="/api/v1/admin/signup"
+                      className="font-medium text-primary-600 hover:underline dark:text-primary-500"
+                    >
+                      Sign up
+                    </a>
+                  </p>
+                  <p className="text-sm font-light text-gray-500 dark:text-gray-400">
+                    Sign in as Admin{" "}
+                    <a
+                      href="/api/v1/admin/signin"
+                      className="font-medium text-primary-600 hover:underline dark:text-primary-500"
+                    >
+                      Sign in
+                    </a>
+                  </p>
                 </form>
               </div>
             </div>
