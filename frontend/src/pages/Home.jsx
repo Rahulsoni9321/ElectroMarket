@@ -1,12 +1,9 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import { Text, Button, Img, Heading, Slider, RatingBar } from "../components";
-import HomepageCompleteyour from "../components/HomepageCompleteyour";
 import HomepageHeader from "../components/HomepageHeader";
 import HomepageHerosection from "../components/HomepageHerosection";
 import HomepageTab from "../components/HomepageTab";
-
-const data1 = [];
 
 export default function HomepagePage() {
   const [sliderState, setSliderState] = React.useState(0);
@@ -266,11 +263,6 @@ export default function HomepagePage() {
                   </React.Fragment>
                 ))}
               />
-            </div>
-            <div className="flex gap-12 md:flex-col">
-              {data1.map((d, index) => (
-                <HomepageCompleteyour {...d} key={"list1" + index} />
-              ))}
             </div>
           </div>
         </div>

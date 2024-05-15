@@ -1,5 +1,5 @@
-import React from "react";
 import ReactStars from "react-rating-stars-component";
+import PropTypes from "prop-types";
 
 const RatingBar = ({
   children,
@@ -25,6 +25,14 @@ const RatingBar = ({
       {children}
     </>
   );
+};
+RatingBar.propTypes = {
+  children: PropTypes.string,
+  starCount: PropTypes.string,
+  color: PropTypes.string,
+  activeColor: PropTypes.string,
+  isEditable: PropTypes.string,
+  className: PropTypes.string,
 };
 
 export { RatingBar };

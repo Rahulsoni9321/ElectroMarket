@@ -13,13 +13,13 @@ export default function HomepageHeader({
   return (
     <div {...props}>
       <header className="flex bg-slate-400 font-bold py-5 sm:py-1">
-        <div className="max-w-full flex items-center  md:flex-col md:p-5">
-          <ul className="flex items-center gap-20 pr-2.5">
+        <div className="max-w-full flex items-center md:flex-col md:p-5">
+          <ul className="flex items-center gap-8 sm:gap-12 md:gap-20 pr-2.5">
             <li>
               <Img
                 src="\public\Images\Electromarket.png"
                 alt="headerlogo"
-                className="h-[50px] object-contain object-left-top"
+                className="h-[50px] sm:h-[60px] object-contain object-left-top"
               />
             </li>
             <li>
@@ -72,7 +72,7 @@ export default function HomepageHeader({
                 <img
                   src="\public\assets\cart-shopping-svgrepo-com.svg"
                   alt="Cart"
-                  className="h-[40px] object-contain"
+                  className="h-[40px] sm:h-[50px] object-contain"
                 ></img>
               </a>
             </li>
@@ -82,10 +82,10 @@ export default function HomepageHeader({
     </div>
   );
 }
+
 HomepageHeader.propTypes = {
   home: PropTypes.string,
   shop: PropTypes.string,
-  accessories: PropTypes.string,
   aboutus: PropTypes.string,
   contactus: PropTypes.string,
   signup: PropTypes.string,

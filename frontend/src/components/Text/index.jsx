@@ -1,5 +1,4 @@
-import React from "react";
-
+import PropTypes from "prop-types";
 const sizes = {
   "5xl": "text-[28px] font-normal md:text-[26px] sm:text-2xl",
   "6xl": "text-[32px] font-medium md:text-3xl sm:text-[28px]",
@@ -16,10 +15,19 @@ const Text = ({ children, className = "", as, size = "lg", ...restProps }) => {
   const Component = as || "p";
 
   return (
-    <Component className={`text-black-900_02 font-poppins ${className} ${sizes[size]}`} {...restProps}>
+    <Component
+      className={`text-black-900_02 font-poppins ${className} ${sizes[size]}`}
+      {...restProps}
+    >
       {children}
     </Component>
   );
+};
+Text.propTypes = {
+  children: PropTypes.string,
+  as: PropTypes.string,
+  size: PropTypes.string,
+  className: PropTypes.string,
 };
 
 export { Text };
