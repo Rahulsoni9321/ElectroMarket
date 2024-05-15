@@ -4,14 +4,14 @@ import Footer from "../../components/Footer";
 import HomepageHeader from "../../components/HomepageHeader";
 
 export default function SignUpPage() {
-  const [phoneNumber, setPhoneNumber] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("+91");
   const [phoneError, setPhoneError] = useState(false);
 
   useEffect(() => {
     // Function to validate phone number
     function validatePhoneNumber(inputtxt) {
       // Regular expression to match only numbers
-      var phoneno = /^\d{10}$/;
+      var phoneno = /^\d{12}$/;
       return phoneno.test(inputtxt);
     }
 
@@ -98,7 +98,7 @@ export default function SignUpPage() {
                       type="text"
                       name="phone"
                       id="phone"
-                      placeholder="123-456-7890"
+                      placeholder="1234567890"
                       value={phoneNumber}
                       onChange={handlePhoneChange}
                       className={`bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 ${
