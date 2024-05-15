@@ -1,9 +1,32 @@
-// import React from "react";
+import { useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
 import Footer from "../../components/Footer";
 import HomepageHeader from "../../components/HomepageHeader";
 
-export default function SignUpAdminPage() {
+export default function SignUpPage() {
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [phoneError, setPhoneError] = useState(false);
+
+  useEffect(() => {
+    // Function to validate phone number
+    function validatePhoneNumber(inputtxt) {
+      // Regular expression to match only numbers
+      var phoneno = /^\d{10}$/;
+      return phoneno.test(inputtxt);
+    }
+
+    const input = phoneNumber.replace(/\D/g, ""); // Remove non-numeric characters
+    if (!validatePhoneNumber(input)) {
+      setPhoneError(true);
+    } else {
+      setPhoneError(false);
+    }
+  }, [phoneNumber]);
+
+  const handlePhoneChange = (event) => {
+    setPhoneNumber(event.target.value);
+  };
+
   return (
     <>
       <Helmet>
@@ -72,13 +95,22 @@ export default function SignUpAdminPage() {
                       Your phone number
                     </label>
                     <input
-                      type="tel"
+                      type="text"
                       name="phone"
                       id="phone"
-                      className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                       placeholder="123-456-7890"
+                      value={phoneNumber}
+                      onChange={handlePhoneChange}
+                      className={`bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 ${
+                        phoneError ? "border-red-500" : ""
+                      }`}
                       required=""
                     />
+                    {phoneError && (
+                      <p className="text-red-500 text-sm">
+                        Please enter a valid phone number.
+                      </p>
+                    )}
                   </div>
 
                   <div>
@@ -130,12 +162,21 @@ export default function SignUpAdminPage() {
                     Create an account
                   </button>
                   <p className="text-sm font-light text-gray-500 dark:text-gray-400">
-                    Login As Admin{" "}
+                    Already have an account?{" "}
                     <a
-                      href="/api/v1/admin/signin"
+                      href="signin"
                       className="font-medium text-primary-600 hover:underline dark:text-primary-500"
                     >
-                      Login Here
+                      Login here
+                    </a>
+                  </p>
+                  <p className="text-sm font-light text-gray-500 dark:text-gray-400">
+                    Sign Up As Admin{" "}
+                    <a
+                      href="/api/v1/admin/signup"
+                      className="font-medium text-primary-600 hover:underline dark:text-primary-500"
+                    >
+                      Sign Up here
                     </a>
                   </p>
                 </form>
