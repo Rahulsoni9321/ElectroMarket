@@ -5,6 +5,8 @@ import ProductGrid from "./pages/ProductGrid/index.jsx";
 import Cart from "./pages/Cart/index.jsx";
 import Signin from "./pages/Signin/index.jsx";
 import SignUp from "./pages/SignUp/index.jsx";
+import About from "./pages/About/index.jsx";
+import Contact from "./pages/Contact/index.jsx";
 
 const ProjectRoutes = () => {
   let element = useRoutes([
@@ -25,6 +27,14 @@ const ProjectRoutes = () => {
     {
       path: "signup",
       element: <SignUp />,
+    },
+    {
+      path: "about",
+      element: <About />,
+    },
+    {
+      path: "contact",
+      element: <Contact />,
     },
   ]);
 

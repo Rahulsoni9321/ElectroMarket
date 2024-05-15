@@ -6,15 +6,16 @@ import PropTypes from "prop-types";
 export default function HomepageHeader({
   home = "Home",
   shop = "Shop",
-  aboutus = "About Us",
-  contactus = "Contact Us",
+  aboutus = "About",
+  contactus = "Contact",
+  signin = "Signin",
   signup = "Sign Up",
   ...props
 }) {
   return (
     <div {...props}>
-      <header className="flex border-b border-solid border-gray-200 bg-slate-400 font-bold py-10 sm:py-1">
-        <div className="max-w-screen-xl flex items-center justify-between gap-2 md:flex-col md:p-5">
+      <header className="flex bg-slate-400 font-bold py-5 sm:py-1">
+        <div className="max-w-full flex items-center  md:flex-col md:p-5">
           <ul className="flex items-center gap-20 pr-2.5">
             <li>
               <Img
@@ -41,14 +42,14 @@ export default function HomepageHeader({
               </a>
             </li>
             <li>
-              <a href="#">
+              <a href="About">
                 <Text size="2xl" as="p" className="p-[11px] tracking-[1.40px]">
                   {aboutus}
                 </Text>
               </a>
             </li>
             <li>
-              <a href="#">
+              <a href="Contact">
                 <Text size="2xl" as="p" className="p-[11px] tracking-[1.40px]">
                   {contactus}
                 </Text>
@@ -61,8 +62,14 @@ export default function HomepageHeader({
                 </Text>
               </a>
             </li>
-
-            <div className="flex gap-2">
+            <li>
+              <a href="\Signin">
+                <Text size="2xl" as="p" className="p-[11px] tracking-[1.40px]">
+                  {signin}
+                </Text>
+              </a>
+            </li>
+            <li>
               <a href="#">
                 <Img
                   src="./public/assets/search-svgrepo-com.svg"
@@ -70,6 +77,8 @@ export default function HomepageHeader({
                   className="h-[32px] w-[32px]"
                 />
               </a>
+            </li>
+            <li>
               <a href="#">
                 <Img
                   src="./public/assets/bag-shopping-svgrepo-com.svg"
@@ -77,7 +86,7 @@ export default function HomepageHeader({
                   className="h-[32px] w-[32px]"
                 />
               </a>
-            </div>
+            </li>
           </ul>
         </div>
       </header>
@@ -91,4 +100,5 @@ HomepageHeader.propTypes = {
   aboutus: PropTypes.string,
   contactus: PropTypes.string,
   signup: PropTypes.string,
+  signin: PropTypes.string,
 };
