@@ -41,6 +41,7 @@ userrouter.post("/signup", async (req, res) => {
       token: token,
     });
   } catch (error) {
+    console.error(error)
     return res.status(500).json({
       message: "Error while creating User. Please try again.",
       details: error,
@@ -82,6 +83,7 @@ userrouter.post("/signin", async (req, res) => {
       });
     }
   } catch (error) {
+    console.error(error)
     return res.status(500).json({
       message: "Error while Signing In. Please try again.",
       details: error,

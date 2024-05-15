@@ -43,6 +43,7 @@ adminrouter.post("/signup", async (req, res) => {
       token: token,
     });
   } catch (error) {
+    console.error(error)
     return res.status(500).json({
       message: "Error while creating Admin. Please try again.",
       details: error,
@@ -84,6 +85,7 @@ adminrouter.post("/signin", async (req, res) => {
       });
     }
   } catch (error) {
+    console.error(error)
     return res.status(500).json({
       message: "Error while Signing In. Please try again.",
       details: error,
@@ -105,7 +107,8 @@ adminrouter.post("/createproduct",AdminMiddleware,async (req,res)=>{
             data:{
                 Title:payload.Title,
                 Description:payload.Description,
-                AdminId:payload.AdminId
+                AdminId:payload.AdminId,
+                createdAt:new Date()
             }
            })
 
@@ -121,8 +124,10 @@ adminrouter.post("/createproduct",AdminMiddleware,async (req,res)=>{
         }
     }
     catch(error) {
+      console.error(error)
            return res.status(500).json({
-            message:"Something went wrong while creating the product. Please try again."
+            message:"Something went wrong while creating the product. Please try again.",
+            details:error
            })
     }
 })
