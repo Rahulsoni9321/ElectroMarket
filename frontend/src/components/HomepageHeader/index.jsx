@@ -25,7 +25,7 @@ export default function HomepageHeader({
             </li>
             <li>
               <a
-                href="#"
+                href="/"
                 className="border-b-2 border-solid border-deep_orange-A700"
               >
                 <Text size="2xl" as="p" className="p-[11px] tracking-[1.40px]">
@@ -34,7 +34,7 @@ export default function HomepageHeader({
               </a>
             </li>
             <li>
-              <a href="#" className="mb-[9px]">
+              <a href="/productgrid" className="mb-[9px]">
                 <Text size="2xl" as="p" className="p-[11px] tracking-[1.40px]">
                   {shop}
                 </Text>
@@ -50,17 +50,18 @@ export default function HomepageHeader({
             <li>
               <a href="#">
                 <Text size="2xl" as="p" className="p-[11px] tracking-[1.40px]">
-                  {signup}
-                </Text>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <Text size="2xl" as="p" className="p-[11px] tracking-[1.40px]">
                   {contactus}
                 </Text>
               </a>
             </li>
+            <li>
+              <a href="\SignUp">
+                <Text size="2xl" as="p" className="p-[11px] tracking-[1.40px]">
+                  {signup}
+                </Text>
+              </a>
+            </li>
+
             <div className="flex gap-2">
               <a href="#">
                 <Img
