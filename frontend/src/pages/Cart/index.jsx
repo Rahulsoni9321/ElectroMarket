@@ -1,52 +1,7 @@
 // import React from "react";
 import { Helmet } from "react-helmet";
-import { Heading, Button, Text, Img } from "../../components";
 import Footer from "../../components/Footer";
 import HomepageHeader from "../../components/HomepageHeader";
-import ProductDetailsColumnaddTo from "../../components/ProductDetailsColumnaddTo";
-
-const data = [
-  {
-    p5star15splitaca:
-      "5 Star (1.5), Split AC, AI Convertible 6-in-1, Gold Fin+ & Black Protection, 2024 Model",
-    threethousandonehundredtwentytwo: "3(122)",
-    mrp: "MRP",
-    oldprice: "₹85990",
-    offer: "46% Off",
-    price: "₹17,800",
-    addToBasket: "Add To Basket",
-  },
-  {
-    p5star15splitaca:
-      "5 Star (1.5), Split AC, AI Convertible 6-in-1, Gold Fin+ & Black Protection, 2024 Model",
-    threethousandonehundredtwentytwo: "3(122)",
-    mrp: "MRP",
-    oldprice: "₹85990",
-    offer: "46% Off",
-    price: "₹17,800",
-    addToBasket: "Add To Basket",
-  },
-  {
-    p5star15splitaca:
-      "5 Star (1.5), Split AC, AI Convertible 6-in-1, Gold Fin+ & Black Protection, 2024 Model",
-    threethousandonehundredtwentytwo: "3(122)",
-    mrp: "MRP",
-    oldprice: "₹85990",
-    offer: "46% Off",
-    price: "₹17,800",
-    addToBasket: "Add To Basket",
-  },
-  {
-    p5star15splitaca:
-      "5 Star (1.5), Split AC, AI Convertible 6-in-1, Gold Fin+ & Black Protection, 2024 Model",
-    threethousandonehundredtwentytwo: "3(122)",
-    mrp: "MRP",
-    oldprice: "₹85990",
-    offer: "46% Off",
-    price: "₹17,800",
-    addToBasket: "Add To Basket",
-  },
-];
 
 export default function CartPage() {
   return (
@@ -58,323 +13,285 @@ export default function CartPage() {
           content="Web site created using create-react-app"
         />
       </Helmet>
-      <div className="flex w-full flex-col gap-[39px] bg-white-A700">
-        <HomepageHeader
-          arrowright="images/img_arrow_right_gray_700.svg"
-          shopTwo="Shopping Cart"
-        />
-        <div className="flex justify-center">
-          <Img
-            className="container-xs h-[96px] md:h-auto md:p-5"
-            src="images/img_stepper.svg"
-            alt="stepper"
-          />
-        </div>
-        <div className="flex justify-center">
-          <div className="container-xs flex items-start justify-center gap-10 md:flex-col md:p-5">
-            <div className="flex flex-1 items-start gap-10 md:flex-col md:self-stretch">
-              <Img
-                src="images/img_image_3_149x149.png"
-                alt="imagefour"
-                className="h-[94px] w-[10%] rounded-md object-cover md:w-full"
-              />
-              <div className="flex flex-1 flex-col items-end gap-[23px] md:self-stretch">
-                <div className="flex flex-col gap-6 self-stretch">
-                  <div className="flex items-start justify-between gap-5 md:flex-col">
-                    <div className="flex flex-1 flex-col gap-4 md:self-stretch">
-                      <div className="flex flex-col items-start gap-[9px]">
-                        <Heading as="h1" className="w-full leading-6">
-                          7Kg Front Load Washing Machine, Inverter Direct Drive,
-                          Middle Black
-                        </Heading>
-                        <Text
-                          size="xs"
-                          as="p"
-                          className="!font-medium !text-gray-700"
-                        >
-                          Fulfilment By: TechVolt India Electronics Pvt. Ltd.
-                        </Text>
-                      </div>
-                      <div className="flex flex-col items-start gap-1.5">
-                        <Text size="xs" as="p" className="!font-medium">
-                          Free Delivery: By Wed, Apr 24th
-                        </Text>
-                        <Text size="xs" as="p" className="!font-medium">
-                          Installation & Demo: By Thu, Apr 25th
-                        </Text>
-                      </div>
-                    </div>
-                    <div className="flex flex-col items-end gap-[3px]">
-                      <Heading size="md" as="h2">
-                        ₹26490.00
-                      </Heading>
-                      <div className="flex flex-wrap gap-[7px] self-start">
-                        <Text
-                          size="xs"
-                          as="p"
-                          className="!font-medium !text-teal-400"
-                        >
-                          Save ₹14500.00
-                        </Text>
-                        <Text
-                          size="xs"
-                          as="p"
-                          className="!text-gray-700 line-through"
-                        >
-                          ₹40990.00
-                        </Text>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="h-px bg-gray-300_03" />
-                </div>
-                <div className="flex flex-col items-start gap-4 self-stretch">
-                  <Heading size="xs" as="h3">
-                    Price Breakdown
-                  </Heading>
-                  <div className="flex flex-col gap-1 self-stretch">
-                    <div className="flex flex-wrap justify-between gap-5">
-                      <Text
-                        size="xs"
-                        as="p"
-                        className="!font-medium !text-gray-700"
-                      >
-                        Price (Inclusive of all taxes)
-                      </Text>
-                      <Text
-                        size="xs"
-                        as="p"
-                        className="!font-medium !text-gray-700"
-                      >
-                        ₹40990.00
-                      </Text>
-                    </div>
-                    <div className="flex flex-wrap justify-between gap-5">
-                      <Text
-                        size="xs"
-                        as="p"
-                        className="!font-medium !text-gray-700"
-                      >
-                        Promotional Discount(s)
-                      </Text>
-                      <Text
-                        size="xs"
-                        as="p"
-                        className="!font-medium !text-gray-700"
-                      >
-                        -₹14500.00
-                      </Text>
-                    </div>
-                    <div className="flex flex-wrap justify-between gap-5">
-                      <Text
-                        size="xs"
-                        as="p"
-                        className="!font-medium !text-gray-700"
-                      >
-                        Discount
-                      </Text>
-                      <Text
-                        size="xs"
-                        as="p"
-                        className="!font-medium !text-gray-700"
-                      >
-                        -₹750.00
-                      </Text>
-                    </div>
-                  </div>
-                </div>
-                <div className="flex flex-col gap-[23px] self-stretch">
-                  <div className="h-px bg-gray-300_03" />
-                  <div className="flex flex-col gap-4">
-                    <div className="flex flex-1 items-start justify-between gap-5 rounded-md border border-solid border-gray-500 p-[17px] sm:flex-col">
-                      <div className="flex items-start gap-5 sm:flex-col">
-                        <Img
-                          src="images/img_fi_11370591.svg"
-                          alt="buy_more_save"
-                          className="h-[36px] w-[36px] sm:w-full"
-                        />
-                        <div className="flex flex-col items-start">
-                          <Text as="p" className="!font-medium">
-                            Buy More Save More
-                          </Text>
-                          <Text size="xs" as="p" className="!text-gray-700">
-                            Get 5% off* on cart value for 2 or more eligible
-                            products purchased together
-                          </Text>
-                        </div>
-                      </div>
-                      <Heading size="xs" as="h4" className="underline">
-                        Add
-                      </Heading>
-                    </div>
-                    <div className="flex flex-1 items-start justify-center rounded-md border border-solid border-gray-500 px-[15px] pb-[18px] pt-[15px] md:flex-col">
-                      <div className="flex flex-1 items-start justify-center gap-5 md:self-stretch sm:flex-col">
-                        <Img
-                          src="images/img_insurance_a_cd07e9ed.svg"
-                          alt="insurancea"
-                          className="h-[36px] w-[36px] sm:w-full"
-                        />
-                        <div className="flex flex-col items-start gap-[3px]">
-                          <Text as="p" className="!font-medium">
-                            TechVolt Care+
-                          </Text>
-                          <div className="flex flex-col items-start gap-[5px]">
-                            <Text size="xs" as="p" className="!text-gray-700">
-                              Earn your peace of mind by availing our Extended
-                              Warranty plans now
-                            </Text>
-                            <Text
-                              size="xs"
-                              as="p"
-                              className="!text-gray-700 underline"
-                            >
-                              More Information
-                            </Text>
-                          </div>
-                        </div>
-                      </div>
-                      <Heading size="xs" as="h5" className="underline">
-                        Add
-                      </Heading>
-                    </div>
-                    <div className="flex flex-1 items-start justify-between gap-5 rounded-md border border-solid border-gray-500 px-[17px] pb-[18px] pt-[17px] sm:flex-col">
-                      <div className="flex items-start gap-5 sm:flex-col">
-                        <Img
-                          src="images/img_1a_cart.png"
-                          alt="1acart"
-                          className="h-[36px] w-[36px] object-cover sm:w-full"
-                        />
-                        <div className="flex flex-col items-start gap-[3px]">
-                          <Text as="p" className="!font-medium">
-                            Exchange Offer
-                          </Text>
-                          <Text size="xs" as="p" className="!text-gray-700">
-                            Trade in your old device & receive instant discount
-                            on your order
-                          </Text>
-                          <Text
-                            size="xs"
-                            as="p"
-                            className="!text-gray-700 underline"
-                          >
-                            More Information
-                          </Text>
-                        </div>
-                      </div>
-                      <Heading size="xs" as="h6" className="underline">
-                        Add
-                      </Heading>
-                    </div>
-                  </div>
-                </div>
-                <div className="flex gap-6">
-                  <Heading as="h6" className="self-end underline">
-                    Add One More
-                  </Heading>
-                  <Img
-                    src="images/img_fi_10514406.svg"
-                    alt="fi10514406"
-                    className="h-[24px] w-[24px] self-start"
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="flex w-[39%] flex-col gap-[37px] rounded-[16px] border border-solid border-black-900_02 bg-gray-100 px-[23px] pb-6 pt-[23px] md:w-full sm:p-5">
-              <div className="flex flex-col gap-[23px]">
-                <div className="flex justify-between gap-5">
-                  <div className="flex flex-col items-start gap-2">
-                    <Heading size="2xl" as="h4">
-                      Total
-                    </Heading>
-                    <Text as="p" className="!text-gray-700">
-                      Includes GST*
-                    </Text>
-                  </div>
-                  <div className="flex flex-col items-end gap-2">
-                    <Heading size="2xl" as="h4">
-                      ₹26490.00
-                    </Heading>
-                    <div className="flex flex-wrap gap-[7px] self-start">
-                      <Text as="p" className="!text-gray-700 line-through">
-                        ₹40990.00
-                      </Text>
-                      <Text as="p" className="!font-medium !text-teal-400">
-                        Save ₹14500.00
-                      </Text>
-                    </div>
-                  </div>
-                </div>
-                <div className="flex flex-col gap-[23px]">
-                  <div className="h-px bg-gray-400_01" />
-                  <div className="flex items-center justify-between gap-5 rounded-md border border-solid border-black-900_02 bg-white-A700 px-4 py-[15px]">
-                    <div className="flex items-center gap-2">
-                      <Img
-                        src="images/img_fi_11370591.svg"
-                        alt="fi11370591"
-                        className="h-[30px] w-[30px]"
+      <HomepageHeader />
+      <section className="bg-white py-8 antialiased dark:bg-gray-800 md:py-16">
+        <div className="mx-auto max-w-screen-xl px-4 2xl:px-0">
+          <h2 className="text-xl font-semibold text-gray-900 dark:text-white sm:text-2xl">
+            Shopping Cart
+          </h2>
+
+          <div className="mt-6 sm:mt-8 md:gap-6 lg:flex lg:items-start xl:gap-8">
+            <div className="mx-auto w-full flex-none lg:max-w-2xl xl:max-w-4xl">
+              <div className="space-y-6">
+                <div className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm dark:border-gray-700 dark:bg-gray-800 md:p-6"></div>
+
+                <div className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm dark:border-gray-700 dark:bg-gray-800 md:p-6">
+                  <div className="space-y-4 md:flex md:items-center md:justify-between md:gap-6 md:space-y-0">
+                    <a href="#" className="w-20 shrink-0 md:order-1">
+                      <img
+                        className="h-20 w-20 dark:hidden"
+                        src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/iphone-light.svg"
+                        alt="imac image"
                       />
-                      <Text
-                        as="p"
-                        className="self-end !font-light !text-gray-700"
+                      <img
+                        className="hidden h-20 w-20 dark:block"
+                        src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/iphone-dark.svg"
+                        alt="imac image"
+                      />
+                    </a>
+
+                    <label htmlFor="counter-input" className="sr-only">
+                      Choose quantity:
+                    </label>
+                    <div className="flex items-center justify-between md:order-3 md:justify-end">
+                      <div className="flex items-center">
+                        <button
+                          type="button"
+                          id="decrement-button-5"
+                          data-input-counter-decrement="counter-input-5"
+                          className="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-md border border-gray-300 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700"
+                        >
+                          <svg
+                            className="h-2.5 w-2.5 text-gray-900 dark:text-white"
+                            aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 18 2"
+                          >
+                            <path
+                              stroke="currentColor"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth="2"
+                              d="M1 1h16"
+                            />
+                          </svg>
+                        </button>
+                        <input
+                          type="text"
+                          id="counter-input-5"
+                          data-input-counter
+                          className="w-10 shrink-0 border-0 bg-transparent text-center text-sm font-medium text-gray-900 focus:outline-none focus:ring-0 dark:text-white"
+                          placeholder=""
+                          value="3"
+                          required
+                        />
+                        <button
+                          type="button"
+                          id="increment-button-5"
+                          data-input-counter-increment="counter-input-5"
+                          className="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-md border border-gray-300 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700"
+                        >
+                          <svg
+                            className="h-2.5 w-2.5 text-gray-900 dark:text-white"
+                            aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 18 18"
+                          >
+                            <path
+                              stroke="currentColor"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth="2"
+                              d="M9 1v16M1 9h16"
+                            />
+                          </svg>
+                        </button>
+                      </div>
+                      <div className="text-end md:order-4 md:w-32">
+                        <p className="text-base font-bold text-gray-900 dark:text-white">
+                          $2,997
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="w-full min-w-0 flex-1 space-y-4 md:order-2 md:max-w-md">
+                      <a
+                        href="#"
+                        className="text-base font-medium text-gray-900 hover:underline dark:text-white"
                       >
-                        Apply coupon code
-                      </Text>
-                    </div>
-                    <Text as="p" className="self-end !font-inter !font-medium">
-                      Apply
-                    </Text>
-                  </div>
-                </div>
-                <div className="flex flex-col items-start gap-[11px]">
-                  <Heading as="h6">Price Breakup</Heading>
-                  <div className="flex flex-col gap-1.5 self-stretch">
-                    <div className="flex flex-wrap justify-between gap-5">
-                      <Text as="p" className="!text-gray-700">
-                        Price (Inclusive of all taxes)
-                      </Text>
-                      <Heading as="h6">₹40990.00</Heading>
-                    </div>
-                    <div className="flex flex-wrap justify-between gap-5">
-                      <Text as="p" className="!text-gray-700">
-                        Discount
-                      </Text>
-                      <Heading as="h6" className="!text-teal-400">
-                        -₹14500.00
-                      </Heading>
-                    </div>
-                    <div className="flex flex-wrap items-center justify-between gap-5">
-                      <Text as="p" className="self-end !text-gray-700">
-                        Shipping charges
-                      </Text>
-                      <Heading as="h6">₹0.00</Heading>
+                        APPLE iPhone 15 5G phone, 256GB, Gold
+                      </a>
+
+                      <div className="flex items-center gap-4">
+                        <button
+                          type="button"
+                          className="inline-flex items-center text-sm font-medium text-gray-500 hover:text-gray-900 hover:underline dark:text-gray-400 dark:hover:text-white"
+                        >
+                          <svg
+                            className="me-1.5 h-5 w-5"
+                            aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              stroke="currentColor"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth="2"
+                              d="M12.01 6.001C6.5 1 1 8 5.782 13.001L12.011 20l6.23-7C23 8 17.5 1 12.01 6.002Z"
+                            />
+                          </svg>
+                          Add to Favorites
+                        </button>
+
+                        <button
+                          type="button"
+                          className="inline-flex items-center text-sm font-medium text-red-600 hover:underline dark:text-red-500"
+                        >
+                          <svg
+                            className="me-1.5 h-5 w-5"
+                            aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              stroke="currentColor"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth="2"
+                              d="M6 18 17.94 6M18 18 6.06 6"
+                            />
+                          </svg>
+                          Remove
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <Button
-                size="3xl"
-                shape="round"
-                className="w-full !rounded-[26px] font-inter font-bold sm:px-5"
-              >
-                Next
-              </Button>
+            </div>
+
+            <div className="mx-auto mt-6 max-w-4xl flex-1 space-y-6 lg:mt-0 lg:w-full">
+              <div className="space-y-4 rounded-lg border border-gray-200 bg-white p-4 shadow-sm dark:border-gray-700 dark:bg-gray-800 sm:p-6">
+                <p className="text-xl font-semibold text-gray-900 dark:text-white">
+                  Order summary
+                </p>
+
+                <div className="space-y-4">
+                  <div className="space-y-2">
+                    <dl className="flex items-center justify-between gap-4">
+                      <dt className="text-base font-normal text-gray-500 dark:text-gray-400">
+                        Original price
+                      </dt>
+                      <dd className="text-base font-medium text-gray-900 dark:text-white">
+                        $7,592.00
+                      </dd>
+                    </dl>
+
+                    <dl className="flex items-center justify-between gap-4">
+                      <dt className="text-base font-normal text-gray-500 dark:text-gray-400">
+                        Savings
+                      </dt>
+                      <dd className="text-base font-medium text-green-600">
+                        -$299.00
+                      </dd>
+                    </dl>
+
+                    <dl className="flex items-center justify-between gap-4">
+                      <dt className="text-base font-normal text-gray-500 dark:text-gray-400">
+                        Store Pickup
+                      </dt>
+                      <dd className="text-base font-medium text-gray-900 dark:text-white">
+                        $99
+                      </dd>
+                    </dl>
+
+                    <dl className="flex items-center justify-between gap-4">
+                      <dt className="text-base font-normal text-gray-500 dark:text-gray-400">
+                        Tax
+                      </dt>
+                      <dd className="text-base font-medium text-gray-900 dark:text-white">
+                        $799
+                      </dd>
+                    </dl>
+                  </div>
+
+                  <dl className="flex items-center justify-between gap-4 border-t border-gray-200 pt-2 dark:border-gray-700">
+                    <dt className="text-base font-bold text-gray-900 dark:text-white">
+                      Total
+                    </dt>
+                    <dd className="text-base font-bold text-gray-900 dark:text-white">
+                      $8,191.00
+                    </dd>
+                  </dl>
+                </div>
+
+                <a
+                  href="#"
+                  className="flex w-full items-center justify-center rounded-lg bg-primary-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                >
+                  Proceed to Checkout
+                </a>
+
+                <div className="flex items-center justify-center gap-2">
+                  <span className="text-sm font-normal text-gray-500 dark:text-gray-400">
+                    {" "}
+                    or{" "}
+                  </span>
+                  <a
+                    href="#"
+                    title=""
+                    className="inline-flex items-center gap-2 text-sm font-medium text-primary-700 underline hover:no-underline dark:text-primary-500"
+                  >
+                    Continue Shopping
+                    <svg
+                      className="h-5 w-5"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke="currentColor"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M19 12H5m14 0-4 4m4-4-4-4"
+                      />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+
+              <div className="space-y-4 rounded-lg border border-gray-200 bg-white p-4 shadow-sm dark:border-gray-700 dark:bg-gray-800 sm:p-6">
+                <form className="space-y-4">
+                  <div>
+                    <label
+                      htmlFor="voucher"
+                      className="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+                    >
+                      {" "}
+                      Do you have a voucher or gift card?{" "}
+                    </label>
+                    <input
+                      type="text"
+                      id="voucher"
+                      className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
+                      placeholder=""
+                      required
+                    />
+                  </div>
+                  <button
+                    type="submit"
+                    className="flex w-full items-center justify-center rounded-lg bg-primary-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                  >
+                    Apply Code
+                  </button>
+                </form>
+              </div>
             </div>
           </div>
         </div>
-        <div className="flex justify-center pb-10 pt-[31px] sm:py-5">
-          <div className="container-xs flex flex-col items-start gap-7 md:p-5">
-            <Heading size="6xl" as="h2">
-              Recently Viewed
-            </Heading>
-            <div className="flex gap-10 self-stretch md:flex-col">
-              {data.map((d, index) => (
-                <ProductDetailsColumnaddTo {...d} key={"productlist" + index} />
-              ))}
-            </div>
-          </div>
-        </div>
-        <Footer />
-      </div>
+      </section>
+      <Footer />
     </>
   );
 }
