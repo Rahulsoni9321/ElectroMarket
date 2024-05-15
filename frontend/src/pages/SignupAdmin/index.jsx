@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet";
 import Footer from "../../components/Footer";
 import HomepageHeader from "../../components/HomepageHeader";
 
-export default function SignUpPage() {
+export default function SignUpAdminPage() {
   return (
     <>
       <Helmet>
@@ -66,6 +66,23 @@ export default function SignUpPage() {
                   </div>
                   <div>
                     <label
+                      htmlFor="phone"
+                      className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >
+                      Your phone number
+                    </label>
+                    <input
+                      type="tel"
+                      name="phone"
+                      id="phone"
+                      className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                      placeholder="123-456-7890"
+                      required=""
+                    />
+                  </div>
+
+                  <div>
+                    <label
                       htmlFor="password"
                       className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                     >
@@ -113,21 +130,12 @@ export default function SignUpPage() {
                     Create an account
                   </button>
                   <p className="text-sm font-light text-gray-500 dark:text-gray-400">
-                    Already have an account?{" "}
+                    Login As Admin{" "}
                     <a
-                      href="signin"
+                      href="/api/v1/admin/signin"
                       className="font-medium text-primary-600 hover:underline dark:text-primary-500"
                     >
-                      Login here
-                    </a>
-                  </p>
-                  <p className="text-sm font-light text-gray-500 dark:text-gray-400">
-                    Sign Up As Admin{" "}
-                    <a
-                      href="/api/v1/admin/signup"
-                      className="font-medium text-primary-600 hover:underline dark:text-primary-500"
-                    >
-                      Sign Up here
+                      Login Here
                     </a>
                   </p>
                 </form>
