@@ -33,11 +33,11 @@ export default function CartPage() {
                         src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/iphone-light.svg"
                         alt="imac image"
                       />
-                      <img
+                      {/* <img
                         className="hidden h-20 w-20 dark:block"
                         src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/iphone-dark.svg"
                         alt="imac image"
-                      />
+                      /> */}
                     </a>
 
                     <label htmlFor="counter-input" className="sr-only">
@@ -107,12 +107,12 @@ export default function CartPage() {
                     </div>
 
                     <div className="w-full min-w-0 flex-1 space-y-4 md:order-2 md:max-w-md">
-                      <a
+                      {/* <a
                         href="#"
                         className="text-base font-medium text-gray-900 hover:underline dark:text-white"
                       >
                         APPLE iPhone 15 5G phone, 256GB, Gold
-                      </a>
+                      </a> */}
 
                       <div className="flex items-center gap-4">
                         <button

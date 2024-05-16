@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import Footer from "../../components/Footer";
 import HomepageHeader from "../../components/HomepageHeader";
 
-export default function SignUpPage() {
+export default function SignUpPageAdmin() {
   const [phoneNumber, setPhoneNumber] = useState("+91");
   const [phoneError, setPhoneError] = useState(false);
 
@@ -25,6 +27,37 @@ export default function SignUpPage() {
 
   const handlePhoneChange = (event) => {
     setPhoneNumber(event.target.value);
+  };
+
+  const [data, setData] = useState({
+    username: "",
+    email: "",
+    password: "",
+    phone: "",
+  });
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
+
+  const handleChange = ({ currentTarget: input }) => {
+    setData({ ...data, [input.name]: input.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const url = "http://localhost:3001/api/v1/user/signup";
+      const { data: res } = await axios.post(url, data);
+      console.log(res.message);
+      navigate("/api/v1/user/signin"); // Navigate after successful signup
+    } catch (error) {
+      if (
+        error.response &&
+        error.response.status >= 400 &&
+        error.response.status <= 500
+      ) {
+        setError(error.response.data.message);
+      }
+    }
   };
 
   return (
@@ -53,7 +86,11 @@ export default function SignUpPage() {
                 <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
                   Create an account
                 </h1>
-                <form className="space-y-4 md:space-y-6" action="#">
+                <form
+                  className="space-y-4 md:space-y-6"
+                  onSubmit={handleSubmit}
+                  action="#"
+                >
                   <div>
                     <label
                       htmlFor="username"
@@ -64,6 +101,8 @@ export default function SignUpPage() {
                     <input
                       type="text"
                       name="username"
+                      value={data.username}
+                      onChange={handleChange}
                       id="username"
                       placeholder="Username"
                       className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
@@ -81,6 +120,8 @@ export default function SignUpPage() {
                     <input
                       type="email"
                       name="email"
+                      value={data.email}
+                      onChange={handleChange}
                       id="email"
                       className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                       placeholder="name@company.com"
@@ -99,8 +140,8 @@ export default function SignUpPage() {
                       name="phone"
                       id="phone"
                       placeholder="1234567890"
-                      value={phoneNumber}
-                      onChange={handlePhoneChange}
+                      value={[phoneNumber, data.phone]}
+                      onChange={[handlePhoneChange, handleChange]}
                       className={`bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 ${
                         phoneError ? "border-red-500" : ""
                       }`}
@@ -123,6 +164,8 @@ export default function SignUpPage() {
                     <input
                       type="password"
                       name="password"
+                      onChange={handleChange}
+                      value={data.password}
                       id="password"
                       placeholder="••••••••"
                       className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
@@ -155,6 +198,7 @@ export default function SignUpPage() {
                       </label>
                     </div>
                   </div>
+                  {error && <div>{error}</div>}
                   <button
                     type="submit"
                     className="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
@@ -168,15 +212,6 @@ export default function SignUpPage() {
                       className="font-medium text-primary-600 hover:underline dark:text-primary-500"
                     >
                       Login here
-                    </a>
-                  </p>
-                  <p className="text-sm font-light text-gray-500 dark:text-gray-400">
-                    Sign Up As Admin{" "}
-                    <a
-                      href="/api/v1/admin/signup"
-                      className="font-medium text-primary-600 hover:underline dark:text-primary-500"
-                    >
-                      Sign Up here
                     </a>
                   </p>
                 </form>
