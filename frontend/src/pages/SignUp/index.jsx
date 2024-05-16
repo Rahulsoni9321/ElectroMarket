@@ -7,9 +7,9 @@ import HomepageHeader from "../../components/HomepageHeader";
 
 export default function SignUpPage() {
   const [data, setData] = useState({
-    username: "",
-    email: "",
-    password: "",
+    Username: "",
+    Email: "",
+    Password: "",
   });
   const [error, setError] = useState("");
   const navigate = useNavigate();
@@ -80,7 +80,7 @@ export default function SignUpPage() {
                       onChange={handleChange}
                       id="username"
                       placeholder="Username"
-                      value={data.username}
+                      value={data.Username}
                       className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                       required=""
                     />
@@ -97,7 +97,7 @@ export default function SignUpPage() {
                       type="email"
                       name="email"
                       id="email"
-                      value={data.email}
+                      value={data.Email}
                       onChange={handleChange}
                       className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                       placeholder="name@company.com"
@@ -117,7 +117,7 @@ export default function SignUpPage() {
                       id="password"
                       placeholder="••••••••"
                       onChange={handleChange}
-                      value={data.password}
+                      value={data.Password}
                       className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                       required=""
                     />
