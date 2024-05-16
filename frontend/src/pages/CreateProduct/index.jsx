@@ -5,6 +5,7 @@ import Helmet from "react-helmet";
 import Chatbot from "../ChatBot";
 import Footer from "../../components/Footer";
 import HomepageHeader from "../../components/HomepageHeader";
+
 const CreateProduct = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -48,10 +49,10 @@ const CreateProduct = () => {
         <title>ElectroMarket</title>
         <meta name="description" content="" />
       </Helmet>
-      <div className="flex w-full flex-col items-center gap-10 bg-white-A700 dark:bg-gray-800">
-        <HomepageHeader shopOne="Sign in" className="self-stretch" />
-        <section className="bg-gray-50 dark:bg-gray-300 self-stretch">
-          <div className="max-w-md mx-auto mt-8">
+      <div className="flex flex-col items-center gap-10 bg-white-A700 dark:bg-gray-300 min-h-screen">
+        <HomepageHeader shopOne="Sign in" className="w-full" />
+        <section className="flex flex-col md:flex-row w-full p-6 space-y-6 md:space-y-0 md:space-x-6">
+          <div className="flex flex-col w-full md:w-2/3 space-y-6">
             <form
               onSubmit={handleSubmit}
               className="space-y-6"
@@ -124,7 +125,6 @@ const CreateProduct = () => {
                   className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                 ></textarea>
               </div>
-
               <div>
                 <label
                   htmlFor="youtubeLink"
@@ -142,39 +142,41 @@ const CreateProduct = () => {
                   className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                 />
               </div>
-              <div>
-                <label
-                  htmlFor="adminName"
-                  className="block text-sm font-medium text-gray-700"
-                >
-                  Admin Name
-                </label>
-                <input
-                  type="text"
-                  name="adminName"
-                  id="adminName"
-                  value={adminName}
-                  onChange={(e) => setAdminName(e.target.value)}
-                  required
-                  className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                />
-              </div>
-              <div>
-                <label
-                  htmlFor="adminEmail"
-                  className="block text-sm font-medium text-gray-700"
-                >
-                  Admin Email
-                </label>
-                <input
-                  type="email"
-                  name="adminEmail"
-                  id="adminEmail"
-                  value={adminEmail}
-                  onChange={(e) => setAdminEmail(e.target.value)}
-                  required
-                  className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                />
+              <div className="flex space-x-4">
+                <div className="flex-1">
+                  <label
+                    htmlFor="adminName"
+                    className="block text-sm font-medium text-gray-700"
+                  >
+                    Admin Name
+                  </label>
+                  <input
+                    type="text"
+                    name="adminName"
+                    id="adminName"
+                    value={adminName}
+                    onChange={(e) => setAdminName(e.target.value)}
+                    required
+                    className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                  />
+                </div>
+                <div className="flex-1">
+                  <label
+                    htmlFor="adminEmail"
+                    className="block text-sm font-medium text-gray-700"
+                  >
+                    Admin Email
+                  </label>
+                  <input
+                    type="email"
+                    name="adminEmail"
+                    id="adminEmail"
+                    value={adminEmail}
+                    onChange={(e) => setAdminEmail(e.target.value)}
+                    required
+                    className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                  />
+                </div>
               </div>
               <div>
                 <button
@@ -185,11 +187,13 @@ const CreateProduct = () => {
                 </button>
               </div>
             </form>
+          </div>
+          <div className="w-full md:w-1/3 flex flex-col items-center">
             <Chatbot />
           </div>
         </section>
       </div>
-      <Footer className="self-stretch" />
+      <Footer className="w-full" />
     </>
   );
 };
