@@ -1,8 +1,9 @@
-import { Router } from "express";
+import { Router, response } from "express";
 import dotenv from "dotenv";
 import { PrismaClient } from "@prisma/client";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcryptjs";
+import { call } from "./gpt.js";
 export const userrouter = Router();
 const prisma = new PrismaClient();
 dotenv.config({
@@ -95,3 +96,9 @@ userrouter.post("/signin", async (req, res) => {
 
 
 
+userrouter.get('/gpt',async (req,res)=>{
+     const reponse = await call();
+     return res.json({
+      response:reponse
+     })
+})
