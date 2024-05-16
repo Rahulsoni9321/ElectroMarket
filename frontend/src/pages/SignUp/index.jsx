@@ -14,17 +14,17 @@ export default function SignUpPage() {
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
-  const handleChange = ({ currntTarget: input }) => {
+  const handleChange = ({ currentTarget: input }) => {
     setData({ ...data, [input.name]: input.value });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const url = "http://localhost:3000/api/v1/user/signup";
-      navigate("/api/v1/user/signin");
+      const url = "http://localhost:3001/api/v1/user/signup";
       const { data: res } = await axios.post(url, data);
       console.log(res.message);
+      navigate("/api/v1/user/signin"); // Navigate after successful signup
     } catch (error) {
       if (
         error.response &&

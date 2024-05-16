@@ -1,9 +1,36 @@
 // import React from "react";
+import { useState } from "react";
+import axios from "axios";
 import { Helmet } from "react-helmet";
 import Footer from "../../components/Footer";
 import HomepageHeader from "../../components/HomepageHeader";
 
 export default function SigninPage() {
+  const [data, setData] = useState({ email: "", password: "" });
+  const [error, setError] = useState("");
+
+  const handleChange = ({ currentTarget: input }) => {
+    setData({ ...data, [input.name]: input.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const url = "http://localhost:3001/api/v1/user/signin";
+      const { data: res } = await axios.post(url, data);
+      localStorage.setItem("token", res.data);
+      window.location = "/";
+    } catch (error) {
+      if (
+        error.response &&
+        error.response.status >= 400 &&
+        error.response.status <= 500
+      ) {
+        setError(error.response.data.message);
+      }
+    }
+  };
+
   return (
     <>
       <Helmet>
@@ -15,7 +42,7 @@ export default function SigninPage() {
         <section className="bg-gray-50 dark:bg-gray-800 self-stretch">
           <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
             <a
-              href="#"
+              href="/"
               className="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white"
             >
               <img
@@ -30,7 +57,11 @@ export default function SigninPage() {
                 <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
                   Sign in to your account
                 </h1>
-                <form className="space-y-4 md:space-y-6" action="#">
+                <form
+                  className="space-y-4 md:space-y-6"
+                  onSubmit={handleSubmit}
+                  action="#"
+                >
                   <div>
                     <label
                       htmlFor="email"
@@ -42,6 +73,8 @@ export default function SigninPage() {
                       type="email"
                       name="email"
                       id="email"
+                      onChange={handleChange}
+                      value={data.email}
                       className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                       placeholder="name@company.com"
                       required=""
@@ -59,9 +92,12 @@ export default function SigninPage() {
                       name="password"
                       id="password"
                       placeholder="••••••••"
+                      onChange={handleChange}
+                      value={data.password}
                       className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                       required=""
                     />
+                    {error && <div>{error}</div>}
                   </div>
                   <div className="flex items-center justify-between">
                     <div className="flex items-start">
