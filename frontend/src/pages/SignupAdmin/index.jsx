@@ -45,7 +45,7 @@ export default function SignUpPageAdmin() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const url = "http://localhost:3001/api/v1/user/signup";
+      const url = "http://localhost:3001/api/v1/admin/signup";
       const { data: res } = await axios.post(url, data);
       console.log(res.message);
       navigate("/api/v1/user/signin"); // Navigate after successful signup
