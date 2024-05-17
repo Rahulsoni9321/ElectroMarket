@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import { PrismaClient } from "@prisma/client";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcryptjs";
+import { userMiddleware } from "../middlewares/user.js";
 import { call } from "./gpt.js";
 export const userrouter = Router();
 const prisma = new PrismaClient();
@@ -101,4 +102,28 @@ userrouter.get('/gpt',async (req,res)=>{
      return res.json({
       response:reponse
      })
+})
+
+
+userrouter.post("/wishlist",userMiddleware,async (req,res)=>{
+      const userpayload = req.body;
+
+      try {
+        const wishlist  = await prisma.wishList.create({
+          data:{
+            UserId:userpayload.UserId,
+            ProducId:userpayload.ProductId
+          }
+        })
+        return res.json({
+          message:"Product successfully added to Wishlist."
+        })
+      }
+      catch(error) {
+        console.log(error);
+        return res.status(500).json({
+          message:"Something went wrong while adding to wishlist, Please try again.",
+          details:error
+        })
+      }
 })

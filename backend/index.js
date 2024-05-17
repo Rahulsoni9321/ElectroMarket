@@ -1,16 +1,16 @@
 import express from "express";
 import dotenv from "dotenv";
 
-import { userrouter } from "../routes/user.js";
-import { adminrouter } from "../routes/admin.js";
+import { userrouter } from "./routes/user.js";
+import { adminrouter } from "./routes/admin.js";
 import cors from "cors";
-import { productrouter } from "../routes/Products.js";
+import { productrouter } from "./routes/Products.js";
 
 dotenv.config({
-  path: "../.env",
+  path: "./.env",
 });
 
-const port = process.env.PORT || 3001;
+const port = process.env.PORT;
 
 const app = express();
 app.use(cors());

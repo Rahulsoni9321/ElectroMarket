@@ -5,7 +5,7 @@ export function userMiddleware (req,res,next) {
 
   if (!token || !token.startswith("Bearer ")) {
     return res.status(403).json({
-      message: "Error, Please try again.",
+      message: "Error in parsing the token, Please try again.",
     });
   }
     const jwttoken = token.split(" ")[1];

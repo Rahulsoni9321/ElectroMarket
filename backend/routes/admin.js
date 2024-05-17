@@ -95,11 +95,12 @@ adminrouter.post("/signin", async (req, res) => {
 
 
 adminrouter.post("/createproduct",AdminMiddleware,async (req,res)=>{
-    const payload = req.body;
+    
+    const AdminId = req.headers;
     try {
         const findAdmin = await prisma.admin.findFirst({
             where:{
-                id:payload.AdminId
+                id:AdminId
             }
         })
         if (findAdmin){
