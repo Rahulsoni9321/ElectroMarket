@@ -4,7 +4,7 @@ import { PrismaClient } from "@prisma/client";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcryptjs";
 import { userMiddleware } from "../middlewares/user.js";
-import { call } from "./gpt.js";
+import {  run } from "./gpt.js";
 export const userrouter = Router();
 const prisma = new PrismaClient();
 dotenv.config({
@@ -97,8 +97,9 @@ userrouter.post("/signin", async (req, res) => {
 
 
 
-userrouter.get('/gpt',async (req,res)=>{
-     const reponse = await call();
+userrouter.post('/gpt',async (req,res)=>{
+     const userpayload = req.body;
+     const reponse = await run(userpayload.input);
      return res.json({
       response:reponse
      })
