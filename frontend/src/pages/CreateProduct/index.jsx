@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Helmet from "react-helmet";
-import Chatbot from "../ChatBot";
 import Footer from "../../components/Footer";
 import HomepageHeader from "../../components/HomepageHeader";
 
@@ -187,9 +186,6 @@ const CreateProduct = () => {
                 </button>
               </div>
             </form>
-          </div>
-          <div className="w-full md:w-1/3 flex flex-col items-center">
-            <Chatbot />
           </div>
         </section>
       </div>
