@@ -17,11 +17,11 @@ const ProjectRoutes = () => {
     { path: "/", element: <Home /> },
     { path: "*", element: <NotFound /> },
     {
-      path: "productgrid",
+      path: "/productgrid",
       element: <ProductGrid />,
     },
     {
-      path: "cart",
+      path: "/cart",
       element: <Cart />,
     },
     {
@@ -41,11 +41,11 @@ const ProjectRoutes = () => {
       element: <SighinAdmin />,
     },
     {
-      path: "about",
+      path: "/about",
       element: <About />,
     },
     {
-      path: "contact",
+      path: "/contact",
       element: <Contact />,
     },
     {

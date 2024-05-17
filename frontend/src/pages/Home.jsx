@@ -1,14 +1,10 @@
-import React from "react";
+// import React from "react";
 import { Helmet } from "react-helmet";
-import { Text, Button, Img, Heading, Slider, RatingBar } from "../components";
 import HomepageHeader from "../components/HomepageHeader";
 import HomepageHerosection from "../components/HomepageHerosection";
-// import HomepageTab from "../components/HomepageTab";
+import Footer from "../components/Footer/index.jsx";
 
 export default function HomepagePage() {
-  const [sliderState, setSliderState] = React.useState(0);
-  const sliderRef = React.useRef(null);
-
   return (
     <>
       <Helmet>
@@ -18,609 +14,197 @@ export default function HomepagePage() {
       <div className="flex w-full flex-col items-center dark:bg-gray-800">
         <HomepageHeader shopOne="Shop" className="self-stretch" />
         <HomepageHerosection />
-        <div className="mt-0 flex justify-center self-stretch pb-10 pt-1 sm:py-1 bg-slate-300">
-          <div className="container-xs flex flex-col gap-12 md:p-5">
-            <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
-              <div className="flex w-full flex-col items-center rounded-[30px] px-1 pb-1 pt-1 sm:py-1">
-                <Img
-                  src="\public\Images\Raspberry Pi 3.png"
-                  alt="image"
-                  className="h-min w-min"
-                />
-                <div className="flex flex-col gap-2 self-stretch">
-                  <Text
-                    size="3xl"
-                    as="p"
-                    className="leading-9 !text-black-900 text-center"
-                  >
-                    Raspberry PI 3 Model B+ Motherboard | BCM2837
-                  </Text>
-                  <div className="flex w-[43%] items-center justify-center gap-2 md:w-full">
-                    <RatingBar
-                      value={3.5}
-                      isEditable={true}
-                      size={18}
-                      className="flex flex-1 justify-between"
-                    />
-                    <Text as="p" className="!text-black-900">
-                      17(122)
-                    </Text>
-                  </div>
-                </div>
-                <div className="flex flex-col items-start gap-2.5">
-                  <div className="flex flex-wrap gap-[7px]">
-                    <Text size="xl" as="p" className="!text-gray-700">
-                      MRP (Incl. of all taxes)
-                    </Text>
-                    <Text
-                      size="xl"
-                      as="p"
-                      className="!text-gray-700 line-through"
-                    >
-                      ₹14,999
-                    </Text>
-                    <Text size="xl" as="p">
-                      72% Off
-                    </Text>
-                  </div>
-                  <Heading size="4xl" as="h2">
-                    ₹4,195
-                  </Heading>
-                </div>
-                <div className="flex gap-[15px] self-stretch">
-                  <Button
-                    shape="round"
-                    className="w-80 border border-solid border-black-900_02 font-inter font-medium sm:px-1"
-                  >
-                    Learn More
-                  </Button>
-                  <Button
-                    shape="round"
-                    className="w-full font-inter font-bold sm:px-5"
-                  >
-                    Shop Now
-                  </Button>
-                </div>
-              </div>
-              <div className="flex w-full flex-col items-center rounded-[30px] px-1 pb-1 pt-1 sm:py-1">
-                <Img
-                  src="\public\Images\breadboard1.png"
-                  alt="imagefive"
-                  className="h-min w-min"
-                />
-                <div className="flex flex-col gap-2">
-                  <Text size="3xl" as="p" className="leading-9 !text-black-900">
-                    Electronic Spices 400 Points Half Size Solderless Breadboard
-                    for Prototype Circuit Pack of 1pcs
-                  </Text>
-                  <div className="flex w-[43%] items-center justify-center gap-2 md:w-full">
-                    <RatingBar
-                      value={2.5}
-                      isEditable={true}
-                      size={18}
-                      className="flex flex-1 justify-between"
-                    />
-                    <Text as="p" className="!text-black-900">
-                      22(122)
-                    </Text>
-                  </div>
-                </div>
-                <div className="flex flex-col gap-[21px]">
-                  <div className="flex flex-col items-start gap-2.5">
-                    <div className="flex flex-wrap gap-[7px]">
-                      <Text size="xl" as="p" className="!text-gray-700">
-                        MRP (Incl. of all taxes)
-                      </Text>
-                      <Text
-                        size="xl"
-                        as="p"
-                        className="!text-gray-700 line-through"
-                      >
-                        ₹199
-                      </Text>
-                      <Text size="xl" as="p">
-                        40% Off
-                      </Text>
-                    </div>
-                    <Heading size="4xl" as="h3">
-                      ₹119
-                    </Heading>
-                  </div>
-                  <div className="flex gap-4">
-                    <Button
-                      shape="round"
-                      className="w-80 border border-solid border-black-900_02 font-inter font-medium sm:px-5"
-                    >
-                      Learn More
-                    </Button>
-                    <Button
-                      shape="round"
-                      className="w-full font-inter font-bold sm:px-5"
-                    >
-                      Shop Now
-                    </Button>
-                  </div>
-                </div>
-              </div>
-              <div className="flex w-full flex-col items-center rounded-[30px] px-1 pb-1 pt-1 sm:py-1">
-                <Img
-                  src="./public/Images/servomotor1.png"
-                  alt="imagethree"
-                  className="h-min w-min"
-                />
-                <div className="flex flex-col gap-2 self-stretch">
-                  <Text size="3xl" as="p" className="leading-9 !text-black-900">
-                    Drfeify RC Motor Servo, Black 17g Metal Gear Core Motor
-                    Servo RC Model Car Upgrade Accessory with Install Screws
-                    Parts
-                  </Text>
-                  <div className="flex w-[43%] items-center justify-center gap-[7px] md:w-full">
-                    <RatingBar
-                      value={4.8}
-                      isEditable={true}
-                      size={18}
-                      className="flex flex-1 justify-between"
-                    />
-                    <Text as="p" className="!text-black-900">
-                      36(122)
-                    </Text>
-                  </div>
-                </div>
-                <div className="flex flex-col items-start gap-2.5">
-                  <div className="flex flex-wrap gap-1.5">
-                    <Text size="xl" as="p" className="!text-gray-700">
-                      MRP (Incl. of all taxes)
-                    </Text>
-                    <Text
-                      size="xl"
-                      as="p"
-                      className="!text-gray-700 line-through"
-                    >
-                      ₹8,199
-                    </Text>
-                    <Text size="xl" as="p">
-                      50% Off
-                    </Text>
-                  </div>
-                  <Heading size="4xl" as="h4">
-                    ₹4,099
-                  </Heading>
-                </div>
-                <div className="flex gap-4 self-stretch">
-                  <Button
-                    shape="round"
-                    className="w-80 border border-solid border-black-900_02 font-inter font-medium sm:px-5"
-                  >
-                    Learn More
-                  </Button>
-                  <Button
-                    shape="round"
-                    className="w-full font-inter font-bold sm:px-5"
-                  >
-                    Shop Now
-                  </Button>
-                </div>
-              </div>
+        <section className="bg-white dark:bg-gray-800 self-stretch">
+          <div className="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
+            <div className="max-w-screen-md mb-8 lg:mb-16">
+              <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
+                Empowering Your Electrical Project Making Experience
+              </h2>
+              <p className="text-gray-500 sm:text-xl dark:text-gray-400">
+                At ElectroMarket, we focus on providing a seamless and secure
+                shopping experience for all your electrical needs.
+              </p>
             </div>
-          </div>
-        </div>
-
-        <div className="flex flex-col items-center w-full pb-10 pt-8 sm:py-5">
-          <div className="container flex flex-col gap-6 px-4 md:px-5">
-            <div className="flex flex-col items-start gap-1 w-full md:w-2/3 lg:w-1/2">
-              <Heading size="6xl" as="h2">
-                HighLight
-              </Heading>
-            </div>
-            <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <Slider
-                autoPlay
-                autoPlayInterval={2000}
-                responsive={{
-                  0: { items: 1 },
-                  550: { items: 1 },
-                  1050: { items: 1 },
-                }}
-                disableDotsControls
-                activeIndex={sliderState}
-                onSlideChanged={(e) => setSliderState(e?.item)}
-                ref={sliderRef}
-              >
-                {[...Array(3)].map((_, index) => (
-                  <React.Fragment key={index}>
-                    <div className="flex flex-col gap-6 rounded-2xl border-2 border-gray-400 bg-fuchsia-100">
-                      <img
-                        src="/public/Images/20.png"
-                        alt="imageseven"
-                        className="h-52 w-full sm:h-64 md:h-72 lg:h-80 rounded-t-2xl object-contain"
-                      />
-                      <div className="flex flex-col items-center gap-3 pb-10 sm:pb-5 px-4 sm:px-6">
-                        <Heading
-                          size="4xl"
-                          as="h3"
-                          className="text-center text-lg sm:text-xl lg:text-2xl"
-                        >
-                          Starter Kit for Uno R3 Compatible with Arduino IDE
-                          <span className="block text-xs mt-1">
-                            (Images are for illustration purpose only)
-                          </span>
-                        </Heading>
-                        <Button
-                          shape="round"
-                          className="border border-black-900_02 font-inter font-medium px-5"
-                        >
-                          Learn More
-                        </Button>
-                        <Button
-                          shape="round"
-                          className="min-w-[170px] font-inter font-medium px-5 bg-orange-200 hover:bg-orange-400"
-                        >
-                          Buy now
-                        </Button>
-                      </div>
-                    </div>
-                  </React.Fragment>
-                ))}
-              </Slider>
-            </div>
-          </div>
-        </div>
-
-        <div className="container-xs mt-28 flex flex-col gap-[46px] md:p-5 bg-slate-100 self-stretch">
-          <div className="flex flex-col items-start gap-1">
-            <Heading size="6xl" as="h2">
-              Need help?
-            </Heading>
-            <Text size="2xl" as="p" className="tracking-[1.40px]">
-              We&#39;re here to provide all the help you need.
-            </Text>
-          </div>
-          <div className="grid grid-cols-4 gap-10 md:grid-cols-3 sm:grid-cols-1">
-            <div className="flex w-full flex-col items-start gap-[74px] rounded-[24px] border border-solid border-gray-400 px-[21px] py-[33px] md:gap-[55px] sm:gap-[37px] sm:p-5">
-              <div className="flex items-start gap-3 self-stretch">
-                <div className="flex flex-1 flex-col gap-2.5">
-                  <Text
-                    size="5xl"
-                    as="p"
-                    className="w-[52%] leading-[42px] !text-black-900 md:w-full"
-                  >
-                    <>
-                      Order
-                      <br />
-                      support
-                    </>
-                  </Text>
-                  <Text as="p" className="leading-6 !text-gray-700">
-                    Track your order and check order FAQ.
-                  </Text>
-                </div>
-                <Img
-                  src="\public\assets\order support.svg"
-                  alt="icon"
-                  className="h-[48px] w-[48px]"
-                />
-              </div>
-              <Button
-                size="lg"
-                className="min-w-[169px] gap-2.5 rounded-[24px] border border-solid border-black-900_02 font-inter font-medium sm:px-5"
-              >
-                Learn More
-              </Button>
-            </div>
-            <div className="flex w-full flex-col items-start gap-[74px] rounded-[24px] border border-solid border-gray-400 px-[21px] py-[33px] md:gap-[55px] sm:gap-[37px] sm:p-5">
-              <div className="flex items-start gap-3 self-stretch">
-                <div className="flex flex-1 flex-col gap-2.5">
-                  <Text
-                    size="5xl"
-                    as="p"
-                    className="w-[51%] leading-[42px] !text-black-900 md:w-full"
-                  >
-                    <>
-                      Repair
-                      <br />
-                      request
-                    </>
-                  </Text>
-                  <Text as="p" className="leading-6 !text-gray-700">
-                    Request repair service conveniently online.
-                  </Text>
-                </div>
-                <Img
-                  src="\public\assets\repair.svg"
-                  alt="icon"
-                  className="h-[48px] w-[48px]"
-                />
-              </div>
-              <Button
-                size="lg"
-                className="min-w-[169px] gap-2.5 rounded-[24px] border border-solid border-black-900_02 font-inter font-medium sm:px-5"
-              >
-                Learn More
-              </Button>
-            </div>
-            <div className="flex w-full flex-col items-start gap-[35px] rounded-[24px] border border-solid border-gray-400 px-[21px] py-[33px] sm:p-5">
-              <div className="flex items-start gap-3 self-stretch">
-                <div className="flex flex-1 flex-col items-start gap-[7px]">
-                  <Text size="5xl" as="p" className="!text-black-900">
-                    Quick help
-                  </Text>
-                  <Text as="p" className="w-full leading-6 !text-gray-700">
-                    Get instant help on shopping.
-                  </Text>
-                </div>
-                <Img
-                  src="\public\assets\quick help.svg"
-                  alt="icon"
-                  className="h-[48px] w-[48px]"
-                />
-              </div>
-              <Button
-                size="lg"
-                className="min-w-[169px] gap-2.5 rounded-[24px] border border-solid border-black-900_02 font-inter font-medium sm:px-5"
-              >
-                Learn More
-              </Button>
-            </div>
-            <div className="flex w-full flex-col items-start gap-[35px] rounded-[24px] border border-solid border-gray-400 px-[21px] py-[33px] sm:p-5">
-              <div className="flex items-start gap-3 self-stretch">
-                <div className="flex flex-1 flex-col items-start gap-1.5">
-                  <Text size="5xl" as="p" className="!text-black-900">
-                    WhatsApp
-                  </Text>
-                  <Text as="p" className="w-full leading-6 !text-gray-700">
-                    Talk to our customer service via WhatsApp
-                  </Text>
-                </div>
-                <Img
-                  src="\public\assets\whatsapp.svg"
-                  alt="volume"
-                  className="h-[48px] w-[48px]"
-                />
-              </div>
-              <Button
-                size="lg"
-                className="min-w-[169px] gap-2.5 rounded-[24px] border border-solid border-black-900_02 font-inter font-medium sm:px-5"
-              >
-                Learn More
-              </Button>
-            </div>
-            <div className="flex w-full flex-col items-start gap-[35px] rounded-[24px] border border-solid border-gray-400 px-[21px] pb-[33px] pt-8 sm:p-5">
-              <div className="flex items-start gap-3 self-stretch">
-                <div className="flex flex-1 flex-col items-start gap-2.5">
-                  <Text size="5xl" as="p" className="!text-black-900">
-                    Email us
-                  </Text>
-                  <Text as="p" className="w-full leading-6 !text-gray-700">
-                    Send an Email to TechVolt Customer Service
-                  </Text>
-                </div>
-                <Img
-                  src="\public\assets\mail.svg"
-                  alt="icon"
-                  className="h-[48px] w-[48px]"
-                />
-              </div>
-              <Button
-                size="lg"
-                className="min-w-[169px] gap-2.5 rounded-[24px] border border-solid border-black-900_02 font-inter font-medium sm:px-5"
-              >
-                Learn More
-              </Button>
-            </div>
-            <div className="flex w-full flex-col items-start gap-[35px] rounded-[24px] border border-solid border-gray-400 px-[21px] pb-[33px] pt-8 sm:p-5">
-              <div className="flex items-start justify-center gap-2.5 self-stretch">
-                <div className="flex flex-1 flex-col items-start gap-2.5">
-                  <Text size="5xl" as="p" className="!text-black-900">
-                    Call us
-                  </Text>
-                  <Text as="p" className="w-full leading-6 !text-gray-700">
-                    Speak directly with our support representatives.
-                  </Text>
-                </div>
-                <Img
-                  src="\public\assets\call.svg"
-                  alt="icon"
-                  className="h-[48px] w-[48px]"
-                />
-              </div>
-              <Button
-                size="lg"
-                className="min-w-[169px] gap-2.5 rounded-[24px] border border-solid border-black-900_02 font-inter font-medium sm:px-5"
-              >
-                Learn More
-              </Button>
-            </div>
-          </div>
-        </div>
-
-        <footer className="dark:bg-gray-900 self-stretch">
-          <div className="mx-auto w-full max-w-screen-xl">
-            <div className="grid grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-4">
+            <div className="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0">
               <div>
-                <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
-                  Company
-                </h2>
-                <ul className="text-gray-500 dark:text-gray-400 font-medium">
-                  <li className="mb-4">
-                    <a href="#" className=" hover:underline">
-                      About
-                    </a>
-                  </li>
-                  <li className="mb-4">
-                    <a href="#" className="hover:underline">
-                      Careers
-                    </a>
-                  </li>
-                  <li className="mb-4">
-                    <a href="#" className="hover:underline">
-                      Brand Center
-                    </a>
-                  </li>
-                  <li className="mb-4">
-                    <a href="#" className="hover:underline">
-                      Blog
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
-                  Help center
-                </h2>
-                <ul className="text-gray-500 dark:text-gray-400 font-medium">
-                  <li className="mb-4">
-                    <a href="#" className="hover:underline">
-                      Discord Server
-                    </a>
-                  </li>
-                  <li className="mb-4">
-                    <a href="#" className="hover:underline">
-                      Twitter
-                    </a>
-                  </li>
-                  <li className="mb-4">
-                    <a href="#" className="hover:underline">
-                      Facebook
-                    </a>
-                  </li>
-                  <li className="mb-4">
-                    <a href="#" className="hover:underline">
-                      Contact Us
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
-                  Legal
-                </h2>
-                <ul className="text-gray-500 dark:text-gray-400 font-medium">
-                  <li className="mb-4">
-                    <a href="#" className="hover:underline">
-                      Privacy Policy
-                    </a>
-                  </li>
-                  <li className="mb-4">
-                    <a href="#" className="hover:underline">
-                      Licensing
-                    </a>
-                  </li>
-                  <li className="mb-4">
-                    <a href="#" className="hover:underline">
-                      Terms &amp; Conditions
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
-                  Download
-                </h2>
-                <ul className="text-gray-500 dark:text-gray-400 font-medium">
-                  <li className="mb-4">
-                    <a href="#" className="hover:underline">
-                      iOS
-                    </a>
-                  </li>
-                  <li className="mb-4">
-                    <a href="#" className="hover:underline">
-                      Android
-                    </a>
-                  </li>
-                  <li className="mb-4">
-                    <a href="#" className="hover:underline">
-                      Windows
-                    </a>
-                  </li>
-                  <li className="mb-4">
-                    <a href="#" className="hover:underline">
-                      MacOS
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div className="px-4 py-6 bg-gray-100 dark:bg-gray-700 md:flex md:items-center md:justify-between">
-              <span className="text-sm text-gray-500 dark:text-gray-300 sm:text-center">
-                © 2024 ElectroMarket. All Rights Reserved.
-              </span>
-              <div className="flex mt-4 sm:justify-center md:mt-0 space-x-5 rtl:space-x-reverse">
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-gray-900 dark:hover:text-white"
-                >
+                <div className="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
                   <svg
-                    className="w-4 h-4"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="currentColor"
-                    viewBox="0 0 8 19"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M6.135 3H8V0H6.135a4.147 4.147 0 0 0-4.142 4.142V6H0v3h2v9.938h3V9h2.021l.592-3H5V3.591A.6.6 0 0 1 5.592 3h.543Z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  <span className="sr-only">Facebook page</span>
-                </a>
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-gray-900 dark:hover:text-white"
-                >
-                  <svg
-                    className="w-4 h-4"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="currentColor"
-                    viewBox="0 0 21 16"
-                  >
-                    <path d="M16.942 1.556a16.3 16.3 0 0 0-4.126-1.3 12.04 12.04 0 0 0-.529 1.1 15.175 15.175 0 0 0-4.573 0 11.585 11.585 0 0 0-.535-1.1 16.274 16.274 0 0 0-4.129 1.3A17.392 17.392 0 0 0 .182 13.218a15.785 15.785 0 0 0 4.963 2.521c.41-.564.773-1.16 1.084-1.785a10.63 10.63 0 0 1-1.706-.83c.143-.106.283-.217.418-.33a11.664 11.664 0 0 0 10.118 0c.137.113.277.224.418.33-.544.328-1.116.606-1.71.832a12.52 12.52 0 0 0 1.084 1.785 16.46 16.46 0 0 0 5.064-2.595 17.286 17.286 0 0 0-2.973-11.59ZM6.678 10.813a1.941 1.941 0 0 1-1.8-2.045 1.93 1.93 0 0 1 1.8-2.047 1.919 1.919 0 0 1 1.8 2.047 1.93 1.93 0 0 1-1.8 2.045Zm6.644 0a1.94 1.94 0 0 1-1.8-2.045 1.93 1.93 0 0 1 1.8-2.047 1.918 1.918 0 0 1 1.8 2.047 1.93 1.93 0 0 1-1.8 2.045Z" />
-                  </svg>
-                  <span className="sr-only">Discord community</span>
-                </a>
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-gray-900 dark:hover:text-white"
-                >
-                  <svg
-                    className="w-4 h-4"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="currentColor"
-                    viewBox="0 0 20 17"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M20 1.892a8.178 8.178 0 0 1-2.355.635 4.074 4.074 0 0 0 1.8-2.235 8.344 8.344 0 0 1-2.605.98A4.13 4.13 0 0 0 13.85 0a4.068 4.068 0 0 0-4.1 4.038 4 4 0 0 0 .105.919A11.705 11.705 0 0 1 1.4.734a4.006 4.006 0 0 0 1.268 5.392 4.165 4.165 0 0 1-1.859-.5v.05A4.057 4.057 0 0 0 4.1 9.635a4.19 4.19 0 0 1-1.856.07 4.108 4.108 0 0 0 3.831 2.807A8.36 8.36 0 0 1 0 14.184 11.732 11.732 0 0 0 6.291 16 11.502 11.502 0 0 0 17.964 4.5c0-.177 0-.35-.012-.523A8.143 8.143 0 0 0 20 1.892Z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  <span className="sr-only">Twitter page</span>
-                </a>
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-gray-900 dark:hover:text-white"
-                >
-                  <svg
-                    className="w-4 h-4"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
+                    className="w-5 h-5 text-primary-600 lg:w-6 lg:h-6 dark:text-primary-300"
                     fill="currentColor"
                     viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
                       fillRule="evenodd"
-                      d="M10 .333A9.911 9.911 0 0 0 6.866 19.65c.5.092.678-.215.678-.477 0-.237-.01-1.017-.014-1.845-2.757.6-3.338-1.169-3.338-1.169a2.627 2.627 0 0 0-1.1-1.451c-.9-.615.07-.6.07-.6a2.084 2.084 0 0 1 1.518 1.021 2.11 2.11 0 0 0 2.884.823c.044-.503.268-.973.63-1.325-2.2-.25-4.516-1.1-4.516-4.9A3.832 3.832 0 0 1 4.7 7.068a3.56 3.56 0 0 1 .095-2.623s.832-.266 2.726 1.016a9.409 9.409 0 0 1 4.962 0c1.89-1.282 2.717-1.016 2.717-1.016.366.83.402 1.768.1 2.623a3.827 3.827 0 0 1 1.02 2.659c0 3.807-2.319 4.644-4.525 4.889a2.366 2.366 0 0 1 .673 1.834c0 1.326-.012 2.394-.012 2.72 0 .263.18.572.681.475A9.911 9.911 0 0 0 10 .333Z"
+                      d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 0l-2 2a1 1 0 101.414 1.414L8 10.414l1.293 1.293a1 1 0 001.414 0l4-4z"
                       clipRule="evenodd"
-                    />
+                    ></path>
                   </svg>
-                  <span className="sr-only">GitHub account</span>
-                </a>
+                </div>
+                <h3 className="mb-2 text-xl font-bold dark:text-white">
+                  Quality Assurance
+                </h3>
+                <p className="text-gray-500 dark:text-gray-400">
+                  We ensure the highest quality standards for all our electrical
+                  products, providing you with reliable and durable options.
+                </p>
+              </div>
+              <div>
+                <div className="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
+                  <svg
+                    className="w-5 h-5 text-primary-600 lg:w-6 lg:h-6 dark:text-primary-300"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"></path>
+                  </svg>
+                </div>
+                <h3 className="mb-2 text-xl font-bold dark:text-white">
+                  Mentor Support
+                </h3>
+                <p className="text-gray-500 dark:text-gray-400">
+                  Our dedicated support team is here to assist you with any
+                  queries, ensuring a smooth shopping experience.
+                </p>
+              </div>
+              <div>
+                <div className="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
+                  <svg
+                    className="w-5 h-5 text-primary-600 lg:w-6 lg:h-6 dark:text-primary-300"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1 5a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z"
+                      clipRule="evenodd"
+                    ></path>
+                    <path d="M2 13.692V16a2 2 0 002 2h12a2 2 0 002-2v-2.308A24.974 24.974 0 0110 15c-2.796 0-5.487-.46-8-1.308z"></path>
+                  </svg>
+                </div>
+                <h3 className="mb-2 text-xl font-bold dark:text-white">
+                  Secure Payments
+                </h3>
+                <p className="text-gray-500 dark:text-gray-400">
+                  Our platform ensures secure and hassle-free transactions for a
+                  worry-free shopping experience.
+                </p>
+              </div>
+              <div>
+                <div className="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
+                  <svg
+                    className="w-5 h-5 text-primary-600 lg:w-6 lg:h-6 dark:text-primary-300"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z"></path>
+                    <path
+                      fillRule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z"
+                      clipRule="evenodd"
+                    ></path>
+                  </svg>
+                </div>
+                <h3 className="mb-2 text-xl font-bold dark:text-white">
+                  Innovative Solutions
+                </h3>
+                <p className="text-gray-500 dark:text-gray-400">
+                  We bring you the latest in electrical innovations to keep your
+                  projects up-to-date with the best technology available.
+                </p>
+              </div>
+              <div>
+                <div className="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
+                  <svg
+                    className="w-5 h-5 text-primary-600 lg:w-6 lg:h-6 dark:text-primary-300"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M7 3a1 1 0 000 2h6a1 1 0 100-2H7zM4 7a1 1 0 011-1h10a1 1 0 110 2H5a1 1 0 01-1-1zM2 11a2 2 0 012-2h12a2 2 0 012 2v4a2 2 0 01-2 2H4a2 2 0 01-2-2v-4z"></path>
+                  </svg>
+                </div>
+                <h3 className="mb-2 text-xl font-bold dark:text-white">
+                  User-Friendly Interface
+                </h3>
+                <p className="text-gray-500 dark:text-gray-400">
+                  Our platform is designed to be intuitive and easy to use,
+                  ensuring a pleasant shopping experience from start to finish.
+                </p>
+              </div>
+              <div>
+                <div className="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
+                  <svg
+                    className="w-5 h-5 text-primary-600 lg:w-6 lg:h-6 dark:text-primary-300"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z"
+                      clipRule="evenodd"
+                    ></path>
+                  </svg>
+                </div>
+                <h3 className="mb-2 text-xl font-bold dark:text-white">
+                  Efficiency and Speed
+                </h3>
+                <p className="text-gray-500 dark:text-gray-400">
+                  Our efficient logistics and fast delivery options ensure that
+                  you receive your electrical products quickly and reliably.
+                </p>
               </div>
             </div>
           </div>
-        </footer>
+        </section>
+        <section className="bg-white dark:bg-gray-900">
+          <div className="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
+            <img
+              className="w-full dark:hidden"
+              src="https://electromarket.com/images/light-theme-dashboard.svg"
+              alt="ElectroMarket dashboard"
+            />
+            <img
+              className="w-full hidden dark:block"
+              src="\public\Images\cta-dashboard-mockup-dark.svg"
+              alt="ElectroMarket dashboard"
+            />
+            <div className="mt-4 md:mt-0">
+              <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
+                Your One-Stop Shop for All Electrical Needs
+              </h2>
+              <p className="mb-6 font-light text-gray-500 md:text-lg dark:text-gray-400">
+                ElectroMarket simplifies your shopping experience by providing a
+                wide range of quality electrical products. Whether you are a
+                professional or a DIY enthusiast, we have everything you need to
+                get the job done.
+              </p>
+              <a
+                href="/productgrid"
+                className="inline-flex items-center text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:focus:ring-primary-900"
+              >
+                Shop Now
+                <svg
+                  className="ml-2 -mr-1 w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                    clipRule="evenodd"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </section>
+        <Footer className="w-full" />
       </div>
     </>
   );
