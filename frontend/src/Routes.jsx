@@ -10,6 +10,7 @@ import SighinAdmin from "./pages/SigninAdmin/index.jsx";
 import About from "./pages/About/index.jsx";
 import Contact from "./pages/Contact/index.jsx";
 import CreateProduct from "./pages/CreateProduct/index.jsx";
+import ProductDisplay from "./pages/ProductDisplay/index.jsx";
 
 const ProjectRoutes = () => {
   let element = useRoutes([
@@ -50,6 +51,10 @@ const ProjectRoutes = () => {
     {
       path: "/api/v1/admin/createproduct",
       element: <CreateProduct />,
+    },
+    {
+      path: "/aboutproduct",
+      element: <ProductDisplay />,
     },
   ]);
 
