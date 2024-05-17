@@ -11,6 +11,7 @@ import About from "./pages/About/index.jsx";
 import Contact from "./pages/Contact/index.jsx";
 import CreateProduct from "./pages/CreateProduct/index.jsx";
 import ProductDisplay from "./pages/ProductDisplay/index.jsx";
+import FeaturedProducts from "./pages/FeaturedProducts/index.jsx";
 
 const ProjectRoutes = () => {
   let element = useRoutes([
@@ -55,6 +56,10 @@ const ProjectRoutes = () => {
     {
       path: "/aboutproduct",
       element: <ProductDisplay />,
+    },
+    {
+      path: "/featuredproducts",
+      element: <FeaturedProducts />,
     },
   ]);
 
