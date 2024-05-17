@@ -6,7 +6,7 @@ function HomepageHerosection() {
           <div className="flex flex-col md:flex-row items-center">
             <div className="md:w-1/2 lg:w-2/3">
               <h1 className="text-4xl md:text-6xl lg:text-7xl text-white font-bold mb-6">
-                Welcome to <br className="hidden md:block" />
+                Welcome to SLIET&apos;s <br className="hidden md:block" />
                 <span className="text-cyan-700">ElectroMarket</span>
               </h1>
               <p className="text-lg md:text-xl lg:text-2xl text-gray-400 mb-8">

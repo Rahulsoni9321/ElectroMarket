@@ -17,6 +17,9 @@ export default function HomepagePage() {
         <section className="bg-white dark:bg-gray-800 self-stretch">
           <section className="py-12 bg-white sm:py-16 lg:py-20 dark:bg-gray-900">
             <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
+              <h2 className="text-2xl font-bold dark:text-white sm:text-3xl">
+                Our Featured Items
+              </h2>
               <div className="grid grid-cols-2 gap-6 mt-10 lg:mt-16 lg:gap-4 lg:grid-cols-4">
                 <div className="relative group">
                   <div className="overflow-hidden aspect-w-1 aspect-h-1">
@@ -311,7 +314,7 @@ export default function HomepagePage() {
             </div>
             <div className="flex justify-center">
               <a
-                href="/featuredproducts"
+                href="/productgrid"
                 className="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
               >
                 View All
