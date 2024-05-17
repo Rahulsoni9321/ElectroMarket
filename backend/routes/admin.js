@@ -36,7 +36,7 @@ adminrouter.post("/signup", async (req, res) => {
       },
     });
 
-    const token = jwt.sign({ admin: newadmin.id }, process.env.JWT_SECRET_KEY);
+    const token = jwt.sign({ adminid: newadmin.id }, process.env.JWT_SECRET_KEY);
 
     return res.json({
       message: "Admin created Successfully",
@@ -95,11 +95,12 @@ adminrouter.post("/signin", async (req, res) => {
 
 
 adminrouter.post("/createproduct",AdminMiddleware,async (req,res)=>{
-    const payload = req.body;
+    
+    const AdminId = req.headers;
     try {
         const findAdmin = await prisma.admin.findFirst({
             where:{
-                id:payload.AdminId
+                id:AdminId
             }
         })
         if (findAdmin){
@@ -107,6 +108,8 @@ adminrouter.post("/createproduct",AdminMiddleware,async (req,res)=>{
             data:{
                 Title:payload.Title,
                 Description:payload.Description,
+                Price:payload.Price,
+                ImageLink:payload.ImageLink,
                 AdminId:payload.AdminId,
                 createdAt:new Date()
             }
