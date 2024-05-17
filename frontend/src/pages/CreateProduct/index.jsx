@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Helmet from "react-helmet";
-import Chatbot from "../ChatBot";
 import Footer from "../../components/Footer";
 import HomepageHeader from "../../components/HomepageHeader";
 
@@ -12,8 +11,6 @@ const CreateProduct = () => {
   const [image, setImage] = useState("");
   const [price, setPrice] = useState("");
   const [youtubeLink, setYoutubeLink] = useState("");
-  const [adminName, setAdminName] = useState("");
-  const [adminEmail, setAdminEmail] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -24,8 +21,6 @@ const CreateProduct = () => {
       formData.append("image", image);
       formData.append("price", price);
       formData.append("youtubeLink", youtubeLink);
-      formData.append("adminName", adminName);
-      formData.append("adminEmail", adminEmail);
 
       const response = await fetch(
         "http://localhost:3001/api/v1/admin/createproduct",
@@ -51,145 +46,108 @@ const CreateProduct = () => {
       </Helmet>
       <div className="flex flex-col items-center gap-10 bg-white-A700 dark:bg-gray-300 min-h-screen">
         <HomepageHeader shopOne="Sign in" className="w-full" />
-        <section className="flex flex-col md:flex-row w-full p-6 space-y-6 md:space-y-0 md:space-x-6">
-          <div className="flex flex-col w-full md:w-2/3 space-y-6">
+        <section className="py-8 bg-white md:py-16 dark:bg-gray-800 antialiased w-full">
+          <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0 w-full max-w-screen-md">
             <form
               onSubmit={handleSubmit}
-              className="space-y-6"
+              className="space-y-6 w-full"
               encType="multipart/form-data"
             >
-              <div>
-                <label
-                  htmlFor="image"
-                  className="block text-sm font-medium text-gray-700"
-                >
-                  Image
-                </label>
-                <input
-                  type="file"
-                  name="image"
-                  id="image"
-                  accept="image/*"
-                  onChange={(e) => setImage(e.target.files[0])}
-                  required
-                  className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                />
+              <div className="grid gap-6 mb-6 md:grid-cols-2 lg:grid-cols-1 w-full">
+                <div className="w-full">
+                  <label
+                    htmlFor="image"
+                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  >
+                    Image
+                  </label>
+                  <input
+                    type="file"
+                    id="image"
+                    name="image"
+                    accept="image/*"
+                    onChange={(e) => setImage(e.target.files[0])}
+                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    required
+                  />
+                </div>
+
+                <div className="w-full lg:col-span-1">
+                  <label
+                    htmlFor="title"
+                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  >
+                    Title
+                  </label>
+                  <input
+                    type="text"
+                    id="title"
+                    name="title"
+                    value={title}
+                    onChange={(e) => setTitle(e.target.value)}
+                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    required
+                  />
+                </div>
+
+                <div className="w-full">
+                  <label
+                    htmlFor="price"
+                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  >
+                    Price
+                  </label>
+                  <input
+                    type="number"
+                    id="price"
+                    name="price"
+                    value={price}
+                    onChange={(e) => setPrice(e.target.value)}
+                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    required
+                  />
+                </div>
+                <div className="w-full md:col-span-2 lg:col-span-1">
+                  <label
+                    htmlFor="description"
+                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  >
+                    Description
+                  </label>
+                  <textarea
+                    id="description"
+                    name="description"
+                    value={description}
+                    onChange={(e) => setDescription(e.target.value)}
+                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    required
+                  ></textarea>
+                </div>
               </div>
-              <div>
-                <label
-                  htmlFor="title"
-                  className="block text-sm font-medium text-gray-700"
-                >
-                  Title
-                </label>
-                <input
-                  type="text"
-                  name="title"
-                  id="title"
-                  value={title}
-                  onChange={(e) => setTitle(e.target.value)}
-                  required
-                  className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                />
-              </div>
-              <div>
-                <label
-                  htmlFor="price"
-                  className="block text-sm font-medium text-gray-700"
-                >
-                  Price
-                </label>
-                <input
-                  type="number"
-                  name="price"
-                  id="price"
-                  value={price}
-                  onChange={(e) => setPrice(e.target.value)}
-                  required
-                  className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                />
-              </div>
-              <div>
-                <label
-                  htmlFor="description"
-                  className="block text-sm font-medium text-gray-700"
-                >
-                  Description
-                </label>
-                <textarea
-                  id="description"
-                  name="description"
-                  value={description}
-                  onChange={(e) => setDescription(e.target.value)}
-                  required
-                  className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                ></textarea>
-              </div>
-              <div>
+              <div className="mb-6 w-full">
                 <label
                   htmlFor="youtubeLink"
-                  className="block text-sm font-medium text-gray-700"
+                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >
                   YouTube Link
                 </label>
                 <input
                   type="url"
-                  name="youtubeLink"
                   id="youtubeLink"
+                  name="youtubeLink"
                   value={youtubeLink}
                   onChange={(e) => setYoutubeLink(e.target.value)}
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   required
-                  className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                 />
               </div>
-              <div className="flex space-x-4">
-                <div className="flex-1">
-                  <label
-                    htmlFor="adminName"
-                    className="block text-sm font-medium text-gray-700"
-                  >
-                    Admin Name
-                  </label>
-                  <input
-                    type="text"
-                    name="adminName"
-                    id="adminName"
-                    value={adminName}
-                    onChange={(e) => setAdminName(e.target.value)}
-                    required
-                    className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                  />
-                </div>
-                <div className="flex-1">
-                  <label
-                    htmlFor="adminEmail"
-                    className="block text-sm font-medium text-gray-700"
-                  >
-                    Admin Email
-                  </label>
-                  <input
-                    type="email"
-                    name="adminEmail"
-                    id="adminEmail"
-                    value={adminEmail}
-                    onChange={(e) => setAdminEmail(e.target.value)}
-                    required
-                    className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                  />
-                </div>
-              </div>
-              <div>
-                <button
-                  type="submit"
-                  className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                >
-                  Add Product
-                </button>
-              </div>
+              <button
+                type="submit"
+                className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              >
+                Add Product
+              </button>
             </form>
-          </div>
-          <div className="w-full md:w-1/3 flex flex-col items-center">
-            <Chatbot />
           </div>
         </section>
       </div>

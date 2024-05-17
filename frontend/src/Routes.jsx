@@ -10,6 +10,7 @@ import SighinAdmin from "./pages/SigninAdmin/index.jsx";
 import About from "./pages/About/index.jsx";
 import Contact from "./pages/Contact/index.jsx";
 import CreateProduct from "./pages/CreateProduct/index.jsx";
+import ProductDisplay from "./pages/ProductDisplay/index.jsx";
 
 const ProjectRoutes = () => {
   let element = useRoutes([
@@ -24,19 +25,19 @@ const ProjectRoutes = () => {
       element: <Cart />,
     },
     {
-      path: "/api/v1/user/signin",
+      path: "/user/signin",
       element: <Signin />,
     },
     {
-      path: "/api/v1/user/signup",
+      path: "/user/signup",
       element: <SignUp />,
     },
     {
-      path: "/api/v1/admin/signup",
+      path: "/admin/signup",
       element: <SignupAdmin />,
     },
     {
-      path: "/api/v1/admin/signin",
+      path: "/admin/signin",
       element: <SighinAdmin />,
     },
     {
@@ -48,8 +49,12 @@ const ProjectRoutes = () => {
       element: <Contact />,
     },
     {
-      path: "/api/v1/admin/createproduct",
+      path: "/admin/createproduct",
       element: <CreateProduct />,
+    },
+    {
+      path: "/aboutproduct",
+      element: <ProductDisplay />,
     },
   ]);
 

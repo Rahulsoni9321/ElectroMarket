@@ -118,12 +118,6 @@ export default function SigninAdminPage() {
                         </label>
                       </div>
                     </div>
-                    <a
-                      href="#"
-                      className="text-sm font-medium text-primary-600 hover:underline text-white"
-                    >
-                      Forgot password?
-                    </a>
                   </div>
                   <button
                     type="submit"
@@ -134,7 +128,7 @@ export default function SigninAdminPage() {
                   <p className="text-sm font-light text-gray-500 dark:text-gray-400">
                     Sign Up As Admin{" "}
                     <a
-                      href="/api/v1/admin/signup"
+                      href="/admin/signup"
                       className="font-medium text-primary-600 hover:underline dark:text-primary-500"
                     >
                       Sign up

@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet";
 import { Text, Button, Img, Heading, Slider, RatingBar } from "../components";
 import HomepageHeader from "../components/HomepageHeader";
 import HomepageHerosection from "../components/HomepageHerosection";
-import HomepageTab from "../components/HomepageTab";
+// import HomepageTab from "../components/HomepageTab";
 
 export default function HomepagePage() {
   const [sliderState, setSliderState] = React.useState(0);
@@ -204,19 +204,15 @@ export default function HomepagePage() {
             </div>
           </div>
         </div>
-        <div className="mt-10 flex flex-col items-center self-stretch pb-10 pt-[31px] sm:py-5">
-          <div className="container-xs flex flex-col gap-6 md:p-5">
-            <div className="flex w-[64%] flex-col items-start gap-1 md:w-full">
+
+        <div className="flex flex-col items-center w-full pb-10 pt-8 sm:py-5">
+          <div className="container flex flex-col gap-6 px-4 md:px-5">
+            <div className="flex flex-col items-start gap-1 w-full md:w-2/3 lg:w-1/2">
               <Heading size="6xl" as="h2">
                 HighLight
               </Heading>
-              <HomepageTab
-                text3="Air Care"
-                text4="OLED evo"
-                className="self-stretch"
-              />
             </div>
-            <div className="flex w-full max-w-[1360px]">
+            <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <Slider
                 autoPlay
                 autoPlayInterval={2000}
@@ -227,34 +223,37 @@ export default function HomepagePage() {
                 }}
                 disableDotsControls
                 activeIndex={sliderState}
-                onSlideChanged={(e) => {
-                  setSliderState(e?.item);
-                }}
+                onSlideChanged={(e) => setSliderState(e?.item)}
                 ref={sliderRef}
-                items={[...Array(3)].map(() => (
-                  <React.Fragment key={Math.random()}>
-                    <div className="flex flex-col gap-6 rounded-[30px] border-2 border-solid bg-red-100 border-gray-400 bg-gray-300_02">
-                      <Img
-                        src="\public\Images\20.png"
+              >
+                {[...Array(3)].map((_, index) => (
+                  <React.Fragment key={index}>
+                    <div className="flex flex-col gap-6 rounded-2xl border-2 border-gray-400 bg-fuchsia-100">
+                      <img
+                        src="/public/Images/20.png"
                         alt="imageseven"
-                        className="h-[200px] rounded-tl-[30px] rounded-tr-[30px] object-contain"
+                        className="h-52 w-full sm:h-64 md:h-72 lg:h-80 rounded-t-2xl object-contain"
                       />
-                      <div className="flex flex-col items-center gap-[13px] pb-10 sm:pb-5">
-                        <Heading size="4xl" as="h3">
+                      <div className="flex flex-col items-center gap-3 pb-10 sm:pb-5 px-4 sm:px-6">
+                        <Heading
+                          size="4xl"
+                          as="h3"
+                          className="text-center text-lg sm:text-xl lg:text-2xl"
+                        >
                           Starter Kit for Uno R3 Compatible with Arduino IDE
-                          <span className="items-center text-xs">
+                          <span className="block text-xs mt-1">
                             (Images are for illustration purpose only)
                           </span>
                         </Heading>
                         <Button
                           shape="round"
-                          className="border border-solid border-black-900_02 font-inter font-medium sm:px-5"
+                          className="border border-black-900_02 font-inter font-medium px-5"
                         >
                           Learn More
                         </Button>
                         <Button
                           shape="round"
-                          className="min-w-[170px] font-inter font-medium sm:px-5 bg-orange-200 hover:bg-orange-400"
+                          className="min-w-[170px] font-inter font-medium px-5 bg-orange-200 hover:bg-orange-400"
                         >
                           Buy now
                         </Button>
@@ -262,7 +261,7 @@ export default function HomepagePage() {
                     </div>
                   </React.Fragment>
                 ))}
-              />
+              </Slider>
             </div>
           </div>
         </div>
