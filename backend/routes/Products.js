@@ -64,3 +64,22 @@ productrouter.get("/:id",async (req,res)=>{
         })
     }
 })
+
+
+productrouter.get("/:name",async (req,res)=>{
+       const productname = req.params.name;
+       try {
+        const productlist = await prisma.product.findMany({
+             where:{
+              Title:{}
+             }
+        })
+         }
+         catch(error) {
+          console.error(error);
+          return res.status(500).json({
+            message:"Something went wrong while fetching product. Please try again",
+            details:error
+          });
+         }
+})
