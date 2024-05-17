@@ -165,6 +165,9 @@ function ProductDisplay() {
                 <p className="mb-6 text-gray-500 dark:text-gray-400">
                   description
                 </p>
+                <p className="mb-6 text-gray-500 dark:text-gray-400">
+                  <a href="#">youtube link</a>
+                </p>
               </div>
             </div>
           </div>
