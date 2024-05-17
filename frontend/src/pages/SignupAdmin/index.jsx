@@ -30,10 +30,10 @@ export default function SignUpPageAdmin() {
   };
 
   const [data, setData] = useState({
-    username: "",
-    email: "",
-    password: "",
-    phone: "",
+    Username: "",
+    Email: "",
+    Password: "",
+    PhoneNumber: "",
   });
   const [error, setError] = useState("");
   const navigate = useNavigate();
@@ -101,7 +101,7 @@ export default function SignUpPageAdmin() {
                     <input
                       type="text"
                       name="username"
-                      value={data.username}
+                      value={data.Username}
                       onChange={handleChange}
                       id="username"
                       placeholder="Username"
@@ -115,12 +115,12 @@ export default function SignUpPageAdmin() {
                       htmlFor="email"
                       className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                     >
-                      Your email
+                      Email
                     </label>
                     <input
                       type="email"
                       name="email"
-                      value={data.email}
+                      value={data.Email}
                       onChange={handleChange}
                       id="email"
                       className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
@@ -140,7 +140,7 @@ export default function SignUpPageAdmin() {
                       name="phone"
                       id="phone"
                       placeholder="1234567890"
-                      value={[phoneNumber, data.phone]}
+                      value={[phoneNumber, data.PhoneNumber]}
                       onChange={[handlePhoneChange, handleChange]}
                       className={`bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 ${
                         phoneError ? "border-red-500" : ""
@@ -165,7 +165,7 @@ export default function SignUpPageAdmin() {
                       type="password"
                       name="password"
                       onChange={handleChange}
-                      value={data.password}
+                      value={data.Password}
                       id="password"
                       placeholder="••••••••"
                       className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"

@@ -20,7 +20,7 @@ export default function ProductGridPage() {
         <title>ElectroMarket</title>
         <meta name="description" content="Web site" />
       </Helmet>
-      <div className="flex w-full flex-col gap-10 bg-white-A700">
+      <div className="flex w-full flex-col gap-10 bg-zinc-300">
         <HomepageHeader shopOne="Shop" />
         <div className="flex justify-center">
           <div className="container-xs flex items-start justify-center gap-10 md:flex-col md:p-5">

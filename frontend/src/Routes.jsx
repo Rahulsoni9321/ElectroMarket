@@ -9,6 +9,7 @@ import SignupAdmin from "./pages/SignupAdmin/index.jsx";
 import SighinAdmin from "./pages/SigninAdmin/index.jsx";
 import About from "./pages/About/index.jsx";
 import Contact from "./pages/Contact/index.jsx";
+import CreateProduct from "./pages/CreateProduct/index.jsx";
 
 const ProjectRoutes = () => {
   let element = useRoutes([
@@ -45,6 +46,10 @@ const ProjectRoutes = () => {
     {
       path: "contact",
       element: <Contact />,
+    },
+    {
+      path: "/api/v1/admin/createproduct",
+      element: <CreateProduct />,
     },
   ]);
 
