@@ -1,28 +1,21 @@
-import axios from "axios";
+import { GoogleGenerativeAI } from "@google/generative-ai";
 
-export async function call() {
+// Access your API key as an environment variable (see "Set up your API key" above)
 
+// ...
 
-const options = {
-  method: 'POST',
-  url: 'https://llm19.p.rapidapi.com/chat',
-  headers: {
-    'content-type': 'application/json',
-    'X-RapidAPI-Key': 'f4fdb55a1bmsh14f59ccdf535998p170d75jsn53f1dd37107c',
-    'X-RapidAPI-Host': 'llm19.p.rapidapi.com'
-  },
-  data: {
-    chatid: '',
-    role: 'You are a Helpful Assistant.',
-    message: 'Hello! How are you?'
-  }
-};
+// For text-only input, use the gemini-pro model
 
-try {
-	const response = await axios.request(options);
-	console.log(response.data);
-    return response.data;
-} catch (error) {
-	console.error(error);
+// ...
+export async function run(prompts) {
+  
+  const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
+  const model = genAI.getGenerativeModel({ model: "gemini-pro"});
+  const prompt = prompts
+
+  const result = await model.generateContent(prompt);
+  const response = await result.response;
+  const text = response.text();
+ return text;
 }
-}
+
