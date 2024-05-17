@@ -119,12 +119,6 @@ export default function SigninPage() {
                         </label>
                       </div>
                     </div>
-                    <a
-                      href="#"
-                      className="text-sm font-medium text-primary-600 hover:underline text-white"
-                    >
-                      Forgot password?
-                    </a>
                   </div>
                   <button
                     type="submit"
@@ -135,16 +129,7 @@ export default function SigninPage() {
                   <p className="text-sm font-light text-gray-500 dark:text-gray-400">
                     Don’t have an account yet?{" "}
                     <a
-                      href="signup"
-                      className="font-medium text-primary-600 hover:underline dark:text-primary-500"
-                    >
-                      Sign up
-                    </a>
-                  </p>
-                  <p className="text-sm font-light text-gray-500 dark:text-gray-400">
-                    Sign up as Admin{" "}
-                    <a
-                      href="/api/v1/admin/signup"
+                      href="/user/signup"
                       className="font-medium text-primary-600 hover:underline dark:text-primary-500"
                     >
                       Sign up
@@ -153,7 +138,7 @@ export default function SigninPage() {
                   <p className="text-sm font-light text-gray-500 dark:text-gray-400">
                     Sign in as Admin{" "}
                     <a
-                      href="/api/v1/admin/signin"
+                      href="/admin/signin"
                       className="font-medium text-primary-600 hover:underline dark:text-primary-500"
                     >
                       Sign in
