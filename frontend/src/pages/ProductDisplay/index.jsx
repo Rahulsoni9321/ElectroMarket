@@ -2,8 +2,48 @@ import Helmet from "react-helmet";
 import HomepageHeader from "../../components/HomepageHeader";
 import Footer from "../../components/Footer";
 import Chatbot from "../ChatBot";
+import { useEffect, useState } from "react";
+import {useSearchParams } from "react-router-dom";
+import axios from "axios";
 
 function ProductDisplay() {
+  
+  const [productdetails,setproductdetails] = useState({
+       Title:"",
+       Description:"",
+       AdminName:"",
+       Image:"",
+       YoutubeLink:"",
+       AdminEmail:"",
+       Price:""
+  })
+  const [params] = useSearchParams();
+  const productid = params.get("id");
+
+
+  useEffect(()=>{
+    async function getproductdetails() {
+      const response = await axios.get(`http://localhost:3001/api/v1/product/${productid}`);
+      const details = response.data.product;
+      setproductdetails({
+        Title:details.Title,
+        Description:details.Description,
+        Image:details.ImageLink,
+        Price:details.Price,
+        YoutubeLink:details.YoutubeLink,
+        AdminName:details.Admin.AdminName,
+        AdminEmail:details.Admin.AdminEmail
+      })
+      setImage(response.data.product.ImageLink)
+      console.log(response.data);
+    }
+    getproductdetails();
+  },[])
+
+
+  if (!productdetails) {
+           return <div>Loading</div>
+  }
   return (
     <>
       <Helmet>
@@ -16,25 +56,23 @@ function ProductDisplay() {
           <div className="max-w-screen-xl px-4 mx-auto 2xl:px-0">
             <div className="lg:grid lg:grid-cols-2 lg:gap-8 xl:gap-16">
               <div className="shrink-0 max-w-md lg:max-w-lg mx-auto">
-                <img
-                  className="w-full dark:hidden"
-                  src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/imac-front.svg"
+               <img
+                  className="w-96 h-80 z-20"
+                  src={`http://localhost:3001/${productdetails.Image}`}
                   alt=""
-                />
-                <img
-                  className="w-full hidden dark:block"
-                  src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/imac-front-dark.svg"
-                  alt=""
-                />
+                /> 
+              
+               
+               
               </div>
 
               <div className="mt-6 sm:mt-8 lg:mt-0">
                 <h1 className="text-xl font-semibold text-gray-900 sm:text-2xl dark:text-white">
-                  Product name
+                  {productdetails.Title}
                 </h1>
                 <div className="mt-4 sm:items-center sm:gap-4 sm:flex">
                   <p className="text-2xl font-semibold text-gray-900 sm:text-3xl dark:text-white">
-                    price
+                    {productdetails.Price}
                   </p>
                 </div>
 
@@ -96,19 +134,19 @@ function ProductDisplay() {
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <p className="mb-6 text-gray-500 dark:text-gray-400">
-                      description
+                      {productdetails.Description}
                     </p>
                     <p className="mb-6 text-gray-500 dark:text-gray-400">
-                      <a href="#">youtube link</a>
+                      <a href="#">{productdetails.YoutubeLink}</a>
                     </p>
                   </div>
 
                   <div>
                     <p className="mb-6 text-gray-500 dark:text-gray-400">
-                      <a href="#">Admin Name</a>
+                      <a href="#">{productdetails.AdminName}</a>
                     </p>
                     <p className="mb-6 text-gray-500 dark:text-gray-400">
-                      <a href="#">Admin Email</a>
+                      <a href="#">{productdetails.AdminEmail}</a>
                     </p>
                   </div>
                 </div>

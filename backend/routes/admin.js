@@ -4,11 +4,25 @@ import { PrismaClient } from "@prisma/client";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcryptjs";
 import { AdminMiddleware } from "../middlewares/admin.js";
+import multer from "multer";
+import fs from "fs";
+import FormData from "form-data";
+
 const prisma = new PrismaClient();
 dotenv.config({
   path: "../.env",
 });
 export const adminrouter = Router();
+
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, "./ProductImages");
+  },
+  filename: (req, file, cb) => {
+    cb(null, file.originalname);
+  },
+});
+const uploadstorage = multer({ storage: storage });
 
 adminrouter.post("/signup", async (req, res) => {
   const Adminpayload = req.body;
@@ -36,14 +50,17 @@ adminrouter.post("/signup", async (req, res) => {
       },
     });
 
-    const token = jwt.sign({ adminid: newadmin.id }, process.env.JWT_SECRET_KEY);
+    const token = jwt.sign(
+      { adminid: newadmin.id },
+      process.env.JWT_SECRET_KEY
+    );
 
     return res.json({
       message: "Admin created Successfully",
       token: token,
     });
   } catch (error) {
-    console.error(error)
+    console.error(error);
     return res.status(500).json({
       message: "Error while creating Admin. Please try again.",
       details: error,
@@ -85,7 +102,7 @@ adminrouter.post("/signin", async (req, res) => {
       });
     }
   } catch (error) {
-    console.error(error)
+    console.error(error);
     return res.status(500).json({
       message: "Error while Signing In. Please try again.",
       details: error,
@@ -93,44 +110,67 @@ adminrouter.post("/signin", async (req, res) => {
   }
 });
 
+adminrouter.post("/createproduct",uploadstorage.single("file"), async (req, res) => {
+  const AdminId = req.header;
+  const payload = req.body;
+  console.log(req.file)
+  console.log(payload);
+  
+  
+  try {
+    const findAdmin = await prisma.admin.findFirst({
+      where: {
+        id: "664847ab6301d3b8d7f90cdd",
+      },
+    });
+    if (findAdmin) {
+      const newproduct = await prisma.product.create({
+        data: {
+          Title: payload.Title,
+          Description: payload.Description,
+          Price: payload.Price,
+          ImageLink: req.file.filename,
+          YoutubeLink: payload.YoutubeLink,
+          AdminId: "664847ab6301d3b8d7f90cdd",
+          createdAt: new Date(),
+        },
+      });
 
-adminrouter.post("/createproduct",AdminMiddleware,async (req,res)=>{
-    
-    const AdminId = req.headers;
-    try {
-        const findAdmin = await prisma.admin.findFirst({
-            where:{
-                id:AdminId
-            }
-        })
-        if (findAdmin){
-           const newproduct = await prisma.product.create({
-            data:{
-                Title:payload.Title,
-                Description:payload.Description,
-                Price:payload.Price,
-                ImageLink:payload.ImageLink,
-                AdminId:payload.AdminId,
-                createdAt:new Date()
-            }
-           })
+      return res.json({
+        message: "Product Created Successfully.",
+        product: newproduct,
+      });
+    } else {
+      return res.status(400).json({
+        message: "Can't post product because Admin does not exist",
+      });
+    }
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({
+      message:
+        "Something went wrong while creating the product. Please try again.",
+      details: error,
+    });
+  }
+});
 
-           return res.json({
-            message:"Product Created Successfully.",
-            product : newproduct
-           })
-        }
-        else{
-            return res.status(400).json({
-                message:"Can't post product because Admin does not exist"
-            })
-        }
-    }
-    catch(error) {
-      console.error(error)
-           return res.status(500).json({
-            message:"Something went wrong while creating the product. Please try again.",
-            details:error
-           })
-    }
-})
+adminrouter.get("/allcreatedProduct", AdminMiddleware, async (req, res) => {
+  const AdminId = req.header;
+  try {
+    const allproducts = await prisma.product.findMany({
+      where: {
+        AdminId: AdminId,
+      },
+    });
+    return res.json({
+      allproducts: allproducts,
+    });
+  } catch (error) {
+    return res.status(500).json({
+      message:
+        "Something went wrong while fetching all products, Please try again.",
+      details: error,
+    });
+  }
+});

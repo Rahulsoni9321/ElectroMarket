@@ -10,8 +10,12 @@ productrouter.get("/bulk", async (req, res) => {
   try {
     const allproducts = await prisma.product.findMany({
       select: {
+        id:true,
         Title: true,
         Description: true,
+        Price:true,
+        ImageLink:true,
+        YoutubeLink:true,
         createdAt: true,
         Admin: {
           select: {
@@ -27,7 +31,7 @@ productrouter.get("/bulk", async (req, res) => {
     })
   } catch (error) {
     console.error(error)
-    return res.json({
+    return res.status(500).json({
       message: "Error while fetching all products. Please try again.",
       details:error
     });
@@ -41,7 +45,20 @@ productrouter.get("/:id",async (req,res)=>{
         const product = await prisma.product.findFirst({
             where:{
                 id:id
-            }
+            },
+            select: {
+              Title: true,
+              Description: true,
+              Price:true,
+              ImageLink:true,
+              YoutubeLink:true,
+              createdAt: true,
+              Admin: {
+                select: {
+                  AdminName: true,
+                  Email: true,
+                },
+              }}
         })
         if (product) {
             return res.json({
@@ -66,12 +83,14 @@ productrouter.get("/:id",async (req,res)=>{
 })
 
 
-productrouter.get("/:name",async (req,res)=>{
+productrouter.get("/SearchProduct/:name",async (req,res)=>{
        const productname = req.params.name;
        try {
         const productlist = await prisma.product.findMany({
              where:{
-              Title:{}
+             Title:{
+              search:productname
+             }
              }
         })
          }

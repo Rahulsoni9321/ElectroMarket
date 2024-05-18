@@ -2,7 +2,7 @@ import jwt from "jsonwebtoken";
 export function AdminMiddleware(req, res, next) {
   const token = req.headers.authorization;
 
-  if (!token || !token.startswith("Bearer ")) {
+  if (!token) {
     return res.status(403).json({
       message: "Error, Please try again.",
     });
