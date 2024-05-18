@@ -3,8 +3,9 @@ import HomepageHeader from "../../components/HomepageHeader";
 import Footer from "../../components/Footer";
 import Chatbot from "../ChatBot";
 import { useEffect, useState } from "react";
-import {useSearchParams } from "react-router-dom";
+import {useNavigate, useSearchParams } from "react-router-dom";
 import axios from "axios";
+import { useAuthContext } from "../../Context/AuthContext";
 
 function ProductDisplay() {
   
@@ -18,7 +19,10 @@ function ProductDisplay() {
        Price:""
   })
   const [params] = useSearchParams();
+  const [buttoncolor,setbuttoncolor] = useState(false);
+  const {isauthenticated} = useAuthContext();
   const productid = params.get("id");
+  const navigate = useNavigate();
 
 
   useEffect(()=>{
@@ -34,12 +38,21 @@ function ProductDisplay() {
         AdminName:details.Admin.AdminName,
         AdminEmail:details.Admin.AdminEmail
       })
-      setImage(response.data.product.ImageLink)
-      console.log(response.data);
+      
+      
     }
     getproductdetails();
   },[])
-
+  
+  const handleclick = ()=>{
+     if (isauthenticated){
+         setbuttoncolor(!buttoncolor);
+         console.log(buttoncolor)
+     }
+     else {
+      navigate("/user/signin")
+     }
+  }
 
   if (!productdetails) {
            return <div>Loading</div>
@@ -77,10 +90,10 @@ function ProductDisplay() {
                 </div>
 
                 <div className="mt-6 sm:gap-4 sm:items-center sm:flex sm:mt-8">
-                  <a
-                    href="#"
-                    title=""
-                    className="flex items-center justify-center py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+                  <button
+                    
+                    onClick={handleclick}
+                    className={buttoncolor ? "flex items-center justify-center py-2.5 px-5 text-sm font-medium text-red-600 focus:outline-none bg-blend rounded-lg border border-red-500 hover:bg-gray-700  hover:text-primary-700 focus:z-10":"flex items-center justify-center py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"}
                     role="button"
                   >
                     <svg
@@ -101,7 +114,7 @@ function ProductDisplay() {
                       />
                     </svg>
                     Add to favorites
-                  </a>
+                  </button>
 
                   <a
                     href="#"
