@@ -12,7 +12,8 @@ const Chatbot = () => {
   };
 
   return (
-    <div className="mt-8">
+    <div className="mt-8 bg-gray-900 h-full self-stretch border-2 border-gray-500 rounded-lg">
+      <h1 className="text-white">ChatBot</h1>
       <div className="border border-gray-300 rounded-md p-4">
         {/* Render chat messages */}
         {messages.map((message, index) => (
