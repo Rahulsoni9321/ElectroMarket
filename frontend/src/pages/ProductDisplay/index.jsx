@@ -3,33 +3,37 @@ import HomepageHeader from "../../components/HomepageHeader";
 import Footer from "../../components/Footer";
 import Chatbot from "../ChatBot";
 import { useEffect, useState } from "react";
+
 import {useNavigate, useSearchParams } from "react-router-dom";
+
+
 import axios from "axios";
 import { useAuthContext } from "../../Context/AuthContext";
 
 function ProductDisplay() {
-  
-  const [productdetails,setproductdetails] = useState({
-       Title:"",
-       Description:"",
-       AdminName:"",
-       Image:"",
-       YoutubeLink:"",
-       AdminEmail:"",
-       Price:""
-  })
+  const [productdetails, setproductdetails] = useState({
+    Title: "",
+    Description: "",
+    AdminName: "",
+    Image: "",
+    YoutubeLink: "",
+    AdminEmail: "",
+    Price: "",
+  });
   const [params] = useSearchParams();
   const [buttoncolor,setbuttoncolor] = useState(false);
   const {isauthenticated} = useAuthContext();
   const productid = params.get("id");
   const navigate = useNavigate();
 
-
-  useEffect(()=>{
+  useEffect(() => {
     async function getproductdetails() {
-      const response = await axios.get(`http://localhost:3001/api/v1/product/${productid}`);
+      const response = await axios.get(
+        `http://localhost:3001/api/v1/product/${productid}`
+      );
       const details = response.data.product;
       setproductdetails({
+
         Title:details.Title,
         Description:details.Description,
         Image:details.ImageLink,
@@ -54,8 +58,23 @@ function ProductDisplay() {
      }
   }
 
+        Title: details.Title,
+        Description: details.Description,
+        Image: details.ImageLink,
+        Price: details.Price,
+        YoutubeLink: details.YoutubeLink,
+        AdminName: details.Admin.AdminName,
+        AdminEmail: details.Admin.AdminEmail,
+      });
+      setImage(response.data.product.ImageLink);
+      console.log(response.data);
+    }
+    getproductdetails();
+  }, []);
+
+
   if (!productdetails) {
-           return <div>Loading</div>
+    return <div>Loading</div>;
   }
   return (
     <>
@@ -66,17 +85,14 @@ function ProductDisplay() {
       <div className="flex w-full flex-col items-center gap-10 bg-white-A700 dark:bg-gray-800">
         <HomepageHeader shopOne="Sign in" className="self-stretch" />
         <section className="py-8 bg-white md:py-16 dark:bg-gray-800 antialiased self-stretch">
-          <div className="max-w-screen-xl px-4 mx-auto 2xl:px-0">
-            <div className="lg:grid lg:grid-cols-2 lg:gap-8 xl:gap-16">
+          <div className="max-w-screen-xl px-4 mx-auto 2xl:px-0 flex flex-row gap-4 self-stretch">
+            <div className="lg:grid lg:grid-cols-2 lg:gap-8 xl:gap-16 basis-3/4">
               <div className="shrink-0 max-w-md lg:max-w-lg mx-auto">
-               <img
+                <img
                   className="w-96 h-80 z-20"
                   src={`http://localhost:3001/${productdetails.Image}`}
                   alt=""
-                /> 
-              
-               
-               
+                />
               </div>
 
               <div className="mt-6 sm:mt-8 lg:mt-0">
@@ -165,11 +181,12 @@ function ProductDisplay() {
                 </div>
               </div>
             </div>
+            <div className="w-full md:w-1/3 flex flex-col items-center basis-1/4 h-screen">
+              <Chatbot />
+            </div>
           </div>
         </section>
-        <div className="w-full md:w-1/3 flex flex-col items-center">
-          <Chatbot />
-        </div>
+
         <Footer className="self-stretch" />
       </div>
     </>
