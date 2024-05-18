@@ -8,32 +8,37 @@ import HomepageHeader from "../../components/HomepageHeader";
 const CreateProduct = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [image, setImage] = useState("");
+  const [image, setImage] = useState();
   const [price, setPrice] = useState("");
   const [youtubeLink, setYoutubeLink] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      const textprice = price.toString();
       const formData = new FormData();
-      formData.append("title", title);
-      formData.append("description", description);
-      formData.append("image", image);
-      formData.append("price", price);
-      formData.append("youtubeLink", youtubeLink);
-
+      formData.append("Title", title);
+      formData.append("Description", description);
+      formData.append("file", image);
+      formData.append("Price", textprice);
+      formData.append("YoutubeLink", youtubeLink);
+      
+    
       const response = await fetch(
+
         "http://localhost:3001/api/v1/admin/createproduct",
         {
           method: "POST",
           body: formData,
+        
         }
       );
+  
       const data = await response.json();
       console.log(data);
       // Handle success or error
     } catch (error) {
-      console.error("Error:", error);
+      console.error(error);
       // Handle error
     }
   };

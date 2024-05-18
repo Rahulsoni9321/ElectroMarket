@@ -117,7 +117,8 @@ userrouter.post("/wishlist",userMiddleware,async (req,res)=>{
           }
         })
         return res.json({
-          message:"Product successfully added to Wishlist."
+          message:"Product successfully added to Wishlist.",
+          wishlistedProduct:wishlist
         })
       }
       catch(error) {
