@@ -47,18 +47,18 @@ function ProductDisplay() {
     <>
       <Helmet>
         <title>ElectroMarket</title>
-        <meta name="description" content="" />
+        <meta name="description" content="Product details page" />
       </Helmet>
-      <div className="flex w-full flex-col items-center gap-10 bg-white-A700 dark:bg-gray-800">
+      <div className="flex w-full flex-col items-center gap-10 bg-white dark:bg-gray-800 min-h-screen">
         <HomepageHeader shopOne="Sign in" className="self-stretch" />
-        <section className="py-8 bg-white md:py-16 dark:bg-gray-800 antialiased self-stretch">
-          <div className="max-w-screen-xl px-4 mx-auto 2xl:px-0 flex flex-row gap-4 self-stretch">
-            <div className="lg:grid lg:grid-cols-2 lg:gap-8 xl:gap-16 basis-3/4">
+        <section className="py-8 bg-white md:py-16 dark:bg-gray-800 antialiased self-stretch flex flex-col md:flex-row gap-4 w-full">
+          <div className="max-w-screen-xl px-4 mx-auto 2xl:px-0 w-full md:basis-3/4">
+            <div className="lg:grid lg:grid-cols-2 lg:gap-8 xl:gap-16">
               <div className="shrink-0 max-w-md lg:max-w-lg mx-auto">
                 <img
                   className="w-96 h-80 z-20"
                   src={`http://localhost:3001/${productdetails.Image}`}
-                  alt=""
+                  alt={productdetails.Title}
                 />
               </div>
 
@@ -75,12 +75,12 @@ function ProductDisplay() {
                 <div className="mt-6 sm:gap-4 sm:items-center sm:flex sm:mt-8">
                   <a
                     href="#"
-                    title=""
+                    title="Add to favorites"
                     className="flex items-center justify-center py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
                     role="button"
                   >
                     <svg
-                      className="w-5 h-5 -ms-2 me-2"
+                      className="w-5 h-5 -ml-2 mr-2"
                       aria-hidden="true"
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
@@ -101,12 +101,12 @@ function ProductDisplay() {
 
                   <a
                     href="#"
-                    title=""
+                    title="Add to cart"
                     className="text-white mt-4 sm:mt-0 bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800 flex items-center justify-center"
                     role="button"
                   >
                     <svg
-                      className="w-5 h-5 -ms-2 me-2"
+                      className="w-5 h-5 -ml-2 mr-2"
                       aria-hidden="true"
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
@@ -133,27 +133,30 @@ function ProductDisplay() {
                       {productdetails.Description}
                     </p>
                     <p className="mb-6 text-gray-500 dark:text-gray-400">
-                      <a href="#">{productdetails.YoutubeLink}</a>
+                      <a href={productdetails.YoutubeLink}>Watch Video</a>
                     </p>
                   </div>
 
                   <div>
                     <p className="mb-6 text-gray-500 dark:text-gray-400">
-                      <a href="#">{productdetails.AdminName}</a>
+                      <a href={`mailto:${productdetails.AdminEmail}`}>
+                        {productdetails.AdminName}
+                      </a>
                     </p>
                     <p className="mb-6 text-gray-500 dark:text-gray-400">
-                      <a href="#">{productdetails.AdminEmail}</a>
+                      <a href={`mailto:${productdetails.AdminEmail}`}>
+                        {productdetails.AdminEmail}
+                      </a>
                     </p>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="w-full md:w-1/3 flex flex-col items-center basis-1/4 h-screen">
-              <Chatbot />
-            </div>
+          </div>
+          <div className="w-full md:w-1/3 flex flex-col items-center md:basis-1/4">
+            <Chatbot />
           </div>
         </section>
-
         <Footer className="self-stretch" />
       </div>
     </>
