@@ -4,27 +4,29 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Footer from "../../components/Footer";
 import HomepageHeader from "../../components/HomepageHeader";
+import { useAuthContext } from "../../Context/AuthContext";
 
 export default function SignUpPage() {
   const [data, setData] = useState({
-    Username: "",
+    UserName: "",
     Email: "",
     Password: "",
   });
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
-  const handleChange = ({ currentTarget: input }) => {
-    setData({ ...data, [input.name]: input.value });
-  };
+ const {login} = useAuthContext();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+   
     try {
       const url = "http://localhost:3001/api/v1/user/signup";
-      const { data: res } = await axios.post(url, data);
-      console.log(res.message);
-      navigate("/api/v1/user/signin"); // Navigate after successful signup
+      const response  = await axios.post(url, data);
+      console.log(response.data);
+      login(response.data.token);
+      navigate("/");
+   
     } catch (error) {
       if (
         error.response &&
@@ -77,10 +79,13 @@ export default function SignUpPage() {
                     <input
                       type="text"
                       name="username"
-                      onChange={handleChange}
+                      onChange={(e)=>{
+
+                        setData({...data,UserName:e.target.value})
+                      }}
                       id="username"
                       placeholder="Username"
-                      value={data.Username}
+                      value={data.UserName}
                       className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                       required=""
                     />
@@ -98,7 +103,10 @@ export default function SignUpPage() {
                       name="email"
                       id="email"
                       value={data.Email}
-                      onChange={handleChange}
+                      onChange={(e)=>{
+
+                        setData({...data,Email:e.target.value})
+                      }}
                       className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                       placeholder="name@company.com"
                       required=""
@@ -116,7 +124,10 @@ export default function SignUpPage() {
                       name="password"
                       id="password"
                       placeholder="••••••••"
-                      onChange={handleChange}
+                      onChange={(e)=>{
+
+                        setData({...data,Password:e.target.value})
+                      }}
                       value={data.Password}
                       className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                       required=""
