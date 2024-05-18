@@ -510,157 +510,207 @@ export default function HomepagePage() {
             </div>
           </div>
         </section>
-        <section className="bg-white self-stretch ">
-          <div
-            id="default-carousel"
-            className="relative w-full"
-            data-carousel="slide"
-          >
-            <div className="relative h-56 overflow-hidden rounded-lg md:h-96">
-              <div
-                className="hidden duration-700 ease-in-out"
-                data-carousel-item
-              >
-                <img
-                  src="/docs/images/carousel/carousel-1.svg"
-                  className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                  alt="..."
-                />
+        <section className="bg-white dark:bg-gray-800 self-stretch">
+          <div className="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
+            <h2 className="mb-8 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
+              Frequently Asked Questions
+            </h2>
+            <div className="grid pt-8 text-left border-t border-gray-200 md:gap-16 dark:border-gray-700 md:grid-cols-2">
+              <div>
+                <div className="mb-10">
+                  <h3 className="flex items-center mb-4 text-lg font-medium text-gray-900 dark:text-white">
+                    <svg
+                      className="flex-shrink-0 mr-2 w-5 h-5 text-gray-500 dark:text-gray-400"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"
+                        clipRule="evenodd"
+                      ></path>
+                    </svg>
+                    What is SLIET&apos;s ElectroMarket?
+                  </h3>
+                  <p className="text-gray-500 dark:text-gray-400">
+                    SLIET&apos;s ElectroMarket is a dedicated platform for
+                    students and faculty to buy, sell, and share electronic
+                    components and tools. It facilitates collaboration and
+                    innovation within the SLIET community.
+                  </p>
+                </div>
+                <div className="mb-10">
+                  <h3 className="flex items-center mb-4 text-lg font-medium text-gray-900 dark:text-white">
+                    <svg
+                      className="flex-shrink-0 mr-2 w-5 h-5 text-gray-500 dark:text-gray-400"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"
+                        clipRule="evenodd"
+                      ></path>
+                    </svg>
+                    Who can use ElectroMarket?
+                  </h3>
+                  <p className="text-gray-500 dark:text-gray-400">
+                    ElectroMarket is available to all students and faculty
+                    members of SLIET. It aims to support academic and research
+                    projects by providing easy access to electronic components
+                    and tools.
+                  </p>
+                </div>
+                <div className="mb-10">
+                  <h3 className="flex items-center mb-4 text-lg font-medium text-gray-900 dark:text-white">
+                    <svg
+                      className="flex-shrink-0 mr-2 w-5 h-5 text-gray-500 dark:text-gray-400"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"
+                        clipRule="evenodd"
+                      ></path>
+                    </svg>
+                    What kind of items are available on ElectroMarket?
+                  </h3>
+                  <p className="text-gray-500 dark:text-gray-400">
+                    ElectroMarket offers a variety of electronic components,
+                    tools, and resources essential for engineering projects.
+                    This includes sensors, microcontrollers, resistors,
+                    capacitors, and much more.
+                  </p>
+                </div>
+                <div className="mb-10">
+                  <h3 className="flex items-center mb-4 text-lg font-medium text-gray-900 dark:text-white">
+                    <svg
+                      className="flex-shrink-0 mr-2 w-5 h-5 text-gray-500 dark:text-gray-400"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"
+                        clipRule="evenodd"
+                      ></path>
+                    </svg>
+                    How do I buy or sell items on ElectroMarket?
+                  </h3>
+                  <p className="text-gray-500 dark:text-gray-400">
+                    To buy or sell items on ElectroMarket, simply log in with
+                    your SLIET credentials, browse the listings, and follow the
+                    instructions for completing transactions. Both buyers and
+                    sellers are encouraged to communicate clearly and confirm
+                    details before finalizing any exchange.
+                  </p>
+                </div>
               </div>
-
-              <div
-                className="hidden duration-700 ease-in-out"
-                data-carousel-item
-              >
-                <img
-                  src="/docs/images/carousel/carousel-2.svg"
-                  className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                  alt="..."
-                />
-              </div>
-
-              <div
-                className="hidden duration-700 ease-in-out"
-                data-carousel-item
-              >
-                <img
-                  src="/docs/images/carousel/carousel-3.svg"
-                  className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                  alt="..."
-                />
-              </div>
-
-              <div
-                className="hidden duration-700 ease-in-out"
-                data-carousel-item
-              >
-                <img
-                  src="/docs/images/carousel/carousel-4.svg"
-                  className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                  alt="..."
-                />
-              </div>
-
-              <div
-                className="hidden duration-700 ease-in-out"
-                data-carousel-item
-              >
-                <img
-                  src="/docs/images/carousel/carousel-5.svg"
-                  className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                  alt="..."
-                />
+              <div>
+                <div className="mb-10">
+                  <h3 className="flex items-center mb-4 text-lg font-medium text-gray-900 dark:text-white">
+                    <svg
+                      className="flex-shrink-0 mr-2 w-5 h-5 text-gray-500 dark:text-gray-400"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"
+                        clipRule="evenodd"
+                      ></path>
+                    </svg>
+                    Are there any fees associated with using ElectroMarket?
+                  </h3>
+                  <p className="text-gray-500 dark:text-gray-400">
+                    ElectroMarket is free to use for all SLIET students and
+                    faculty members. There are no fees for listing items or
+                    making purchases. However, users must adhere to the
+                    platform&apos;s guidelines and policies.
+                  </p>
+                </div>
+                <div className="mb-10">
+                  <h3 className="flex items-center mb-4 text-lg font-medium text-gray-900 dark:text-white">
+                    <svg
+                      className="flex-shrink-0 mr-2 w-5 h-5 text-gray-500 dark:text-gray-400"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"
+                        clipRule="evenodd"
+                      ></path>
+                    </svg>
+                    How is quality ensured on ElectroMarket?
+                  </h3>
+                  <p className="text-gray-500 dark:text-gray-400">
+                    Quality on ElectroMarket is maintained through user reviews
+                    and ratings. Additionally, the ElectroMarket team
+                    periodically reviews listings to ensure compliance with
+                    platform standards. Users are encouraged to report any
+                    issues or concerns.
+                  </p>
+                </div>
+                <div className="mb-10">
+                  <h3 className="flex items-center mb-4 text-lg font-medium text-gray-900 dark:text-white">
+                    <svg
+                      className="flex-shrink-0 mr-2 w-5 h-5 text-gray-500 dark:text-gray-400"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"
+                        clipRule="evenodd"
+                      ></path>
+                    </svg>
+                    Can I suggest new features or improvements for
+                    ElectroMarket?
+                  </h3>
+                  <p className="text-gray-500 dark:text-gray-400">
+                    Yes, we welcome suggestions and feedback from our users. If
+                    you have ideas for new features or improvements, please feel
+                    free to contact us. Your input is valuable in helping us
+                    enhance the platform.
+                  </p>
+                </div>
+                <div className="mb-10">
+                  <h3 className="flex items-center mb-4 text-lg font-medium text-gray-900 dark:text-white">
+                    <svg
+                      className="flex-shrink-0 mr-2 w-5 h-5 text-gray-500 dark:text-gray-400"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"
+                        clipRule="evenodd"
+                      ></path>
+                    </svg>
+                    How can I get support if I encounter issues?
+                  </h3>
+                  <p className="text-gray-500 dark:text-gray-400">
+                    If you encounter any issues or need assistance, you can
+                    contact our support team. We are here to help ensure you
+                    have a smooth and productive experience on ElectroMarket.
+                    Visit the support section or send us an email.
+                  </p>
+                </div>
               </div>
             </div>
-
-            <div className="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
-              <button
-                type="button"
-                className="w-3 h-3 rounded-full"
-                aria-current="true"
-                aria-label="Slide 1"
-                data-carousel-slide-to="0"
-              ></button>
-              <button
-                type="button"
-                className="w-3 h-3 rounded-full"
-                aria-current="false"
-                aria-label="Slide 2"
-                data-carousel-slide-to="1"
-              ></button>
-              <button
-                type="button"
-                className="w-3 h-3 rounded-full"
-                aria-current="false"
-                aria-label="Slide 3"
-                data-carousel-slide-to="2"
-              ></button>
-              <button
-                type="button"
-                className="w-3 h-3 rounded-full"
-                aria-current="false"
-                aria-label="Slide 4"
-                data-carousel-slide-to="3"
-              ></button>
-              <button
-                type="button"
-                className="w-3 h-3 rounded-full"
-                aria-current="false"
-                aria-label="Slide 5"
-                data-carousel-slide-to="4"
-              ></button>
-            </div>
-
-            <button
-              type="button"
-              className="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-              data-carousel-prev
-            >
-              <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                <svg
-                  className="w-4 h-4 text-white dark:text-gray-900 rtl:rotate-180"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 6 10"
-                >
-                  <path
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M5 1 1 5l4 4"
-                  />
-                </svg>
-                <span className="sr-only">Previous</span>
-              </span>
-            </button>
-            <button
-              type="button"
-              className="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-              data-carousel-next
-            >
-              <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                <svg
-                  className="w-4 h-4 text-white dark:text-gray-900 rtl:rotate-180"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 6 10"
-                >
-                  <path
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="m1 9 4-4-4-4"
-                  />
-                </svg>
-                <span className="sr-only">Next</span>
-              </span>
-            </button>
           </div>
         </section>
+
         <Footer className="w-full" />
       </div>
     </>
