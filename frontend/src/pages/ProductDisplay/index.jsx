@@ -53,8 +53,8 @@ function ProductDisplay() {
         <HomepageHeader shopOne="Sign in" className="self-stretch" />
         <section className="py-8 bg-white md:py-16 dark:bg-gray-800 antialiased self-stretch flex flex-col md:flex-row gap-4 w-full">
           <div className="max-w-screen-xl px-4 mx-auto 2xl:px-0 w-full md:basis-3/4">
-            <div className="lg:grid lg:grid-cols-2 lg:gap-8 xl:gap-16">
-              <div className="shrink-0 max-w-md lg:max-w-lg mx-auto">
+            <div className="flex gap-20 items-start">
+              <div className="shrink-0 max-w-md lg:max-w-lg ">
                 <img
                   className="w-96 h-80 z-20"
                   src={`http://localhost:3001/${productdetails.Image}`}
@@ -63,12 +63,12 @@ function ProductDisplay() {
               </div>
 
               <div className="mt-6 sm:mt-8 lg:mt-0">
-                <h1 className="text-xl font-semibold text-gray-900 sm:text-2xl dark:text-white">
+                <h1 className="text-xl font-semibold text-gray-900 sm:text-4xl tracking-tight dark:text-white">
                   {productdetails.Title}
                 </h1>
                 <div className="mt-4 sm:items-center sm:gap-4 sm:flex">
                   <p className="text-2xl font-semibold text-gray-900 sm:text-3xl dark:text-white">
-                    {productdetails.Price}
+                    Rs. {productdetails.Price}/-
                   </p>
                 </div>
 
@@ -126,32 +126,37 @@ function ProductDisplay() {
                   </a>
                 </div>
 
+              </div>
+            </div>
                 <hr className="my-6 md:my-8 border-gray-200 dark:border-gray-800" />
-                <div className="grid grid-cols-2 gap-4">
+                <div className="">
                   <div>
-                    <p className="mb-6 text-gray-500 dark:text-gray-400">
+                    <div className="mb-6 text-gray-500 dark:text-gray-200">
+                      <div className="text-4xl font-semibold text-gray-100 my-2">Description</div>
                       {productdetails.Description}
-                    </p>
-                    <p className="mb-6 text-gray-500 dark:text-gray-400">
-                      <a href={productdetails.YoutubeLink}>Watch Video</a>
-                    </p>
+                    </div>
+                    <div className="mb-6 text-gray-500 dark:text-gray-200">
+                      <div className="text-4xl font-semibold text-gray-100 my-2">Youtube Link</div>
+                      <a className="underline underline-offset-1 text-blue-500" href={productdetails.YoutubeLink}>{productdetails.YoutubeLink}</a>
+                    </div>
                   </div>
 
                   <div>
-                    <p className="mb-6 text-gray-500 dark:text-gray-400">
+                    <div className="mb-6 text-gray-500 dark:text-gray-200">
+                    <div className="text-2xl font-semibold text-gray-100 my-2">Seller Email</div>
                       <a href={`mailto:${productdetails.AdminEmail}`}>
                         {productdetails.AdminName}
                       </a>
-                    </p>
-                    <p className="mb-6 text-gray-500 dark:text-gray-400">
-                      <a href={`mailto:${productdetails.AdminEmail}`}>
-                        {productdetails.AdminEmail}
-                      </a>
-                    </p>
+                    </div>
+                    <div className="mb-6 text-gray-500 dark:text-gray-200">
+                    <div className="text-2xl font-semibold text-gray-100 my-2">Seller Name</div>
+
+                      <p>
+                        {productdetails.AdminName}
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
           </div>
           <div className="w-full md:w-1/3 flex flex-col items-center md:basis-1/4">
             <Chatbot />

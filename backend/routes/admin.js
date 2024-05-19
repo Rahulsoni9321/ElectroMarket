@@ -113,8 +113,7 @@ adminrouter.post("/signin", async (req, res) => {
 adminrouter.post("/createproduct",uploadstorage.single("file"), async (req, res) => {
   const AdminId = req.header;
   const payload = req.body;
-  console.log(req.file)
-  console.log(payload);
+
   
   
   try {
@@ -135,7 +134,7 @@ adminrouter.post("/createproduct",uploadstorage.single("file"), async (req, res)
           createdAt: new Date(),
         },
       });
-
+      console.log("successfully created product")
       return res.json({
         message: "Product Created Successfully.",
         product: newproduct,
