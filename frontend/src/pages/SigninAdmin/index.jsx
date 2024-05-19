@@ -4,21 +4,21 @@ import axios from "axios";
 import { Helmet } from "react-helmet";
 import Footer from "../../components/Footer";
 import HomepageHeader from "../../components/HomepageHeader";
+import { useAuthContext } from "../../Context/AuthContext";
+import toast from "react-hot-toast";
 
 export default function SigninAdminPage() {
   const [data, setData] = useState({ Email: "", Password: "" });
   const [error, setError] = useState("");
-
-  const handleChange = ({ currentTarget: input }) => {
-    setData({ ...data, [input.name]: input.value });
-  };
+  const {login} = useAuthContext();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const url = "http://localhost:3001/api/v1/admin/signin";
-      const { data: res } = await axios.post(url, data);
-      localStorage.setItem("token", res.data);
+      const response = await axios.post(url, data);
+      login(response.data.token);
+      toast.success("Signed in successfully.")
       window.location = "/";
     } catch (error) {
       if (
@@ -72,7 +72,9 @@ export default function SigninAdminPage() {
                       type="email"
                       name="email"
                       id="email"
-                      onChange={handleChange}
+                      onChange={(e)=>{
+                        setData({...data,Email:e.target.value})
+                      }}
                       value={data.Email}
                       className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                       placeholder="name@company.com"
@@ -91,8 +93,10 @@ export default function SigninAdminPage() {
                       name="password"
                       id="password"
                       placeholder="••••••••"
-                      onChange={handleChange}
-                      value={data.Password}
+                      onChange={(e)=>{
+                        setData({...data,Password:e.target.value})
+                      }}
+                      
                       className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                       required=""
                     />

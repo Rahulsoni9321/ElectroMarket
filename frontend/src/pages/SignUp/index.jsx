@@ -5,6 +5,7 @@ import axios from "axios";
 import Footer from "../../components/Footer";
 import HomepageHeader from "../../components/HomepageHeader";
 import { useAuthContext } from "../../Context/AuthContext";
+import toast from "react-hot-toast";
 
 export default function SignUpPage() {
   const [data, setData] = useState({
@@ -19,12 +20,16 @@ export default function SignUpPage() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-   
+    if (!data.Email.includes("@sliet.ac.in")){
+        toast.error("Signup with your SLIET's Email-Id")
+        return;
+    }
     try {
       const url = "http://localhost:3001/api/v1/user/signup";
       const response  = await axios.post(url, data);
       console.log(response.data);
       login(response.data.token);
+      toast.success("Signed Up Successfully.")
       navigate("/");
    
     } catch (error) {

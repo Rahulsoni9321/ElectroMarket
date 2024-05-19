@@ -4,33 +4,14 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Footer from "../../components/Footer";
 import HomepageHeader from "../../components/HomepageHeader";
+import { useAuthContext } from "../../Context/AuthContext";
+import toast from "react-hot-toast";
 
 export default function SignUpPageAdmin() {
   const [phoneNumber, setPhoneNumber] = useState("+91");
-  const [phoneError, setPhoneError] = useState(false);
-
-  useEffect(() => {
-    // Function to validate phone number
-    function validatePhoneNumber(inputtxt) {
-      // Regular expression to match only numbers
-      var phoneno = /^\d{12}$/;
-      return phoneno.test(inputtxt);
-    }
-
-    const input = phoneNumber.replace(/\D/g, ""); // Remove non-numeric characters
-    if (!validatePhoneNumber(input)) {
-      setPhoneError(true);
-    } else {
-      setPhoneError(false);
-    }
-  }, [phoneNumber]);
-
-  const handlePhoneChange = (event) => {
-    setPhoneNumber(event.target.value);
-  };
 
   const [data, setData] = useState({
-    Username: "",
+    AdminName: "",
     Email: "",
     Password: "",
     PhoneNumber: "",
@@ -38,17 +19,26 @@ export default function SignUpPageAdmin() {
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
-  const handleChange = ({ currentTarget: input }) => {
-    setData({ ...data, [input.name]: input.value });
-  };
+  const { isauthenticated, login } = useAuthContext();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!data.Email.includes("@sliet.ac.in")) {
+      toast.error("Signup with your SLIET's Email-Id");
+      return;
+    }
+    if(isNaN(data.PhoneNumber) || data.PhoneNumber.length!==10){
+      toast.error("Not a number")
+      return ;
+    };
+    
+   
     try {
       const url = "http://localhost:3001/api/v1/admin/signup";
-      const { data: res } = await axios.post(url, data);
-      console.log(res.message);
-      navigate("/api/v1/user/signin"); // Navigate after successful signup
+      const response = await axios.post(url, data);
+      toast.success("Signed up successfully.");
+      login(response.data.token);
+      navigate("/admin/createproduct");
     } catch (error) {
       if (
         error.response &&
@@ -93,18 +83,20 @@ export default function SignUpPageAdmin() {
                 >
                   <div>
                     <label
-                      htmlFor="username"
+                      htmlFor="adminname"
                       className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                     >
-                      Username
+                      AdminName
                     </label>
                     <input
                       type="text"
                       name="username"
-                      value={data.Username}
-                      onChange={handleChange}
+                      value={data.AdminName}
+                      onChange={(e) => {
+                        setData({ ...data, AdminName: e.target.value });
+                      }}
                       id="username"
-                      placeholder="Username"
+                      placeholder="AdminName"
                       className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                       required=""
                     />
@@ -121,7 +113,9 @@ export default function SignUpPageAdmin() {
                       type="email"
                       name="email"
                       value={data.Email}
-                      onChange={handleChange}
+                      onChange={(e) => {
+                        setData({ ...data, Email: e.target.value });
+                      }}
                       id="email"
                       className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                       placeholder="name@company.com"
@@ -140,18 +134,15 @@ export default function SignUpPageAdmin() {
                       name="phone"
                       id="phone"
                       placeholder="1234567890"
-                      value={[phoneNumber, data.PhoneNumber]}
-                      onChange={[handlePhoneChange, handleChange]}
-                      className={`bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 ${
-                        phoneError ? "border-red-500" : ""
-                      }`}
+                      onChange={(e) => {
+                        setData({ ...data, PhoneNumber: e.target.value });
+                      }}
+                      className={`bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 
+                        
+                      `}
                       required=""
                     />
-                    {phoneError && (
-                      <p className="text-red-500 text-sm">
-                        Please enter a valid phone number.
-                      </p>
-                    )}
+                   
                   </div>
 
                   <div>
@@ -164,7 +155,9 @@ export default function SignUpPageAdmin() {
                     <input
                       type="password"
                       name="password"
-                      onChange={handleChange}
+                      onChange={(e) => {
+                        setData({ ...data, Password: e.target.value });
+                      }}
                       value={data.Password}
                       id="password"
                       placeholder="••••••••"
@@ -201,7 +194,7 @@ export default function SignUpPageAdmin() {
                   {error && <div>{error}</div>}
                   <button
                     type="submit"
-                    className="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                    className="w-full text-white bg-primary-600 border-[1px] border-gray-400 shadow-sm shadow-white/50 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
                   >
                     Create an account
                   </button>
