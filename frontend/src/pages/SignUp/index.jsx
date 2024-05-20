@@ -27,11 +27,9 @@ export default function SignUpPage() {
     try {
       const url = "http://localhost:3001/api/v1/user/signup";
       const response  = await axios.post(url, data);
-      console.log(response.data);
-      login(response.data.token);
+      login(response.data.token,response.data.user);
       toast.success("Signed Up Successfully.")
       navigate("/");
-   
     } catch (error) {
       if (
         error.response &&

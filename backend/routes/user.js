@@ -41,6 +41,7 @@ userrouter.post("/signup", async (req, res) => {
     return res.json({
       message: "User created Successfully",
       token: token,
+      user:newuser
     });
   } catch (error) {
     console.error(error);
@@ -73,6 +74,7 @@ userrouter.post("/signin", async (req, res) => {
         return res.json({
           message: "Signed In successfully",
           token: token,
+          user:findinguser
         });
       } else {
         return res.status(411).json({
@@ -102,14 +104,14 @@ userrouter.post("/gpt", async (req, res) => {
   });
 });
 
-userrouter.post("/wishlist", userMiddleware, async (req, res) => {
+userrouter.post("/wishlist", async (req, res) => {
   const userpayload = req.body;
-
+  
   try {
     const wishlist = await prisma.wishList.create({
       data: {
         UserId: userpayload.UserId,
-        ProducId: userpayload.ProductId,
+        ProductId: userpayload.ProductId,
       },
     });
     return res.json({
@@ -125,3 +127,89 @@ userrouter.post("/wishlist", userMiddleware, async (req, res) => {
     });
   }
 });
+userrouter.post("/deletewishlist", async (req, res) => {
+  const userpayload = req.body;
+  
+  try {
+    const wishlist = await prisma.wishList.findFirst({
+      where: {
+        UserId: userpayload.UserId,
+        ProductId: userpayload.ProductId,
+      },
+    });
+
+      await prisma.wishList.delete({
+      where: {
+        id:wishlist.id
+      }});
+
+    return res.json({
+      message: "Product deleted from to Wishlist.",
+      wishlistedProduct: wishlist,
+    });
+  } catch (error) {
+    console.log(error);
+    return res.status(500).json({
+      message:
+        "Something went wrong while deleting to wishlist, Please try again.",
+      details: error,
+    });
+  }
+});
+
+userrouter.post('/lockedproduct',async (req,res)=>{
+  const userpayload = req.body;
+  const lockproduct = await prisma.user.findFirst({
+    where:{
+      id:userpayload.UserId
+    },
+    select:{
+      Product:true
+    }
+    
+  })
+
+  if (!lockproduct){
+    return res.status(500).json({
+      message:"No Bought Product till now."
+    })
+  }
+
+  return res.json({
+    product:lockproduct
+  })
+})
+userrouter.get('/wishlist/:email',async (req,res)=>{
+  const email = req.params.email;
+  
+  const finduser = await prisma.user.findFirst({
+    where:{
+      Email:email
+    },
+    select:{
+        WishList:{
+          select:{
+            Product:{
+              select:{
+                id:true,
+                ImageLink:true,
+                Title:true,
+                Description:true,
+                Price:true
+              }
+            }
+          }
+        }
+    }
+  })
+  if (!finduser) {
+    return res.status(411).json({
+      message:"User does not exist."
+    })
+  }
+  
+  return res.json({
+    wishList:finduser
+  })
+
+})

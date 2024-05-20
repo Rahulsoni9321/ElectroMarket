@@ -27,8 +27,8 @@ model User {
 model WishList {
   id String  @id @default(auto()) @map("_id") @db.ObjectId
   UserId String @db.ObjectId()
-  ProducId String @db.ObjectId()
-  Product Product @relation(fields: [ProducId], references: [id])
+  ProductId String @db.ObjectId()
+  Product Product @relation(fields: [ProductId], references: [id])
   User User @relation(fields: [UserId], references: [id])
 } 
 
@@ -48,6 +48,7 @@ model Product {
   Description String
   Price String
   YoutubeLink String
+  Lock Boolean? @default(false)
   ImageLink String?
   AdminId String @db.ObjectId
   UserId String? @db.ObjectId
