@@ -1,1 +1,1 @@
-export const backend_route="https://electro-market-orcin.vercel.app/api/v1"
+export const backend_route="http://localhost:3001/api/v1"
