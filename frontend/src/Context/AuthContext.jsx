@@ -24,6 +24,9 @@ export const AuthContextProvider = ({ children }) => {
   const logout = () => {
     setisauthenticated(false);
     localStorage.removeItem("token");
+    localStorage.removeItem("user_email");
+    localStorage.removeItem("user_name");
+    localStorage.removeItem("user_id");
     toast.success("logged out successfully", {
       duration: 3000,
     });

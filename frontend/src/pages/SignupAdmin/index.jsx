@@ -6,6 +6,7 @@ import Footer from "../../components/Footer";
 import HomepageHeader from "../../components/HomepageHeader";
 import { useAuthContext } from "../../Context/AuthContext";
 import toast from "react-hot-toast";
+import { backend_route } from "../../config";
 
 export default function SignUpPageAdmin() {
   const [phoneNumber, setPhoneNumber] = useState("+91");
@@ -34,10 +35,10 @@ export default function SignUpPageAdmin() {
     
    
     try {
-      const url = "http://localhost:3001/api/v1/admin/signup";
+      const url = `${backend_route}/admin/signup`;
       const response = await axios.post(url, data);
       toast.success("Signed up successfully.");
-      login(response.data.token);
+      login(response.data.token,response.data.admin);
       navigate("/admin/createproduct");
     } catch (error) {
       if (

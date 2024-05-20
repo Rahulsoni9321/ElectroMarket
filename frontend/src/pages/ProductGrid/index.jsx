@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import axios from "axios";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { backend_route } from "../../config";
 
 
 function FeaturedProducts() {
@@ -14,7 +15,7 @@ function FeaturedProducts() {
 
   useEffect(()=>{
      async function getallProducts() {
-           const response = await axios.get('http://localhost:3001/api/v1/product/bulk')
+           const response = await axios.get(`${backend_route}/product/bulk`)
            setallproductdetails(response.data.allproducts);
      }
      getallProducts();

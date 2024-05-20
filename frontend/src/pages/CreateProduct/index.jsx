@@ -5,6 +5,7 @@ import Helmet from "react-helmet";
 import Footer from "../../components/Footer";
 import HomepageHeader from "../../components/HomepageHeader";
 import {toast} from "react-hot-toast";
+import { backend_route } from "../../config";
 
 const CreateProduct = () => {
   const [title, setTitle] = useState("");
@@ -29,7 +30,7 @@ const CreateProduct = () => {
       }
       const response = await fetch(
 
-        "http://localhost:3001/api/v1/admin/createproduct",
+       `${backend_route}/admin/createproduct`,
         {
           method: "POST",
           body: formData,

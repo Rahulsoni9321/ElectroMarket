@@ -7,11 +7,14 @@ import { useEffect } from "react";
 import axios from "axios";
 import { backend_route } from "../../config";
 import toast from "react-hot-toast";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuthContext } from "../../Context/AuthContext";
 
 export default function CartPage() {
   const [lockedproduct, setlockedproduct] = useState([]);
   const userid = localStorage.getItem("user_id");
+  const {isauthenticated} = useAuthContext();
+  const navigate = useNavigate();
 
   useEffect(() => {
     async function lockedItems() {
@@ -31,7 +34,10 @@ export default function CartPage() {
     lockedItems();
   }, []);
 
-
+  if (!isauthenticated) {
+    navigate("/user/signin");
+    return ;
+  }
   if (!lockedproduct) {
     return <div className="py-20 flex justify-center text-2xl">Loading....</div>
   }
