@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "start": " node index.js ",
-    "prisma:migrate":"cd prisma && npx prisma generate"
+    "migrate":"cd prisma && npx prisma generate"
   },
   "author": "--",
   "license": "MIT",
