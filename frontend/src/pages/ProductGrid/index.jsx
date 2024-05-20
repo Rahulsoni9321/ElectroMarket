@@ -47,11 +47,12 @@ function FeaturedProducts() {
 
           <div className="grid grid-cols-2 gap-6 mt-10 lg:mt-16 lg:gap-4 lg:grid-cols-4">
           {allproductdetails.map((details)=>{
-              return  <Link to={`/aboutproduct?id=${details.id}`}>
+            {
+              return details.Lock===true ? "" :  <Link to={`/aboutproduct?id=${details.id}`}>
               <div className="relative group">
                 <div className="overflow-hidden aspect-w-1 aspect-h-1">
                   <img
-                    className="object-cover   transition-all duration-300 group-hover:scale-125"
+                    className="object-cover  rounded-xl transition-all duration-300 group-hover:scale-125"
                     src={`http://localhost:3001/${details.ImageLink}`}
                     alt=""
                   />
@@ -78,6 +79,8 @@ function FeaturedProducts() {
                 </div>
               </div>
               </Link>
+            }
+              
           })}  
          
             

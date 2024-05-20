@@ -12,6 +12,7 @@ import Contact from "./pages/Contact/index.jsx";
 import CreateProduct from "./pages/CreateProduct/index.jsx";
 import ProductDisplay from "./pages/ProductDisplay/index.jsx";
 import Chatbot from "./pages/ChatBot/index.jsx";
+import UserDetails from "./pages/UserDetails/index.jsx";
 
 const ProjectRoutes = () => {
   let element = useRoutes([
@@ -60,6 +61,10 @@ const ProjectRoutes = () => {
     {
       path: "/chatbot",
       element: <Chatbot />,
+    },
+    {
+      path: "/userdetails",
+      element: <UserDetails />,
     },
   ]);
 

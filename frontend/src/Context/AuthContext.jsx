@@ -12,9 +12,14 @@ export const AuthContextProvider = ({ children }) => {
   const [isauthenticated, setisauthenticated] = useState(
     !!localStorage.getItem("token")
   );
-  const login = (token) => {
+  const login = (token,user) => {
     setisauthenticated(true);
-    localStorage.setItem("token", `Bearer ${token}`);
+    localStorage.setItem("token", token);
+
+    localStorage.setItem("user_email",user.Email);
+    localStorage.setItem("user_name",user.Username);
+    localStorage.setItem("user_id",user.id);
+    
   };
   const logout = () => {
     setisauthenticated(false);

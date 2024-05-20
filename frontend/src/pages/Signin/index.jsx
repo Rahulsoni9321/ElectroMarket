@@ -19,7 +19,9 @@ export default function SigninPage() {
       const url = "http://localhost:3001/api/v1/user/signin";
       const response = await axios.post(url, data);
       toast.success("Signed in successfully.")
-      login(response.data.token);
+      login(response.data.token,response.data.user);
+      
+
       window.location = "/";
     } catch (error) {
       if (
