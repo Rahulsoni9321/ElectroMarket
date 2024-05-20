@@ -6,6 +6,7 @@ import Footer from "../../components/Footer";
 import HomepageHeader from "../../components/HomepageHeader";
 import { useAuthContext } from "../../Context/AuthContext";
 import toast from "react-hot-toast";
+import { backend_route } from "../../config";
 
 export default function SigninPage() {
   const [data, setData] = useState({ Email: "", Password: "" });
@@ -16,7 +17,7 @@ export default function SigninPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const url = "http://localhost:3001/api/v1/user/signin";
+      const url = `${backend_route}/user/signin`;
       const response = await axios.post(url, data);
       toast.success("Signed in successfully.")
       login(response.data.token,response.data.user);

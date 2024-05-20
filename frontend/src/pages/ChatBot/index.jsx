@@ -1,10 +1,9 @@
 import axios from "axios";
-import { useEffect } from "react";
 import { useState } from "react";
 import Helmet from "react-helmet";
 import { backend_route } from "../../config";
 import { useAuthContext } from "../../Context/AuthContext";
-import {Link, useNavigate} from "react-router-dom";
+import { useNavigate} from "react-router-dom";
 import toast from "react-hot-toast";
 
 const Chatbot = () => {

@@ -58,6 +58,7 @@ adminrouter.post("/signup", async (req, res) => {
     return res.json({
       message: "Admin created Successfully",
       token: token,
+      admin: newadmin,
     });
   } catch (error) {
     console.error(error);
@@ -90,6 +91,7 @@ adminrouter.post("/signin", async (req, res) => {
         return res.json({
           message: "Signed In successfully",
           token: token,
+          admin: findingadmin,
         });
       } else {
         return res.status(411).json({
@@ -110,49 +112,50 @@ adminrouter.post("/signin", async (req, res) => {
   }
 });
 
-adminrouter.post("/createproduct",uploadstorage.single("file"), async (req, res) => {
-  const AdminId = req.header;
-  const payload = req.body;
+adminrouter.post(
+  "/createproduct",
+  uploadstorage.single("file"),
+  async (req, res) => {
+    const AdminId = req.header;
+    const payload = req.body;
 
-  
-  
-  try {
-    const findAdmin = await prisma.admin.findFirst({
-      where: {
-        id: "664847ab6301d3b8d7f90cdd",
-      },
-    });
-    if (findAdmin) {
-      const newproduct = await prisma.product.create({
-        data: {
-          Title: payload.Title,
-          Description: payload.Description,
-          Price: payload.Price,
-          ImageLink: req.file.filename,
-          YoutubeLink: payload.YoutubeLink,
-          AdminId: "664847ab6301d3b8d7f90cdd",
-          createdAt: new Date(),
+    try {
+      const findAdmin = await prisma.admin.findFirst({
+        where: {
+          id: "664847ab6301d3b8d7f90cdd",
         },
       });
-      console.log("successfully created product")
-      return res.json({
-        message: "Product Created Successfully.",
-        product: newproduct,
-      });
-    } else {
-      return res.status(400).json({
-        message: "Can't post product because Admin does not exist",
+      if (findAdmin) {
+        const newproduct = await prisma.product.create({
+          data: {
+            Title: payload.Title,
+            Description: payload.Description,
+            Price: payload.Price,
+            ImageLink: req.file.filename,
+            YoutubeLink: payload.YoutubeLink,
+            AdminId: "664847ab6301d3b8d7f90cdd",
+            createdAt: new Date(),
+          },
+        });
+        return res.json({
+          message: "Product Created Successfully.",
+          product: newproduct,
+        });
+      } else {
+        return res.status(400).json({
+          message: "Can't post product because Admin does not exist",
+        });
+      }
+    } catch (error) {
+      console.error(error);
+      return res.status(500).json({
+        message:
+          "Something went wrong while creating the product. Please try again.",
+        details: error,
       });
     }
-  } catch (error) {
-    console.error(error);
-    return res.status(500).json({
-      message:
-        "Something went wrong while creating the product. Please try again.",
-      details: error,
-    });
   }
-});
+);
 
 adminrouter.get("/allcreatedProduct", AdminMiddleware, async (req, res) => {
   const AdminId = req.header;
