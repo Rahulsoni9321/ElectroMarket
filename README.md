@@ -15,7 +15,6 @@ ElectroMarket is a user-friendly e-commerce platform designed specifically for p
 - Front-end: HTML, CSS, JavaScript, React.js
 - Back-end: Node.js, Express.js
 - Database: MongoDB with Prisma ORM
-- Real-time Chat: Socket.io
 - Authentication: JWT (JSON Web Tokens), Cookies
 
 ## Installation
